@@ -185,3 +185,7 @@ F9 Microkernel internals, file `include/autoconf.h` is the entry point:
     pages.
 * `CONFIG_PANIC_DUMP_STACK`
   - Dump kernel stack while panic.
+
+GPIO PART
+==============
+
