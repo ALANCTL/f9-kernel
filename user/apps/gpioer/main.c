@@ -9,6 +9,7 @@
 #include <l4io.h>
 #include <l4/ipc.h>
 #include <l4/utcb.h>
+#include <l4/types.h>
 
 #define STACK_SIZE 256
 
@@ -67,33 +68,40 @@ void __USER_TEXT gpioer_server (void)
 	L4_MsgTag_t msgtag;
 	L4_Msg_t msg;
 	L4_Word_t getVal;
+	L4_Time_t s;
+
+	L4_Word_t foo = 0;
+
+	/*
+    L4_Word_t page[2] = { 
+		0x40020000, 0x40020008
+    };  
+	*/
 
 	led_init ();
 		
+	s = L4_TimePeriod (500000);
+	
 	while (1) {
 		msgtag = L4_Receive (threads[GPIOER_CLIENT]);  
 	
 		getVal = L4_MsgWord (&msg, 0);
-		 		
+	
+		foo += s.period.e;
+ 
+		printf ("half a second is e %#x\n", foo);
+
 		leds_onoff (getVal);
 
+    	//L4_MsgPut (&msg, 0, 0, NULL, 2, page);
+	
+		//printf ("GPIO Server\n");
+	
+		//L4_Sleep (L4_TimePeriod (1000 * 200));
+
+		
 		L4_MsgStore (msgtag, &msg);
 	}
-
-	/*
-	bool flag = true;
-
-    
-	led_init ();
-
-    while (1) {
-        leds_onoff (flag);
-		
-		L4_Sleep (L4_TimePeriod (1000 * 1000));
-
-		flag = !flag;
-    }
-	*/
 }
 
 void __USER_TEXT gpioer_client (void)
@@ -101,14 +109,26 @@ void __USER_TEXT gpioer_client (void)
 	L4_Msg_t msg;
 	
 	L4_Word_t setVal = 1;
-			
+
+	/*	
+    L4_Word_t page[2] = { 
+    	0x2000fc00, 0x2000ff00
+    };  
+	*/
+				
 	L4_MsgClear (&msg);
 
-	L4_MsgAppendWord (&msg, val);
+    //L4_MsgPut (&msg, 0, 0, NULL, 2, page);
+	
+	L4_MsgAppendWord (&msg, setVal);
 
 	L4_MsgLoad (&msg);
 
 	while (1) {
+		L4_Sleep (L4_TimePeriod (1000 * 200));
+
+		printf ("GPIO Client\n");
+
 		L4_Send (threads[GPIOER_SERVER]);
 	}
 }
