@@ -13,11 +13,12 @@
 #define STACK_SIZE 256
 
 enum {
-	GPIOER_THREAD, 
+	GPIOER_SERVER, 
+	GPIOER_CLIENT,
 	BUTTON_MONITOR_THREAD 
 };
 
-static L4_ThreadId_t threads[2] __USER_DATA;
+static L4_ThreadId_t threads[3] __USER_DATA;
 
 static L4_Word_t last_thread __USER_DATA;
 static L4_Word_t free_mem __USER_DATA;
@@ -61,12 +62,27 @@ static inline void __USER_TEXT leds_onoff (bool on)
 	}
 }
 
-
-void __USER_TEXT gpioer_thread (void)
+void __USER_TEXT gpioer_server (void)
 {
+	L4_MsgTag_t msgtag;
+	L4_Msg_t msg;
+	L4_Word_t getVal;
+
+	led_init ();
+		
+	while (1) {
+		msgtag = L4_Receive (threads[GPIOER_CLIENT]);  
+	
+		getVal = L4_MsgWord (&msg, 0);
+		 		
+		leds_onoff (getVal);
+
+		L4_MsgStore (msgtag, &msg);
+	}
+
+	/*
 	bool flag = true;
 
-	printf ("gpioer thread: built-in leds blinking\n");
     
 	led_init ();
 
@@ -77,8 +93,25 @@ void __USER_TEXT gpioer_thread (void)
 
 		flag = !flag;
     }
+	*/
 }
 
+void __USER_TEXT gpioer_client (void)
+{
+	L4_Msg_t msg;
+	
+	L4_Word_t setVal = 1;
+			
+	L4_MsgClear (&msg);
+
+	L4_MsgAppendWord (&msg, val);
+
+	L4_MsgLoad (&msg);
+
+	while (1) {
+		L4_Send (threads[GPIOER_SERVER]);
+	}
+}
 
 /* STM32F407-Discovery
  * User Button connected on PA0 
@@ -148,8 +181,9 @@ static void __USER_TEXT main (user_struct *user)
 {
 	free_mem = user->fpages[0].base;
 
-	threads[GPIOER_THREAD] = create_thread (user, gpioer_thread);
+	threads[GPIOER_SERVER] = create_thread (user, gpioer_server);
 	threads[BUTTON_MONITOR_THREAD] = create_thread (user, button_monitor_thread);
+	threads[GPIOER_CLIENT] = create_thread (user, gpioer_client);
 }
 
 #define DEV_SIZE 0x3c00
@@ -159,7 +193,7 @@ DECLARE_USER (
 	0,
 	gpioer,
 	main,
-	DECLARE_FPAGE (0x0, 2 * UTCB_SIZE + 2 * STACK_SIZE)
+	DECLARE_FPAGE (0x0, 3 * UTCB_SIZE + 3 * STACK_SIZE)
     /* map thread with AHB DEVICE for gpio accessing */
 	DECLARE_FPAGE (AHB1_1DEV, DEV_SIZE)
 );
