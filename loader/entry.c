@@ -16,10 +16,7 @@
 #include <debug.h>
 #include <types.h>
 #include <debug.h>
-
 #include <elf/elf.h>
-
-#include <lib/string.h>
 
 /* linker variables */
 extern uint32_t kernel_flash_start;
@@ -69,16 +66,6 @@ void (* const g_pfnVectors[])(void) = {
 #include INC_PLAT(nvic_table.h)
 };
 
-void benchmark_memcpy (void)
-{
-	char *src = "test";
-	char dest[4];
-
-	memcpy (dest, src, 4);
-
-	dbg_printf (DL_BASIC, "\nmemcpy is OK.\n");
-}
-
 int main(void)
 {
 	void (*kernel_entry)(void);
@@ -89,8 +76,6 @@ int main(void)
 
 	dbg_layer = DL_BASIC;
 	dbg_uart_init();
-
-	benchmark_memcpy ();
 
 	dbg_printf(DL_BASIC, "loading kernel ...\n");
 
