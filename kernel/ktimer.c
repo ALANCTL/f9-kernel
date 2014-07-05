@@ -13,9 +13,11 @@
 #include <platform/bitops.h>
 #include <platform/irq.h>
 #include <init_hook.h>
+#include <lib/string.h>
 #if defined(CONFIG_KTIMER_TICKLESS) && defined(CONFIG_KTIMER_TICKLESS_VERIFY)
 #include <tickless-verify.h>
 #endif
+
 
 DECLARE_KTABLE(ktimer_event_t, ktimer_event_table, CONFIG_MAX_KT_EVENTS);
 
@@ -84,8 +86,39 @@ void __ktimer_handler(void)
 IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 
 #ifdef CONFIG_KDB
+
+#define MEASURE_SIZE 1024
+
+static char test_src[MEASURE_SIZE];
+static char test_dest[MEASURE_SIZE];
+static uint64_t measure_start;
+static uint64_t measure_end;
+static uint64_t measure_consume[256]; 
+static int measure_index = 0;
+
+void testbench_memcpy_unalignment (void)
+{
+	int i;
+	for (i = 0; i < MEASURE_SIZE; ++i) {
+		test_src[i] = 'A' + i;  
+	}
+		
+	measure_start = ktimer_now;
+	
+	for (i = 0; i < MEASURE_SIZE; ++i) {
+		memcpy(test_dest, test_src, i);
+	}
+	
+	measure_end = ktimer_now;	
+
+	measure_consume[measure_index] = measure_end - measure_start;
+	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld\n", measure_consume[measure_index++]);	
+}
+
 void kdb_show_ktimer(void)
 {
+	testbench_memcpy_alignment ();
+
 	dbg_printf(DL_KDB, "Now is %ld\n", ktimer_now);
 
 	if (ktimer_enabled) {
