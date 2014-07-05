@@ -115,8 +115,28 @@ void testbench_memcpy_unalignment (void)
 	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld\n", measure_consume[measure_index++]);	
 }
 
+void testbench_memcpy_alignment (void)
+{
+	int i;
+	for (i = 0; i < MEASURE_SIZE; ++i) {
+		test_src[i] = 'A' + i;  
+	}
+		
+	measure_start = ktimer_now;
+	
+	for (i = 0; i < MEASURE_SIZE / 4; ++i) {
+		memcpy(test_dest, test_src, 4 * (i + 1));
+	}
+	
+	measure_end = ktimer_now;	
+
+	measure_consume[measure_index] = measure_end - measure_start;
+	dbg_printf (DL_KDB, "The consumption of memcpy, alignment case: %ld\n", measure_consume[measure_index++]);	
+}
+
 void kdb_show_ktimer(void)
 {
+	testbench_memcpy_unalignment ();
 	testbench_memcpy_alignment ();
 
 	dbg_printf(DL_KDB, "Now is %ld\n", ktimer_now);
