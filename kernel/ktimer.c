@@ -89,26 +89,15 @@ IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 
 #define MAX_BYTES 5440
 
-static char test_src[4];
-static char test_dest[MAX_BYTES];
-
-void test_data_init (int __size)
-{
-	if (__size > MAX_BYTES) {
-		dbg_printf (DL_KDB, "\n The size is bigger than the definition. \n"); 
-	} else {
-		for (int i = 0; i < __size; ++i) {
-			test_src[i] = 'A' + i;
-		}
-	}
-}
+char *test_src = "test";
+char test_dest[MAX_BYTES];
 
 void testbench_memcpy_unalignment (void)
 {
 	uint64_t measure_start = ktimer_now;
 	
 	for (int i = 0; i < MAX_BYTES; ++i) {
-		memcpy(test_dest, test_src, i);
+		memcpy (test_dest, test_src, i);
 	}
 	
 	uint64_t measure_end = ktimer_now;	
@@ -135,8 +124,6 @@ void testbench_memcpy_alignment (int __cycles, int __size)
 */
 void kdb_show_ktimer(void)
 {
-	test_data_init (MAX_BYTES);
-		
 	testbench_memcpy_unalignment ();
 	//testbench_memcpy_alignment ();
 
