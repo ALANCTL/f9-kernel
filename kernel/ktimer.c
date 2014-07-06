@@ -87,15 +87,10 @@ IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 
 #ifdef CONFIG_KDB
 
-#define MEASURE_SIZE 128
-#define MAX_BYTES 128
+#define MAX_BYTES 5440
 
-static char test_src[MEASURE_SIZE];
-static char test_dest[MEASURE_SIZE];
-static uint64_t measure_start;
-static uint64_t measure_end;
-static uint64_t measure_consume[256]; 
-static int measure_index = 0;
+static char test_src[4];
+static char test_dest[MAX_BYTES];
 
 void test_data_init (int __size)
 {
@@ -110,38 +105,40 @@ void test_data_init (int __size)
 
 void testbench_memcpy_unalignment (void)
 {
-	measure_start = ktimer_now;
+	uint64_t measure_start = ktimer_now;
 	
-	for (int i = 0; i < MEASURE_SIZE; ++i) {
+	for (int i = 0; i < MAX_BYTES; ++i) {
 		memcpy(test_dest, test_src, i);
 	}
 	
-	measure_end = ktimer_now;	
+	uint64_t measure_end = ktimer_now;	
 
-	measure_consume[measure_index] = measure_end - measure_start;
-	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld ticks.\n", measure_consume[measure_index++]);	
+	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld ticks.\n", measure_end - measure_start);	
 }
 
-void testbench_memcpy_alignment (void)
+/*
+void testbench_memcpy_alignment (int __cycles, int __size)
 {
-	measure_start = ktimer_now;
+	for (int i = 1; i <= __cycles; ++i) { 
+		measure_start = ktimer_now;
 	
-	for (int i = 0; i < MEASURE_SIZE / 4; ++i) {
-		memcpy(test_dest, test_src, 4 * (i + 1));
+		for (int j = __size; j <= __size * i; ++j) {
+			memcpy (test_dest, test_src, __size);
+		}
+	
+		measure_end = ktimer_now;	
 	}
-	
-	measure_end = ktimer_now;	
 
 	measure_consume[measure_index] = measure_end - measure_start;
 	dbg_printf (DL_KDB, "The consumption of memcpy, alignment case: %ld\n ticks.", measure_consume[measure_index++]);	
 }
-
+*/
 void kdb_show_ktimer(void)
 {
-	test_data_init (128);
+	test_data_init (MAX_BYTES);
 		
 	testbench_memcpy_unalignment ();
-	testbench_memcpy_alignment ();
+	//testbench_memcpy_alignment ();
 
 	dbg_printf(DL_KDB, "Now is %ld\n", ktimer_now);
 
