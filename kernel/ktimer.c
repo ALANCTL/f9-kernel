@@ -87,7 +87,8 @@ IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 
 #ifdef CONFIG_KDB
 
-#define MEASURE_SIZE 1024
+#define MEASURE_SIZE 128
+#define MAX_BYTES 128
 
 static char test_src[MEASURE_SIZE];
 static char test_dest[MEASURE_SIZE];
@@ -96,46 +97,49 @@ static uint64_t measure_end;
 static uint64_t measure_consume[256]; 
 static int measure_index = 0;
 
+void test_data_init (int __size)
+{
+	if (__size > MAX_BYTES) {
+		dbg_printf (DL_KDB, "\n The size is bigger than the definition. \n"); 
+	} else {
+		for (int i = 0; i < __size; ++i) {
+			test_src[i] = 'A' + i;
+		}
+	}
+}
+
 void testbench_memcpy_unalignment (void)
 {
-	int i;
-	for (i = 0; i < MEASURE_SIZE; ++i) {
-		test_src[i] = 'A' + i;  
-	}
-		
 	measure_start = ktimer_now;
 	
-	for (i = 0; i < MEASURE_SIZE; ++i) {
+	for (int i = 0; i < MEASURE_SIZE; ++i) {
 		memcpy(test_dest, test_src, i);
 	}
 	
 	measure_end = ktimer_now;	
 
 	measure_consume[measure_index] = measure_end - measure_start;
-	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld\n", measure_consume[measure_index++]);	
+	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld ticks.\n", measure_consume[measure_index++]);	
 }
 
 void testbench_memcpy_alignment (void)
 {
-	int i;
-	for (i = 0; i < MEASURE_SIZE; ++i) {
-		test_src[i] = 'A' + i;  
-	}
-		
 	measure_start = ktimer_now;
 	
-	for (i = 0; i < MEASURE_SIZE / 4; ++i) {
+	for (int i = 0; i < MEASURE_SIZE / 4; ++i) {
 		memcpy(test_dest, test_src, 4 * (i + 1));
 	}
 	
 	measure_end = ktimer_now;	
 
 	measure_consume[measure_index] = measure_end - measure_start;
-	dbg_printf (DL_KDB, "The consumption of memcpy, alignment case: %ld\n", measure_consume[measure_index++]);	
+	dbg_printf (DL_KDB, "The consumption of memcpy, alignment case: %ld\n ticks.", measure_consume[measure_index++]);	
 }
 
 void kdb_show_ktimer(void)
 {
+	test_data_init (128);
+		
 	testbench_memcpy_unalignment ();
 	testbench_memcpy_alignment ();
 
