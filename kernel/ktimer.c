@@ -88,6 +88,7 @@ IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 #ifdef CONFIG_KDB
 
 #define MAX_BYTES 5440
+#define SYSTICKS_REG 0xE000E018
 
 char test_src[4] = {'A', 'B', 'C', 'D'};
 char test_dest[MAX_BYTES];
@@ -99,7 +100,7 @@ uint32_t measure_consumption (uint32_t start, uint32_t end)
 
 uint32_t *get_systicks (void)
 {
-	return (uint32_t *) 0xE000E018; 
+	return (uint32_t *) SYSTICKS_REG;
 }
 
 void testbench_memcpy_unalignment (void)
