@@ -89,20 +89,32 @@ IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 
 #define MAX_BYTES 5440
 
-char *test_src = "test";
+char test_src[4] = {'A', 'B', 'C', 'D'};
 char test_dest[MAX_BYTES];
+
+uint32_t measure_consumption (uint32_t start, uint32_t end) 
+{
+	return (start < end) ? (end - start) : (start - end);	
+}
+
+uint32_t *get_systicks (void)
+{
+	return (uint32_t *) 0xE000E018; 
+}
 
 void testbench_memcpy_unalignment (void)
 {
-	uint64_t measure_start = ktimer_now;
-	
+	uint32_t measure_start = *get_systicks ();
+
+	//int len = sizeof (test_src) - 1;
+		
 	for (int i = 0; i < MAX_BYTES; ++i) {
-		memcpy (test_dest, test_src, i);
+		memcpy (test_dest, test_src, 3);
 	}
 	
-	uint64_t measure_end = ktimer_now;	
+	uint32_t measure_end = *get_systicks ();
 
-	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld ticks.\n", measure_end - measure_start);	
+	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case: %ld ticks.\n", measure_consumption (measure_start, measure_end));
 }
 
 /*
@@ -127,12 +139,20 @@ void kdb_show_ktimer(void)
 	testbench_memcpy_unalignment ();
 	//testbench_memcpy_alignment ();
 
+	//uint32_t *foo = (uint32_t *) 0xE000E018;
+	uint32_t start = *get_systicks ();
+	
+	dbg_printf(DL_KDB, "foo is %ld\n", start);
+
 	dbg_printf(DL_KDB, "Now is %ld\n", ktimer_now);
 
 	if (ktimer_enabled) {
 		dbg_printf(DL_KDB,
 		           "Ktimer T=%d D=%d\n", ktimer_time, ktimer_delta);
 	}
+	uint32_t end = *get_systicks ();
+	dbg_printf(DL_KDB, "foo is %ld\n", end);
+	dbg_printf(DL_KDB, "foo is %ld\n", measure_consumption (start, end));
 }
 
 #if defined(CONFIG_KTIMER_TICKLESS) && defined(CONFIG_KTIMER_TICKLESS_VERIFY)
