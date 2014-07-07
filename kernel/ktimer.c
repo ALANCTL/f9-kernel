@@ -103,14 +103,13 @@ uint32_t *get_systicks (void)
 	return (uint32_t *) SYSTICKS_REG;
 }
 
-void testbench_memcpy_unalignment (void)
+void testbench_memcpy (int len)
 {
 	uint32_t measure_start = 0;
 	uint32_t measure_end = 0;
-	int len = sizeof (test_src) - 1;
 	
-	dbg_printf (DL_KDB, "The consumption of memcpy, unalignment case, unit: [ticks]\n");
-	dbg_printf (DL_KDB, "----------------------------------------------------------\n");
+	dbg_printf (DL_KDB, "The consumption of memcpy, unit: [ticks]\n");
+	dbg_printf (DL_KDB, "----------------------------------------\n");
 
 	for (int i = 1; i <= (MAX_BYTES / len); ++i) {
 		measure_start = *get_systicks ();		
@@ -123,29 +122,14 @@ void testbench_memcpy_unalignment (void)
 		dbg_printf (DL_KDB, "[%d]: %ld\n", i, measure_consumption (measure_start, measure_end));
 	}
 
-	dbg_printf (DL_KDB, "----------------------------------------------------------\n");
+	dbg_printf (DL_KDB, "----------------------------------------\n");
 }
 
-/*
-void testbench_memcpy_alignment (int __cycles, int __size)
-{
-	for (int i = 1; i <= __cycles; ++i) { 
-		measure_start = ktimer_now;
-	
-		for (int j = __size; j <= __size * i; ++j) {
-			memcpy (test_dest, test_src, __size);
-		}
-	
-		measure_end = ktimer_now;	
-	}
-
-	measure_consume[measure_index] = measure_end - measure_start;
-	dbg_printf (DL_KDB, "The consumption of memcpy, alignment case: %ld\n ticks.", measure_consume[measure_index++]);	
-}
-*/
 void kdb_show_ktimer(void)
 {
-	testbench_memcpy_unalignment ();
+	testbench_memcpy (3);
+	testbench_memcpy (4);
+
 	//testbench_memcpy_alignment ();
 
 	//uint32_t *foo = (uint32_t *) 0xE000E018;
