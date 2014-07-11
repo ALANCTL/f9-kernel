@@ -161,16 +161,37 @@ void init_char_block (int block_size)
 	}
 }
 
+void stream_copy_access (void)
+{
+	uint64_t start 	 	  = 0;
+	uint64_t end 	 	  = 0;
+	uint64_t latency 	  = 0;
+	int 	 n_iterations = MEASURE_BLOCK_SIZE / 2;
+	
+	start = *fetch_cyccnt ();
+	
+	for (int i = 1; i <= n_iterations; ++i) {
+		memcpy (cblock, cblock + n_iterations - 1, i); 
+	}
+	
+	end = *fetch_cyccnt ();	
+	
+	latency = (end - start) / n_iterations;
+
+	dbg_printf (DL_KDB, "%ld \n", latency);
+}
+
 void kdb_show_ktimer(void)
 {
 	dbg_printf (DL_KDB, "-----------------------------\n");
 	dbg_printf (DL_KDB, "benchmark: \n");
-
-	init_char_block (MEASURE_BLOCK_SIZE);
 	
 	measure_alignment_unit ();	
 	measure_maximum_char_blocks ();
 
+	init_char_block (MEASURE_BLOCK_SIZE);
+	stream_copy_access ();
+	
 	dbg_printf (DL_KDB, "-----------------------------\n");
 
 	dbg_printf (DL_KDB, "Now is %ld\n", ktimer_now);
