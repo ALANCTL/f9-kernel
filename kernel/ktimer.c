@@ -88,7 +88,7 @@ IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 #ifdef CONFIG_KDB
 
 #define MAX_BSS_BYTES 			5440
-#define MEASURE_BLOCK_SIZE 		512
+#define MEASURE_BLOCK_SIZE 		1024
 
 #define CYCLE_COUNT_REGADDR							0xE0001004 
 #define CONTROL_REGADDR								0xE0001000
@@ -161,24 +161,28 @@ void init_char_block (int block_size)
 	}
 }
 
-void stream_copy_access (void)
+#define n_case 8
+void stream_copy_access_unalignment (void)
 {
 	uint64_t start 	 	  = 0;
 	uint64_t end 	 	  = 0;
 	uint64_t latency 	  = 0;
-	int 	 n_iterations = MEASURE_BLOCK_SIZE / 2;
-	
-	start = *fetch_cyccnt ();
-	
-	for (int i = 1; i <= n_iterations; ++i) {
-		memcpy (cblock, cblock + n_iterations - 1, i); 
-	}
-	
-	end = *fetch_cyccnt ();	
-	
-	latency = (end - start) / n_iterations;
 
-	dbg_printf (DL_KDB, "%ld \n", latency);
+	int n_iterations[n_case] = {4, 8, 16, 32, 64, 128, 256, MEASURE_BLOCK_SIZE / 2};
+
+	for (int j = 0; j < n_case; ++j) {
+		start = *fetch_cyccnt ();
+
+		for (int i = 1; i <= n_iterations[j]; ++i) {
+			memcpy (cblock, cblock + n_iterations[j] - 1, i); 
+		}
+	
+		end = *fetch_cyccnt ();	
+	
+		latency = (end - start); // n_iterations[j];
+
+		dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations[j], latency);
+	}
 }
 
 void kdb_show_ktimer(void)
@@ -190,7 +194,7 @@ void kdb_show_ktimer(void)
 	measure_maximum_char_blocks ();
 
 	init_char_block (MEASURE_BLOCK_SIZE);
-	stream_copy_access ();
+	stream_copy_access_unalignment ();
 	
 	dbg_printf (DL_KDB, "-----------------------------\n");
 
