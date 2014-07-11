@@ -161,27 +161,30 @@ void init_char_block (int block_size)
 	}
 }
 
-#define n_case 8
 void stream_copy_access_unalignment (void)
 {
-	uint64_t start 	 	  = 0;
-	uint64_t end 	 	  = 0;
-	uint64_t latency 	  = 0;
+	uint64_t start 	 = 0;
+	uint64_t end 	 = 0;
+	uint64_t latency = 0;
 
-	int n_iterations[n_case] = {4, 8, 16, 32, 64, 128, 256, MEASURE_BLOCK_SIZE / 2};
+	int base		 = 2;
+	int n_iterations = base;
+	int n_case		 = 8;
 
 	for (int j = 0; j < n_case; ++j) {
 		start = *fetch_cyccnt ();
 
-		for (int i = 1; i <= n_iterations[j]; ++i) {
-			memcpy (cblock, cblock + n_iterations[j] - 1, i); 
+		n_iterations = base << (j + 1);
+
+		for (int i = 1; i <= n_iterations; ++i) {
+			memcpy (cblock, cblock + n_iterations - 1, i); 
 		}
 	
 		end = *fetch_cyccnt ();	
 	
 		latency = (end - start); // n_iterations[j];
 
-		dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations[j], latency);
+		dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
 	}
 }
 
