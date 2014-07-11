@@ -87,7 +87,8 @@ IRQ_HANDLER(ktimer_handler, __ktimer_handler);
 
 #ifdef CONFIG_KDB
 
-#define MAX_BYTES 5440
+#define MAX_BSS_BYTES 			5440
+#define MEASURE_BLOCK_SIZE 		512
 
 #define CYCLE_COUNT_REGADDR							0xE0001004 
 #define CONTROL_REGADDR								0xE0001000
@@ -98,6 +99,8 @@ static uint64_t *DWT_CONTROL 	= (uint64_t *) CONTROL_REGADDR;
 static uint64_t *SCB_DEMCR 		= (uint64_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR;
 
 static int cnt_enable = 0; 
+
+static char cblock[MEASURE_BLOCK_SIZE];
 
 void dwt_cfg (void) 
 {
@@ -139,7 +142,7 @@ void measure_maximum_char_blocks (void)
 
 	start = *fetch_cyccnt ();
 	
-	for (int i = 0; i < MAX_BYTES; ++i) {
+	for (int i = 0; i < MAX_BSS_BYTES; ++i) {
 	}	
 
 	end = *fetch_cyccnt ();
@@ -147,10 +150,23 @@ void measure_maximum_char_blocks (void)
 	dbg_printf (DL_KDB, "The consumption of maximum of char blocks: %ld\n", end - start);
 }
 
+void init_char_block (int block_size)
+{
+	if (block_size > MEASURE_BLOCK_SIZE) {
+		dbg_printf (DL_KDB, "[E]: The init size of char blocks is too big.\n");
+	}
+
+	for (int i = 0; i < block_size && block_size <= MEASURE_BLOCK_SIZE; ++i) {
+		cblock[i] = 'A' + i;
+	}
+}
+
 void kdb_show_ktimer(void)
 {
 	dbg_printf (DL_KDB, "-----------------------------\n");
 	dbg_printf (DL_KDB, "benchmark: \n");
+
+	init_char_block (MEASURE_BLOCK_SIZE);
 	
 	measure_alignment_unit ();	
 	measure_maximum_char_blocks ();
