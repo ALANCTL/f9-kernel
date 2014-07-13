@@ -42,6 +42,11 @@ uint64_t *fetch_systicks (void)
     return (uint64_t *) SYSTICKS_REG;
 }
 
+uint32_t fetch_systicks_consumption (uint32_t start, uint32_t end)
+{
+	return (start < end) ? (end - start) : (start - end);
+}   
+
 void measure_alignment_unit (void)
 {   
     uint64_t start  = 0;
