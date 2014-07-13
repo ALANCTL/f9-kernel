@@ -3,7 +3,6 @@
 # found in the LICENSE file.
 
 kernel-y = \
-	benchmark.o \
 	debug.o \
 	error.o \
 	fpage.o \
