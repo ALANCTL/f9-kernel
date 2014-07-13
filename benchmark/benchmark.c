@@ -137,18 +137,43 @@ void dwt_stream_copy_access_alignment (void)
 	}
 }
 
+void systicks_stream_copy_access_alignment (void)
+{	
+	uint64_t start = 0;
+	uint64_t end = 0;
+	uint64_t latency = 0;
+
+	int base = 2;
+	int n_iterations = base;
+	int n_case = 8;
+
+	for (int i = 1; i <= n_case; ++i) {
+		n_iterations = base << i;
+
+		start = *fetch_systicks ();
+
+		for (int j = 1; j <= n_iterations; j += 4) {
+			memcpy (cblock, cblock + n_iterations / 2 - 1, 4);
+		}
+
+		end = *fetch_systicks ();
+
+		latency = (end - start);
+
+        dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+	}
+}
+
 void benchmark_main (void)
 {
     measure_alignment_unit ();
     measure_maximum_char_blocks ();
 
     init_char_block (MEASURE_BLOCK_SIZE);
+
     dwt_stream_copy_access_unalignment ();
 	dwt_stream_copy_access_alignment ();
-
-	uint64_t foo = *fetch_systicks ();
-
-	dbg_printf (DL_KDB, "Ticks: %ld\n", foo);
+	systicks_stream_copy_access_alignment ();
 }
 
 void benchmark_init (void)
