@@ -27,13 +27,14 @@ extern void kdb_dump_mempool(void);
 extern void kdb_dump_as(void);
 extern void kdb_show_sampling(void);
 extern void kdb_show_tickless_verify(void);
+extern void benchmark_main (void);
 
 struct kdb_t kdb_functions[] = {
 	{
 		.option = 'b',
 		.name = "Benchmark",
 		.menuentry = "Benchmark: memcpy and memset",
-		.function = kdb_show_ktimer
+		.function = benchmark_main
 	},
 	{
 		.option = 'K',
