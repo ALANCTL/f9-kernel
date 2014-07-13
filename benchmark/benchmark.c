@@ -8,7 +8,9 @@
 #define CYCLE_COUNT_REGADDR                         0xE0001004 
 #define CONTROL_REGADDR                             0xE0001000
 #define DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR     0xE000EDFC
- 
+
+#define SYSTICKS_REG 								0xE000E018   
+
 static uint64_t *DWT_CYCCNT     = (uint64_t *) CYCLE_COUNT_REGADDR; 
 static uint64_t *DWT_CONTROL    = (uint64_t *) CONTROL_REGADDR; 
 static uint64_t *SCB_DEMCR      = (uint64_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR;
@@ -33,6 +35,11 @@ uint64_t *fetch_cyccnt (void)
     dwt_cfg (); 
 
     return DWT_CYCCNT;
+}
+
+uint64_t *fetch_systicks (void)
+{
+    return (uint64_t *) SYSTICKS_REG;
 }
 
 void measure_alignment_unit (void)
@@ -76,7 +83,7 @@ void init_char_block (int block_size)
     }
 }
 
-void stream_copy_access_unalignment (void)
+void dwt_stream_copy_access_unalignment (void)
 {   
     uint64_t start   = 0;
     uint64_t end     = 0;
@@ -103,7 +110,7 @@ void stream_copy_access_unalignment (void)
     }
 }
 
-void stream_copy_access_alignment (void)
+void dwt_stream_copy_access_alignment (void)
 {	
 	uint64_t start = 0;
 	uint64_t end = 0;
@@ -136,8 +143,12 @@ void benchmark_main (void)
     measure_maximum_char_blocks ();
 
     init_char_block (MEASURE_BLOCK_SIZE);
-    stream_copy_access_unalignment ();
-	stream_copy_access_alignment ();
+    dwt_stream_copy_access_unalignment ();
+	dwt_stream_copy_access_alignment ();
+
+	uint64_t foo = *fetch_systicks ();
+
+	dbg_printf (DL_KDB, "Ticks: %ld\n", foo);
 }
 
 void benchmark_init (void)
@@ -161,5 +172,4 @@ void benchmark_handler (void)
 	benchmark_init (); 
 	benchmark_main ();
 }
-
 
