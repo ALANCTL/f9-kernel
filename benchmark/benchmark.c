@@ -232,15 +232,16 @@ void systicks_stream_copy_access_alignment (void)
 
 void benchmark_main (void)
 {
-    measure_alignment_unit ();
-    measure_maximum_char_blocks ();
+    //measure_alignment_unit ();
+    //measure_maximum_char_blocks ();
 
     init_char_block (MEASURE_BLOCK_SIZE);
 
-    dwt_stream_copy_access_unalignment ();
-	dwt_stream_copy_access_alignment ();
-	systicks_stream_copy_access_unalignment ();
-	systicks_stream_copy_access_alignment ();
+	for (int i = 0; i < (sizeof (benchmark_functions) / sizeof (struct benchmark_t)); ++i) {
+		dbg_printf (DL_KDB, "------%s------\n", benchmark_functions[i].name);
+		benchmark_functions[i].function ();
+		dbg_printf (DL_KDB, "--------------------------------------\n");
+	}
 }
 
 void benchmark_init (void)
@@ -261,7 +262,7 @@ void benchmark_init (void)
 
 void benchmark_handler (void)
 {
-	benchmark_init (); 
+	//benchmark_init (); 
 	benchmark_main ();
 }
 
