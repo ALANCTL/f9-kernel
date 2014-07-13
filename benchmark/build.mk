@@ -1,0 +1,2 @@
+benchmark-y = \
+	benchmark.o
