@@ -109,4 +109,29 @@ void benchmark_main (void)
 
     init_char_block (MEASURE_BLOCK_SIZE);
     stream_copy_access_unalignment ();
+
 }
+
+void benchmark_init (void)
+{
+	dbg_puts ("----------------------------------\n");
+	dbg_puts ("-------|---------------------B----\n");
+	dbg_puts ("-------|-------|-------------E----\n");
+	dbg_puts ("-------|-------|---|---------N----\n");
+	dbg_puts ("---|---|-------|---|---------C----\n");
+	dbg_puts ("---|---|---|---|---|---------H----\n");
+	dbg_puts ("---|---|---|---|---|---|-----M----\n");
+	dbg_puts ("---|---|---|---|---|---|-----A----\n");
+	dbg_puts ("---|---|---|---|---|---|-----R----\n");
+	dbg_puts ("---|---|---|---|---|---|-----K----\n");
+	dbg_puts ("----------------------------------\n");
+	dbg_puts ("\n");
+}
+
+void benchmark_handler (void)
+{
+	benchmark_init (); 
+	benchmark_main ();
+}
+
+
