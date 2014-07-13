@@ -11,6 +11,13 @@
 
 #define SYSTICKS_REG 								0xE000E018   
 
+typedef void (*benchmark_function_t)(void);
+
+struct benchmark_t {
+    char *name;
+    benchmark_function_t function;
+};
+
 static uint64_t *DWT_CYCCNT     = (uint64_t *) CYCLE_COUNT_REGADDR; 
 static uint64_t *DWT_CONTROL    = (uint64_t *) CONTROL_REGADDR; 
 static uint64_t *SCB_DEMCR      = (uint64_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR;
