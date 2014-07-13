@@ -35,6 +35,7 @@ include board/$(BOARD)/build.mk
 includes = \
 	board/$(BOARD) \
 	include \
+	include/benchmark \
 	include/platform \
 $(eval BOARD_$(BOARD)=y)
 
@@ -48,6 +49,7 @@ KCONFIG_FILES = \
 include mk/config.mk
 
 # Get build configuration from sub-directories
+include benchmark/build.mk
 include platform/$(CHIP)/build.mk
 include platform/build.mk
 include kernel/lib/build.mk
@@ -65,6 +67,7 @@ objs_from_dir = $(foreach obj, $($(2)-y), \
 all-y += $(call objs_from_dir,platform/$(CHIP),chip)
 all-y += $(call objs_from_dir,board/$(BOARD),board)
 all-y += $(call objs_from_dir,platform,platform)
+all-y += $(call objs_from_dir,benchmark,benchmark)
 all-y += $(call objs_from_dir,kernel/lib,kernel-lib)
 all-y += $(call objs_from_dir,kernel,kernel)
 all-y += $(call objs_from_dir,user,user)
@@ -78,6 +81,7 @@ loader-all-y += $(call objs_from_dir,kernel/lib,loader-kernel-lib)
 loader-all-y += $(call objs_from_dir,kernel,loader-kernel)
 
 dirs = \
+	benchmark \
 	kernel/lib \
 	kernel \
 	platform/$(CHIP) \
