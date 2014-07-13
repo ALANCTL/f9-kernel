@@ -142,6 +142,33 @@ void dwt_stream_copy_access_alignment (void)
 	}
 }
 
+void systicks_stream_copy_access_unalignment (void)
+{   
+    uint64_t start   = 0;
+    uint64_t end     = 0;
+    uint64_t latency = 0;
+
+    int base         = 2;
+    int n_iterations = base;
+    int n_case       = 8;
+
+    for (int j = 0; j < n_case; ++j) {
+        n_iterations = base << (j + 1); 
+
+        start = *fetch_systicks ();
+            
+        for (int i = 1; i <= n_iterations; ++i) {
+            memcpy (cblock, cblock + n_iterations / 2 - 1, i); 
+        }   
+
+        end = *fetch_systicks ();
+
+        latency = fetch_systicks_consumption (start, end);
+
+        dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+    }   
+}
+
 void systicks_stream_copy_access_alignment (void)
 {	
 	uint64_t start = 0;
@@ -178,6 +205,7 @@ void benchmark_main (void)
 
     dwt_stream_copy_access_unalignment ();
 	dwt_stream_copy_access_alignment ();
+	systicks_stream_copy_access_unalignment ();
 	systicks_stream_copy_access_alignment ();
 }
 
