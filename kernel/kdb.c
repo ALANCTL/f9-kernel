@@ -27,15 +27,9 @@ extern void kdb_dump_mempool(void);
 extern void kdb_dump_as(void);
 extern void kdb_show_sampling(void);
 extern void kdb_show_tickless_verify(void);
-extern void benchmark_main (void);
+extern void benchmark_handler (void);
 
 struct kdb_t kdb_functions[] = {
-	{
-		.option = 'b',
-		.name = "Benchmark",
-		.menuentry = "Benchmark: memcpy and memset",
-		.function = benchmark_main
-	},
 	{
 		.option = 'K',
 		.name = "KTABLES",
@@ -146,15 +140,32 @@ int kdb_dump_error()
 	return 0;
 }
 
-void debug_kdb_handler(void)
-{
-	kdb_handler(dbg_getchar());
+void dispatch_handler(void)
+{	
+	char c = dbg_getchar ();
+
+	if (c == '?')
+		kdb_handler (c);
+
+	if (c == 'B')	
+		benchmark_handler ();
 }
 
 void kdb_init(void)
 {
-	softirq_register(KDB_SOFTIRQ, debug_kdb_handler);
-	dbg_puts("Press '?' to print KDB menu\n");
+	softirq_register(KDB_SOFTIRQ, dispatch_handler);
+	
+	dbg_puts ("======== Welcome Back, Developer =======\n");
+	dbg_puts ("----------------------------------------\n");
+	dbg_puts ("-------------- SELECT ----------KEY-----\n");
+	dbg_puts ("----------------------------------------\n");
+	dbg_puts ("------------- Main Menu --------[M]-----\n");
+	dbg_puts ("----------------------------------------\n");
+	dbg_puts ("---------- KDB Debug Mode ------[D]-----\n");
+	dbg_puts ("----------------------------------------\n");
+	dbg_puts ("------------- Benchmark --------[B]-----\n");
+	dbg_puts ("----------------------------------------\n");
+	dbg_puts ("========================================\n");
 }
 
 INIT_HOOK(kdb_init, INIT_LEVEL_KERNEL);
