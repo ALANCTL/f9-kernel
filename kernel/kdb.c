@@ -30,6 +30,12 @@ extern void kdb_show_tickless_verify(void);
 
 struct kdb_t kdb_functions[] = {
 	{
+		.option = 'b',
+		.name = "Benchmark",
+		.menuentry = "Benchmark: memcpy and memset",
+		.function = kdb_show_ktimer
+	},
+	{
 		.option = 'K',
 		.name = "KTABLES",
 		.menuentry = "print kernel tables",
