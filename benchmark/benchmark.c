@@ -31,6 +31,28 @@ static int cnt_enable = 0;
 
 static char cblock[MEASURE_BLOCK_SIZE];
 
+struct benchmark_t benchmark_functions[] = {
+	{
+		.name = "Use DWT to measure the case which is SCA unalignment.",
+		.function = dwt_stream_copy_access_unalignment
+	},
+
+	{
+		.name = "Use DWT to measure the case which is SCA alignment.",
+		.function = dwt_stream_copy_access_alignment
+	},
+
+	{	
+		.name = "Use Systicks to measure the case which is SCA unalignment.", 
+		.function = systicks_stream_copy_access_unalignment
+	},
+
+	{
+		.name = "Use Systicks to measure the case which is SCA alignment.",
+		.function = systicks_stream_copy_access_alignment
+	}
+};
+
 void dwt_cfg (void) 
 {
     *SCB_DEMCR      = *SCB_DEMCR    | 0x01000000;
