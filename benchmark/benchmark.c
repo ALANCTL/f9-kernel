@@ -42,7 +42,7 @@ uint64_t *fetch_systicks (void)
     return (uint64_t *) SYSTICKS_REG;
 }
 
-uint32_t fetch_systicks_consumption (uint32_t start, uint32_t end)
+uint64_t fetch_systicks_consumption (uint32_t start, uint32_t end)
 {
 	return (start < end) ? (end - start) : (start - end);
 }   
@@ -163,7 +163,7 @@ void systicks_stream_copy_access_alignment (void)
 
 		end = *fetch_systicks ();
 
-		latency = (end - start);
+		latency = fetch_systicks_consumption (start, end);
 
         dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
 	}
