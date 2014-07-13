@@ -33,22 +33,22 @@ static char cblock[MEASURE_BLOCK_SIZE];
 
 struct benchmark_t benchmark_functions[] = {
 	{
-		.name = "Use DWT to measure the case which is SCA unalignment.",
+		.name = "DWT SCA unalignment: ==================================",
 		.function = dwt_stream_copy_access_unalignment
 	},
 
 	{
-		.name = "Use DWT to measure the case which is SCA alignment.",
+		.name = "DWT SCA alignment: ====================================",
 		.function = dwt_stream_copy_access_alignment
 	},
 
 	{	
-		.name = "Use Systicks to measure the case which is SCA unalignment.", 
+		.name = "Systicks SCA unalignment: =============================", 
 		.function = systicks_stream_copy_access_unalignment
 	},
 
 	{
-		.name = "Use Systicks to measure the case which is SCA alignment.",
+		.name = "Systicks SCA alignment: ===============================",
 		.function = systicks_stream_copy_access_alignment
 	}
 };
@@ -132,6 +132,8 @@ void dwt_stream_copy_access_unalignment (void)
     int n_iterations = base;
     int n_case       = 8;
 
+	dbg_printf (DL_KDB, "Latency: [");
+
     for (int j = 0; j < n_case; ++j) {
         n_iterations = base << (j + 1);
 
@@ -145,7 +147,12 @@ void dwt_stream_copy_access_unalignment (void)
 
         latency = (end - start); // /n_iterations;
 
-        dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+		
+		if (j != n_case - 1) 
+        	dbg_printf (DL_KDB, "%ld, ", latency);
+		else	
+			dbg_printf (DL_KDB, "%ld]\n", latency);
     }
 }
 
@@ -158,6 +165,8 @@ void dwt_stream_copy_access_alignment (void)
 	int base = 2;
 	int n_iterations = base;
 	int n_case = 8;
+
+	dbg_printf (DL_KDB, "Latency: [");
 
 	for (int i = 1; i <= n_case; ++i) {
 		n_iterations = base << i;
@@ -172,7 +181,12 @@ void dwt_stream_copy_access_alignment (void)
 
 		latency = (end - start);
 
-        dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+		
+		if (i != n_case - 1) 
+        	dbg_printf (DL_KDB, "%ld, ", latency);
+		else	
+			dbg_printf (DL_KDB, "%ld]\n", latency);
 	}
 }
 
@@ -185,6 +199,8 @@ void systicks_stream_copy_access_unalignment (void)
     int base         = 2;
     int n_iterations = base;
     int n_case       = 8;
+
+	dbg_printf (DL_KDB, "Latency: [");
 
     for (int j = 0; j < n_case; ++j) {
         n_iterations = base << (j + 1); 
@@ -199,7 +215,12 @@ void systicks_stream_copy_access_unalignment (void)
 
         latency = fetch_systicks_consumption (start, end);
 
-        dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+		
+		if (j != n_case - 1) 
+        	dbg_printf (DL_KDB, "%ld, ", latency);
+		else	
+			dbg_printf (DL_KDB, "%ld]\n", latency);
     }   
 }
 
@@ -212,6 +233,8 @@ void systicks_stream_copy_access_alignment (void)
 	int base = 2;
 	int n_iterations = base;
 	int n_case = 8;
+	
+	dbg_printf (DL_KDB, "Latency: [");
 
 	for (int i = 1; i <= n_case; ++i) {
 		n_iterations = base << i;
@@ -226,7 +249,12 @@ void systicks_stream_copy_access_alignment (void)
 
 		latency = fetch_systicks_consumption (start, end);
 
-        dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+		
+		if (i != n_case - 1) 
+        	dbg_printf (DL_KDB, "%ld, ", latency);
+		else	
+			dbg_printf (DL_KDB, "%ld]\n", latency);
 	}
 }
 
@@ -238,9 +266,10 @@ void benchmark_main (void)
     init_char_block (MEASURE_BLOCK_SIZE);
 
 	for (int i = 0; i < (sizeof (benchmark_functions) / sizeof (struct benchmark_t)); ++i) {
-		dbg_printf (DL_KDB, "------%s------\n", benchmark_functions[i].name);
+		dbg_printf (DL_KDB, "%s\n", benchmark_functions[i].name);
+		dbg_printf (DL_KDB, "--------------------------------------------------\n");
 		benchmark_functions[i].function ();
-		dbg_printf (DL_KDB, "--------------------------------------\n");
+		dbg_printf (DL_KDB, "--------------------------------------------------\n");
 	}
 }
 
