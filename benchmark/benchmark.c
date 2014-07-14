@@ -266,7 +266,21 @@ void systicks_stream_copy_access_alignment (void)
 }
 
 void dwt_set_to_zero () {
-	memset (cblock, '0', MEASURE_BLOCK_SIZE)	memset (cblock, '0', MEASURE_BLOCK_SIZE);;
+	uint64_t start;
+	uint64_t end;
+	uint64_t latency;
+
+	start = *fetch_cyccnt ();
+
+	for (int i = 0; i < MEASURE_BLOCK_SIZE; ++i) {
+		memset (cblock, '0', i); 
+	}
+
+	end = *fetch_cyccnt ();
+
+	latency = end - start;
+
+	dbg_printf (DL_KDB, "Latency: %ld\n", latency);
 }
 
 void benchmark_main (void)
