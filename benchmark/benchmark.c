@@ -269,18 +269,25 @@ void dwt_set_to_zero () {
 	uint64_t start;
 	uint64_t end;
 	uint64_t latency;
+	int n_case = 8;
+	uint64_t base = 2;
+	uint64_t set_blocks = base;
+	
+	for (int i = 0; i < n_case; ++i) {
+		start = *fetch_cyccnt ();
 
-	start = *fetch_cyccnt ();
+		set_blocks = base << (i + 1);
 
-	for (int i = 0; i < MEASURE_BLOCK_SIZE; ++i) {
-		memset (cblock, '0', i); 
+		for (int j = 0; j < set_blocks; ++j) {
+			memset (cblock, '0', j); 
+		}
+
+		end = *fetch_cyccnt ();
+
+		latency = end - start;
+
+		dbg_printf (DL_KDB, "Latency: %ld\n", latency);
 	}
-
-	end = *fetch_cyccnt ();
-
-	latency = end - start;
-
-	dbg_printf (DL_KDB, "Latency: %ld\n", latency);
 }
 
 void benchmark_main (void)
