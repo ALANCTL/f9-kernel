@@ -297,7 +297,28 @@ void dwt_set_to_zero () {
 }
 
 void systicks_set_to_zero () {
+	uint64_t start = 0;
+	uint64_t end = 0;
+	uint64_t latency = 0;
+	int n_iterations = 8;
+	int base = 2;
+	int	set_blocks = base; 		
+	
+	for (int i = 0; i < n_iterations; ++i) {
+		set_blocks = base << (i + 1);
+
+		start = *fetch_systicks ();
+
+		for (int j = 1; j <= set_blocks; ++j) {
+			memset (cblock, '0', j);
+		}
 		
+		end = *fetch_systicks ();
+
+		latency = fetch_systicks_consumption (start, end);
+	
+		dbg_printf (DL_KDB, "Latency: %ld\n", latency);
+	}
 }
 
 void benchmark_main (void)
