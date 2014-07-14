@@ -23,6 +23,8 @@ void dwt_stream_copy_access_alignment (void);
 void systicks_stream_copy_access_unalignment (void); 
 void systicks_stream_copy_access_alignment (void); 
 
+void dwt_set_to_zero (void);
+
 static uint64_t *DWT_CYCCNT     = (uint64_t *) CYCLE_COUNT_REGADDR; 
 static uint64_t *DWT_CONTROL    = (uint64_t *) CONTROL_REGADDR; 
 static uint64_t *SCB_DEMCR      = (uint64_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR;
@@ -50,6 +52,11 @@ struct benchmark_t benchmark_functions[] = {
 	{
 		.name = "Systicks SCA alignment: ===============================",
 		.function = systicks_stream_copy_access_alignment
+	},
+
+	{
+		.name = "DWT memset",
+		.function = dwt_set_to_zero
 	}
 };
 
@@ -256,6 +263,10 @@ void systicks_stream_copy_access_alignment (void)
 		else	
 			dbg_printf (DL_KDB, "%ld]\n", latency);
 	}
+}
+
+void dwt_set_to_zero () {
+	memset (cblock, '0', MEASURE_BLOCK_SIZE)	memset (cblock, '0', MEASURE_BLOCK_SIZE);;
 }
 
 void benchmark_main (void)
