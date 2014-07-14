@@ -24,6 +24,7 @@ void systicks_stream_copy_access_unalignment (void);
 void systicks_stream_copy_access_alignment (void); 
 
 void dwt_set_to_zero (void);
+void systicks_set_to_zero (void);
 
 static uint64_t *DWT_CYCCNT     = (uint64_t *) CYCLE_COUNT_REGADDR; 
 static uint64_t *DWT_CONTROL    = (uint64_t *) CONTROL_REGADDR; 
@@ -57,6 +58,11 @@ struct benchmark_t benchmark_functions[] = {
 	{
 		.name = "DWT memset",
 		.function = dwt_set_to_zero
+	},
+
+	{
+		.name = "Systick memset",
+		.function = systicks_set_to_zero
 	}
 };
 
@@ -288,6 +294,10 @@ void dwt_set_to_zero () {
 
 		dbg_printf (DL_KDB, "Latency: %ld\n", latency);
 	}
+}
+
+void systicks_set_to_zero () {
+		
 }
 
 void benchmark_main (void)
