@@ -36,32 +36,32 @@ static char cblock[MEASURE_BLOCK_SIZE];
 
 struct benchmark_t benchmark_functions[] = {
 	{
-		.name = "DWT SCA unalignment: ==================================",
+		.name = "DWT SCA unalignment: ",
 		.function = dwt_stream_copy_access_unalignment
 	},
 
 	{
-		.name = "DWT SCA alignment: ====================================",
+		.name = "DWT SCA alignment: ",
 		.function = dwt_stream_copy_access_alignment
 	},
 
 	{	
-		.name = "Systicks SCA unalignment: =============================", 
+		.name = "Systicks SCA unalignment: ", 
 		.function = systicks_stream_copy_access_unalignment
 	},
 
 	{
-		.name = "Systicks SCA alignment: ===============================",
+		.name = "Systicks SCA alignment: ",
 		.function = systicks_stream_copy_access_alignment
 	},
 
 	{
-		.name = "DWT memset",
+		.name = "DWT memset: ",
 		.function = dwt_set_to_zero
 	},
 
 	{
-		.name = "Systick memset",
+		.name = "Systick memset: ",
 		.function = systicks_set_to_zero
 	}
 };
@@ -115,9 +115,9 @@ void dwt_stream_copy_access_unalignment (void)
     int n_iterations = base;
     int n_case       = 8;
 
-	dbg_printf (DL_KDB, "Latency: [");
-
-    for (int j = 0; j < n_case; ++j) {
+	dbg_printf (DL_KDB, "|%6s|%12s|\n", "Offset", "Clock Cycles");	
+    
+	for (int j = 0; j < n_case; ++j) {
         n_iterations = base << (j + 1);
 
         start = *fetch_cyccnt ();
@@ -129,11 +129,8 @@ void dwt_stream_copy_access_unalignment (void)
         end = *fetch_cyccnt ();
 
         latency = (end - start); 
-		
-		if (j != n_case - 1) 
-        	dbg_printf (DL_KDB, "%ld, ", latency);
-		else	
-			dbg_printf (DL_KDB, "%ld]\n", latency);
+	
+        dbg_printf (DL_KDB, "|%6d|%12ld|\n", n_iterations, latency);
     }
 }
 
@@ -147,7 +144,7 @@ void dwt_stream_copy_access_alignment (void)
 	int n_iterations = base;
 	int n_case = 8;
 
-	dbg_printf (DL_KDB, "Latency: [");
+	dbg_printf (DL_KDB, "|%6s|%12s|\n", "Offset", "Clock Cycles");	
 
 	for (int i = 1; i <= n_case; ++i) {
 		n_iterations = base << i;
@@ -162,10 +159,7 @@ void dwt_stream_copy_access_alignment (void)
 
 		latency = (end - start);
 		
-		if (i != n_case - 1) 
-        	dbg_printf (DL_KDB, "%ld, ", latency);
-		else	
-			dbg_printf (DL_KDB, "%ld]\n", latency);
+        dbg_printf (DL_KDB, "|%6d|%12ld|\n", n_iterations, latency);
 	}
 }
 
@@ -179,9 +173,9 @@ void systicks_stream_copy_access_unalignment (void)
     int n_iterations = base;
     int n_case       = 8;
 
-	dbg_printf (DL_KDB, "Latency: [");
-
-    for (int j = 0; j < n_case; ++j) {
+	dbg_printf (DL_KDB, "|%6s|%8s|\n", "Offset", "Systicks");	
+    
+	for (int j = 0; j < n_case; ++j) {
         n_iterations = base << (j + 1); 
 
         start = *fetch_systicks ();
@@ -194,10 +188,7 @@ void systicks_stream_copy_access_unalignment (void)
 
         latency = fetch_systicks_consumption (start, end);
 		
-		if (j != n_case - 1) 
-        	dbg_printf (DL_KDB, "%ld, ", latency);
-		else	
-			dbg_printf (DL_KDB, "%ld]\n", latency);
+		dbg_printf (DL_KDB, "|%6d|%8ld|\n", n_iterations, latency);
     }   
 }
 
@@ -210,8 +201,8 @@ void systicks_stream_copy_access_alignment (void)
 	int base = 2;
 	int n_iterations = base;
 	int n_case = 8;
-	
-	dbg_printf (DL_KDB, "Latency: [");
+
+	dbg_printf (DL_KDB, "|%6s|%8s|\n", "Offset", "Systicks");	
 
 	for (int i = 1; i <= n_case; ++i) {
 		n_iterations = base << i;
@@ -226,11 +217,7 @@ void systicks_stream_copy_access_alignment (void)
 
 		latency = fetch_systicks_consumption (start, end);
 
-		
-		if (i != n_case - 1) 
-        	dbg_printf (DL_KDB, "%ld, ", latency);
-		else	
-			dbg_printf (DL_KDB, "%ld]\n", latency);
+		dbg_printf (DL_KDB, "|%6d|%8ld|\n", n_iterations, latency);
 	}
 }
 
@@ -241,6 +228,8 @@ void dwt_set_to_zero () {
 	int n_case = 8;
 	uint64_t base = 2;
 	uint64_t set_blocks = base;
+
+	dbg_printf (DL_KDB, "|%6s|%12s|\n", "Length", "Clock cycles");	
 	
 	for (int i = 0; i < n_case; ++i) {
 		start = *fetch_cyccnt ();
@@ -255,7 +244,7 @@ void dwt_set_to_zero () {
 
 		latency = end - start;
 
-		dbg_printf (DL_KDB, "Latency: %ld\n", latency);
+		dbg_printf (DL_KDB, "|%6d|%12ld|\n", set_blocks, latency);
 	}
 }
 
@@ -266,6 +255,8 @@ void systicks_set_to_zero () {
 	int n_iterations = 8;
 	int base = 2;
 	int	set_blocks = base; 		
+
+	dbg_printf (DL_KDB, "|%6s|%8s|\n", "Length", "Systicks");	
 	
 	for (int i = 0; i < n_iterations; ++i) {
 		set_blocks = base << (i + 1);
@@ -280,7 +271,7 @@ void systicks_set_to_zero () {
 
 		latency = fetch_systicks_consumption (start, end);
 	
-		dbg_printf (DL_KDB, "Latency: %ld\n", latency);
+		dbg_printf (DL_KDB, "|%6d|%8ld|\n", set_blocks, latency);
 	}
 }
 
