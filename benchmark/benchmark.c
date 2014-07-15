@@ -94,36 +94,6 @@ uint64_t fetch_systicks_consumption (uint32_t start, uint32_t end)
 	return (start < end) ? (end - start) : (start - end);
 }   
 
-void measure_alignment_unit (void)
-{   
-    uint64_t start  = 0;
-    uint64_t end    = 0;
-
-    start = *fetch_cyccnt ();
-
-    for (int i = 0; i < 4; ++i) {
-    } 
-    
-    end = *fetch_cyccnt ();
-
-    dbg_printf (DL_KDB, "The consumption of alignment unit: %ld\n", end - start);   
-}
-
-void measure_maximum_char_blocks (void)
-{
-    uint64_t start  = 0;
-    uint64_t end    = 0;
-
-    start = *fetch_cyccnt ();
-    
-    for (int i = 0; i < MAX_BSS_BYTES; ++i) {
-    }   
-
-    end = *fetch_cyccnt ();
-
-    dbg_printf (DL_KDB, "The consumption of maximum of char blocks: %ld\n", end - start);
-}
-
 void init_char_block (int block_size)
 {
     if (block_size > MEASURE_BLOCK_SIZE) {
@@ -158,9 +128,7 @@ void dwt_stream_copy_access_unalignment (void)
 
         end = *fetch_cyccnt ();
 
-        latency = (end - start); // /n_iterations;
-
-        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
+        latency = (end - start); 
 		
 		if (j != n_case - 1) 
         	dbg_printf (DL_KDB, "%ld, ", latency);
@@ -193,8 +161,6 @@ void dwt_stream_copy_access_alignment (void)
 		end = *fetch_cyccnt ();
 
 		latency = (end - start);
-
-        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
 		
 		if (i != n_case - 1) 
         	dbg_printf (DL_KDB, "%ld, ", latency);
@@ -227,8 +193,6 @@ void systicks_stream_copy_access_unalignment (void)
         end = *fetch_systicks ();
 
         latency = fetch_systicks_consumption (start, end);
-
-        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
 		
 		if (j != n_case - 1) 
         	dbg_printf (DL_KDB, "%ld, ", latency);
@@ -262,7 +226,6 @@ void systicks_stream_copy_access_alignment (void)
 
 		latency = fetch_systicks_consumption (start, end);
 
-        //dbg_printf (DL_KDB, "The block size is %d bytes, the latency is %ld \n", n_iterations, latency);
 		
 		if (i != n_case - 1) 
         	dbg_printf (DL_KDB, "%ld, ", latency);
@@ -323,9 +286,6 @@ void systicks_set_to_zero () {
 
 void benchmark_main (void)
 {
-    //measure_alignment_unit ();
-    //measure_maximum_char_blocks ();
-
     init_char_block (MEASURE_BLOCK_SIZE);
 
 	for (int i = 0; i < (sizeof (benchmark_functions) / sizeof (struct benchmark_t)); ++i) {
@@ -336,25 +296,8 @@ void benchmark_main (void)
 	}
 }
 
-void benchmark_init (void)
-{
-	dbg_puts ("----------------------------------\n");
-	dbg_puts ("-------|---------------------B----\n");
-	dbg_puts ("-------|-------|-------------E----\n");
-	dbg_puts ("-------|-------|---|---------N----\n");
-	dbg_puts ("---|---|-------|---|---------C----\n");
-	dbg_puts ("---|---|---|---|---|---------H----\n");
-	dbg_puts ("---|---|---|---|---|---|-----M----\n");
-	dbg_puts ("---|---|---|---|---|---|-----A----\n");
-	dbg_puts ("---|---|---|---|---|---|-----R----\n");
-	dbg_puts ("---|---|---|---|---|---|-----K----\n");
-	dbg_puts ("----------------------------------\n");
-	dbg_puts ("\n");
-}
-
 void benchmark_handler (void)
 {
-	//benchmark_init (); 
 	benchmark_main ();
 }
 
