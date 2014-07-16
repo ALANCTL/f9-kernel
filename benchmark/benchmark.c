@@ -105,11 +105,15 @@ void init_char_block (int block_size)
     }
 }
 
+void print_data (int n_iterations, uint32_t cnt) 
+{
+	dbg_printf (DL_KDB, ((n_iterations) % 10 == 0) ? "\n" : "%ld, ", cnt);	
+}
+
 void dwt_stream_copy_access_unalignment (void)
 {   
     uint32_t start  = 0;
     uint32_t end    = 0;
-    uint32_t delta 	= 0;
 
 	int max_offset = 512;
 	int foo_offset = 0;
@@ -124,10 +128,8 @@ void dwt_stream_copy_access_unalignment (void)
         }
 
         end = *fetch_cyccnt ();
-
-        delta = (end - start); 
 	
-        dbg_printf (DL_KDB, "%ld, ", delta);
+		print_data (i + 1, end - start);	
     }
 }
 
