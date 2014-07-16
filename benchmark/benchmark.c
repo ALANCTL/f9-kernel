@@ -161,28 +161,25 @@ void systicks_stream_copy_access_unalignment (void)
 {   
     uint32_t start   = 0;
     uint32_t end     = 0;
-    uint32_t latency = 0;
+	uint32_t delta 	 = 0;   
 
-    int base         = 2;
-    int n_iterations = base;
-    int n_case       = 8;
+	int max_offset = 512;
+	int foo_offset = 0;
 
-	dbg_printf (DL_KDB, "|%6s|%8s|\n", "Offset", "Systicks");	
-    
-	for (int j = 0; j < n_case; ++j) {
-        n_iterations = base << (j + 1); 
-
+	for (int i = 0; i < max_offset; ++i) {
         start = *fetch_systicks ();
-            
-        for (int i = 1; i <= n_iterations; ++i) {
-            memcpy (cblock, cblock + n_iterations / 2 - 1, i); 
+           
+		foo_offset = sizeof (char) * (i + 1);
+ 
+        for (int j = 1; j <= i; ++j) {
+            memcpy (cblock, cblock + foo_offset, foo_offset); 
         }   
 
         end = *fetch_systicks ();
 
-        latency = fetch_systicks_consumption (start, end);
+        delta = fetch_systicks_consumption (start, end);
 		
-		dbg_printf (DL_KDB, "|%6d|%8ld|\n", n_iterations, latency);
+		print_data (i + 1, delta);	
     }   
 }
 
@@ -190,7 +187,7 @@ void systicks_stream_copy_access_alignment (void)
 {	
 	uint32_t start = 0;
 	uint32_t end = 0;
-	uint32_t latency = 0;
+	uint64_t latency = 0;
 
 	int base = 2;
 	int n_iterations = base;
