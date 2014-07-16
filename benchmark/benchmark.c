@@ -215,7 +215,7 @@ void systicks_stream_copy_access_alignment (void)
 void dwt_set_to_zero () {
 	uint32_t start;
 	uint32_t end;
-	uint32_t latency;
+	uint64_t latency;
 	int n_case = 8;
 	uint32_t base = 2;
 	uint32_t set_blocks = base;
@@ -242,7 +242,7 @@ void dwt_set_to_zero () {
 void systicks_set_to_zero () {
 	uint32_t start = 0;
 	uint32_t end = 0;
-	uint32_t latency = 0;
+	uint64_t latency = 0;
 	int n_iterations = 8;
 	int base = 2;
 	int	set_blocks = base; 		
