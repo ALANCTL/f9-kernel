@@ -107,30 +107,27 @@ void init_char_block (int block_size)
 
 void dwt_stream_copy_access_unalignment (void)
 {   
-    uint64_t start   = 0;
-    uint64_t end     = 0;
-    uint64_t latency = 0;
+    uint64_t start  = 0;
+    uint64_t end    = 0;
+    uint64_t delta 	= 0;
 
-    int base         = 2;
-    int n_iterations = base;
-    int n_case       = 8;
-
-	dbg_printf (DL_KDB, "|%6s|%12s|\n", "Offset", "Clock Cycles");	
+	int max_offset = 512;
+	int foo_offset = 0;
     
-	for (int j = 0; j < n_case; ++j) {
-        n_iterations = base << (j + 1);
-
+	for (int i = 0; i < max_offset; ++i) {
         start = *fetch_cyccnt ();
         
-		for (int i = 1; i <= n_iterations; ++i) {
-            memcpy (cblock, cblock + n_iterations / 2 - 1, i);
+		for (int j = 1; j <= i; ++j) {
+			foo_offset = j * sizeof (char);
+ 
+            memcpy (cblock, cblock + foo_offset, foo_offset);
         }
 
         end = *fetch_cyccnt ();
 
-        latency = (end - start); 
+        delta = (end - start); 
 	
-        dbg_printf (DL_KDB, "|%6d|%12ld|\n", n_iterations, latency);
+        dbg_printf (DL_KDB, "%ld, ", delta);
     }
 }
 
@@ -291,4 +288,3 @@ void benchmark_handler (void)
 {
 	benchmark_main ();
 }
-
