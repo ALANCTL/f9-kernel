@@ -137,13 +137,10 @@ void dwt_stream_copy_access_alignment (void)
 {	
 	uint32_t start = 0;
 	uint32_t end = 0;
-	uint32_t latency = 0;
 
 	int base = 2;
 	int n_iterations = base;
 	int n_case = 8;
-
-	dbg_printf (DL_KDB, "|%6s|%12s|\n", "Offset", "Clock Cycles");	
 
 	for (int i = 1; i <= n_case; ++i) {
 		n_iterations = base << i;
@@ -155,10 +152,8 @@ void dwt_stream_copy_access_alignment (void)
 		}
 
 		end = *fetch_cyccnt ();
-
-		latency = (end - start);
 		
-        dbg_printf (DL_KDB, "|%6d|%12ld|\n", n_iterations, latency);
+		print_data (i + 1, end - start);	
 	}
 }
 
