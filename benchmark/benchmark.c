@@ -26,9 +26,9 @@ void systicks_stream_copy_access_alignment (void);
 void dwt_set_to_zero (void);
 void systicks_set_to_zero (void);
 
-static uint64_t *DWT_CYCCNT     = (uint64_t *) CYCLE_COUNT_REGADDR; 
-static uint64_t *DWT_CONTROL    = (uint64_t *) CONTROL_REGADDR; 
-static uint64_t *SCB_DEMCR      = (uint64_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR;
+static uint32_t *DWT_CYCCNT     = (uint32_t *) CYCLE_COUNT_REGADDR; 
+static uint32_t *DWT_CONTROL    = (uint32_t *) CONTROL_REGADDR; 
+static uint32_t *SCB_DEMCR      = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR;
 
 static int cnt_enable = 0;  
 
@@ -77,19 +77,19 @@ void dwt_cfg (void)
     }   
 }
 
-uint64_t *fetch_cyccnt (void)
+uint32_t *fetch_cyccnt (void)
 {
     dwt_cfg (); 
 
     return DWT_CYCCNT;
 }
 
-uint64_t *fetch_systicks (void)
+uint32_t *fetch_systicks (void)
 {
-    return (uint64_t *) SYSTICKS_REG;
+    return (uint32_t *) SYSTICKS_REG;
 }
 
-uint64_t fetch_systicks_consumption (uint32_t start, uint32_t end)
+uint32_t fetch_systicks_consumption (uint32_t start, uint32_t end)
 {
 	return (start < end) ? (end - start) : (start - end);
 }   
@@ -107,9 +107,9 @@ void init_char_block (int block_size)
 
 void dwt_stream_copy_access_unalignment (void)
 {   
-    uint64_t start  = 0;
-    uint64_t end    = 0;
-    uint64_t delta 	= 0;
+    uint32_t start  = 0;
+    uint32_t end    = 0;
+    uint32_t delta 	= 0;
 
 	int max_offset = 512;
 	int foo_offset = 0;
@@ -133,9 +133,9 @@ void dwt_stream_copy_access_unalignment (void)
 
 void dwt_stream_copy_access_alignment (void)
 {	
-	uint64_t start = 0;
-	uint64_t end = 0;
-	uint64_t latency = 0;
+	uint32_t start = 0;
+	uint32_t end = 0;
+	uint32_t latency = 0;
 
 	int base = 2;
 	int n_iterations = base;
@@ -162,9 +162,9 @@ void dwt_stream_copy_access_alignment (void)
 
 void systicks_stream_copy_access_unalignment (void)
 {   
-    uint64_t start   = 0;
-    uint64_t end     = 0;
-    uint64_t latency = 0;
+    uint32_t start   = 0;
+    uint32_t end     = 0;
+    uint32_t latency = 0;
 
     int base         = 2;
     int n_iterations = base;
@@ -191,9 +191,9 @@ void systicks_stream_copy_access_unalignment (void)
 
 void systicks_stream_copy_access_alignment (void)
 {	
-	uint64_t start = 0;
-	uint64_t end = 0;
-	uint64_t latency = 0;
+	uint32_t start = 0;
+	uint32_t end = 0;
+	uint32_t latency = 0;
 
 	int base = 2;
 	int n_iterations = base;
@@ -219,12 +219,12 @@ void systicks_stream_copy_access_alignment (void)
 }
 
 void dwt_set_to_zero () {
-	uint64_t start;
-	uint64_t end;
-	uint64_t latency;
+	uint32_t start;
+	uint32_t end;
+	uint32_t latency;
 	int n_case = 8;
-	uint64_t base = 2;
-	uint64_t set_blocks = base;
+	uint32_t base = 2;
+	uint32_t set_blocks = base;
 
 	dbg_printf (DL_KDB, "|%6s|%12s|\n", "Length", "Clock cycles");	
 	
@@ -246,9 +246,9 @@ void dwt_set_to_zero () {
 }
 
 void systicks_set_to_zero () {
-	uint64_t start = 0;
-	uint64_t end = 0;
-	uint64_t latency = 0;
+	uint32_t start = 0;
+	uint32_t end = 0;
+	uint32_t latency = 0;
 	int n_iterations = 8;
 	int base = 2;
 	int	set_blocks = base; 		
