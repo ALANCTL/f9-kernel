@@ -1,0 +1,26 @@
+From 0920f385875d452c7dadf502190cc4e30e2c185f Mon Sep 17 00:00:00 2001
+From: gapry <gapryun@gmail.com>
+Date: Sun, 20 Jul 2014 05:34:10 +0800
+Subject: [PATCH] Kernel: Use the origin memcpy routine to build the kernel.
+
+---
+ kernel/lib/build.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/kernel/lib/build.mk b/kernel/lib/build.mk
+index 354e305..cd29b88 100644
+--- a/kernel/lib/build.mk
++++ b/kernel/lib/build.mk
+@@ -3,8 +3,8 @@
+ # found in the LICENSE file.
+ 
+ lib-str-y += \
+-	memcpy-armv7m.o \
+ 	memset.o \
++	memcpy.o
+ 
+ 
+ kernel-lib-y += \
+-- 
+1.9.1
+
