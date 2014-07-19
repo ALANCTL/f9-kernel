@@ -3,8 +3,8 @@
 # found in the LICENSE file.
 
 lib-str-y += \
-	memcpy-armv7m.o \
 	memset.o \
+	memcpy.o
 
 
 kernel-lib-y += \
