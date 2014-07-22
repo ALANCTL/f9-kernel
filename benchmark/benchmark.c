@@ -32,7 +32,7 @@ static uint32_t *SCB_DEMCR      = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_R
 
 static int cnt_enable = 0;  
 
-static char cblock[MEASURE_BLOCK_SIZE];
+static char cblock[MEASURE_BLOCK_SIZE] __attribute__ ((aligned (MEASURE_BLOCK_SIZE)));
 
 struct benchmark_t benchmark_functions[] = {
 	{
