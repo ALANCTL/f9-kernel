@@ -2,8 +2,7 @@
 #include <lib/string.h>
 #include <benchmark/benchmark.h>
 
-#define MAX_BSS_BYTES           5440
-#define MEASURE_BLOCK_SIZE      1024
+#define MAX_BYTES		16384
 
 #define CYCLE_COUNT_REGADDR                         0xE0001004 
 #define CONTROL_REGADDR                             0xE0001000
@@ -32,7 +31,7 @@ static uint32_t *SCB_DEMCR      = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_R
 
 static int cnt_enable = 0;  
 
-static char cblock[MEASURE_BLOCK_SIZE] __attribute__ ((aligned (MEASURE_BLOCK_SIZE)));
+static char cblock[MAX_BYTES] __attribute__ ((aligned (MAX_BYTES)));
 
 struct benchmark_t benchmark_functions[] = {
 	{
@@ -48,11 +47,6 @@ struct benchmark_t benchmark_functions[] = {
 	{	
 		.name = "Systicks SCA unalignment: ", 
 		.function = systicks_stream_copy_access_unalignment
-	},
-
-	{
-		.name = "Systicks SCA alignment: ",
-		.function = systicks_stream_copy_access_alignment
 	},
 
 	{
@@ -94,15 +88,11 @@ uint32_t fetch_systicks_consumption (uint32_t start, uint32_t end)
 	return (start < end) ? (end - start) : (start - end);
 }   
 
-void init_char_block (int block_size)
+void init_char_block (char* char_block)
 {
-    if (block_size > MEASURE_BLOCK_SIZE) {
-        dbg_printf (DL_KDB, "[E]: The init size of char blocks is too big.\n");
-    }
+	dbg_printf (DL_KDB, "%d\n", MAX_BYTES / 2);
+	dbg_printf (DL_KDB, "%p\n", char_block);
 
-    for (int i = 0; i < block_size && block_size <= MEASURE_BLOCK_SIZE; ++i) {
-        cblock[i] = 'A' + i;
-    }
 }
 
 void print_data (int n_iterations, uint32_t cnt) 
@@ -184,30 +174,37 @@ void systicks_stream_copy_access_unalignment (void)
 }
 
 void systicks_stream_copy_access_alignment (void)
-{	
-	uint32_t start = 0;
-	uint32_t end = 0;
-	uint64_t latency = 0;
+{
+	char char_block[MAX_BYTES] __attribute__((aligned (MAX_BYTES)));
+    
+	for (int i = 0; i < (MAX_BYTES / 2); ++i) {
+        char_block[i] = 'A';
+    }	
+	
+	dbg_printf (DL_KDB, "%p\n", char_block);
+	/*
+	uint32_t start = 0, end = 0;
 
-	int base = 2;
-	int n_iterations = base;
-	int n_case = 8;
+	uint64_t delta = 0;
 
-	for (int i = 1; i <= n_case; ++i) {
+	int base = 2, n_iterations = base, n_power = 8;
+
+	for (int i = 1; i <= n_power; ++i) {
 		n_iterations = base << i;
 
 		start = *fetch_systicks ();
 
 		for (int j = 1; j <= n_iterations; j += 4) {
-			memcpy (cblock, cblock + n_iterations / 2 - 1, 4);
+			memcpy (char_block, char_block + n_iterations / 2 - 1, 4);
 		}
 
 		end = *fetch_systicks ();
 
-		latency = fetch_systicks_consumption (start, end);
+		delta = fetch_systicks_consumption (start, end);
 
-		dbg_printf (DL_KDB, "%d %ld\n", n_iterations, latency);
+		dbg_printf (DL_KDB, "%d %ld\n", n_iterations, delta);
 	}
+	*/
 }
 
 void dwt_set_to_zero () {
@@ -266,14 +263,7 @@ void systicks_set_to_zero () {
 
 void benchmark_main (void)
 {
-    init_char_block (MEASURE_BLOCK_SIZE);
-
-	for (int i = 0; i < (sizeof (benchmark_functions) / sizeof (struct benchmark_t)); ++i) {
-		dbg_printf (DL_KDB, "%s\n", benchmark_functions[i].name);
-		dbg_printf (DL_KDB, "--------------------------------------------------\n");
-		benchmark_functions[i].function ();
-		dbg_printf (DL_KDB, "--------------------------------------------------\n");
-	}
+	systicks_stream_copy_access_alignment ();
 }
 
 void benchmark_handler (void)
