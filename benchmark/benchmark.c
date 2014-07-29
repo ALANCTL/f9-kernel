@@ -3,24 +3,40 @@
 #include <benchmark/benchmark.h>
 
 #define MAX_BYTES		256
-#define SYSTICKS_REG 	0xE000E018   
 
-uint32_t *fetch_systicks (void)
-{
-    return (uint32_t *) SYSTICKS_REG;
-}
+#define CYCLE_COUNT_REGADDR                                    0xE0001004
+#define CONTROL_REGADDR                                        0xE0001000 
+#define DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR                0xE000EDFC 
 
-uint32_t fetch_systicks_consumption (uint32_t start, uint32_t end)
-{
-	return (start < end) ? (end - start) : (start - end);
-}   
+static uint32_t *DWT_CYCCNT    = (uint32_t *) CYCLE_COUNT_REGADDR; 
+static uint32_t *DWT_CONTROL   = (uint32_t *) CONTROL_REGADDR; 
+static uint32_t *SCB_DEMCR     = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR; 
 
-void systicks_stream_copy_access_alignment (void)
+static int cnt_enable = 0;                                                                                     
+
+void dwt_cfg (void)
+{ 
+	*SCB_DEMCR = *SCB_DEMCR | 0x01000000;                                                      
+    *DWT_CONTROL = *DWT_CONTROL | 1 ; 
+     
+    if (!cnt_enable) {                                                                                         
+       cnt_enable  = 1;   
+       *DWT_CYCCNT = 0;  
+	}
+}                              
+
+uint32_t *fetch_cyccnt (void)  
+{	
+	dwt_cfg ();
+
+	return DWT_CYCCNT;
+}                              
+
+void measure_alignment (void)
 {
 	uint32_t start	 = 0;
 	uint32_t end	 = 0;
 	uint64_t delta	 = 0;
-	uint64_t latency = 0;	
 
 	/*
 	 * Init the measure block context
@@ -35,24 +51,23 @@ void systicks_stream_copy_access_alignment (void)
 	 * The measure process  
 	 */
 	for (uint32_t i = 1, offset = 4; i <= ((MAX_BYTES / 2) / 4); ++i, offset += 4) {
-		start = *fetch_systicks ();
-
+		start = *fetch_cyccnt ();
+	
 		memcpy (char_block, char_block + offset - 1, offset);
 
-		end = *fetch_systicks ();
+		end = *fetch_cyccnt ();
 
-		delta = fetch_systicks_consumption (start, end);
+		delta = end - start;
 
 		dbg_printf (DL_KDB, "%ld\n", delta);
 	}
 }
 
-void systicks_stream_copy_access_unalignment (void)
+void measure_unalignment (void)
 {
 	uint32_t start	 = 0;
 	uint32_t end	 = 0;
 	uint64_t delta	 = 0;
-	uint64_t latency = 0;	
 
 	/*
 	 * Init the measure block context
@@ -70,13 +85,13 @@ void systicks_stream_copy_access_unalignment (void)
 		if (offset % 4 == 0)
 			offset += 1;
 
-		start = *fetch_systicks ();
+		start = *fetch_cyccnt ();
 
 		memcpy (char_block, char_block + offset - 1, offset);
 
-		end = *fetch_systicks ();
+		end = *fetch_cyccnt ();
 
-		delta = fetch_systicks_consumption (start, end);
+		delta = end - start;
 
 		dbg_printf (DL_KDB, "%ld\n", delta);
 	}
@@ -84,7 +99,13 @@ void systicks_stream_copy_access_unalignment (void)
 
 void benchmark_main (void)
 {
-	systicks_stream_copy_access_unalignment ();
+	dbg_printf (DL_KDB, "alignment\n");
+
+	measure_alignment ();
+
+	dbg_printf (DL_KDB, "unalignment\n");
+
+	measure_unalignment ();
 }
 
 void benchmark_handler (void)
