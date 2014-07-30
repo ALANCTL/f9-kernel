@@ -14,6 +14,12 @@ static uint32_t *SCB_DEMCR     = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_RE
 
 static int cnt_enable = 0;
 
+typedef void (*memcpy_function_t)(void);
+
+struct measure_t {
+	memcpy_function_t function;
+}
+
 void dwt_cfg (void)
 { 
 	*SCB_DEMCR = *SCB_DEMCR | 0x01000000;                                                      
