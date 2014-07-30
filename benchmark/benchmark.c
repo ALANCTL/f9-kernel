@@ -61,6 +61,41 @@ void measure_offset_4bytes (char* src, char* dest)
 	memcpy (src, dest, 4);
 }
 
+void measure_offset_8bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 8); 
+}
+
+void measure_offset_16bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 16);
+}
+
+void measure_offset_32bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 32);
+}
+
+void measure_offset_64bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 64);
+}
+
+void measure_offset_128bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 128);
+}
+
+void measure_offset_256bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 256);
+}
+
+void measure_offset_512bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 512);
+}
+
 void dwt_cfg (void)
 { 
 	*SCB_DEMCR = *SCB_DEMCR | 0x01000000;                                                      
