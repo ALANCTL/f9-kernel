@@ -2,7 +2,7 @@
 #include <lib/string.h>
 #include <benchmark/benchmark.h>
 
-#define MAX_BYTES 512
+#define MAX_BYTES 4096
 
 #define CYCLE_COUNT_REGADDR	0xE0001004
 #define CONTROL_REGADDR 0xE0001000 
@@ -105,6 +105,9 @@ struct measure_t measure_functions[] = {
 		.function = measure_offset_509bytes
 	}
 };
+
+#define INDEX (sizeof (measure_functions) / sizeof (struct measure_t))
+static uint64_t data[INDEX][2];
 
 void measure_offset_4bytes (char* src, char* dest)
 {
@@ -219,12 +222,12 @@ void profiler_main (void)
 	uint32_t start	 = 0;
 	uint32_t end	 = 0;
 	uint64_t latency = 0;
-
+	
 	/*
 	 * Init the measure block context
 	 */
-	char src[MAX_BYTES] __attribute__((aligned));
-	char dest[MAX_BYTES] __attribute__((aligned));
+	char src[MAX_BYTES] __attribute__((aligned (4)));
+	char dest[MAX_BYTES] __attribute__((aligned (4)));
 
 	for (int i = 0; i < MAX_BYTES; ++i) {
         src[i] = 'A';
@@ -250,13 +253,25 @@ void profiler_main (void)
 		
 		latency = (end - start) / exp;	
 
-		dbg_printf (DL_KDB, "%d %ld\n", measure_functions[j].offset, latency);
-
+		data[j][0] = measure_functions[j].offset;
+		data[j][1] = latency;
+		
 		reset_cyccnt ();	
+	}
+}
+
+void print_latency (void)
+{
+	for (int i = 0; i < sizeof (measure_functions) / sizeof (struct measure_t); ++i) {
+		dbg_printf (DL_KDB, "%d %ld\n", data[i][0], data[i][1]);
+
+		char foo = dbg_getchar ();
 	}
 }
 
 void benchmark_handler (void)
 {
 	profiler_main ();
+	
+	print_latency ();
 }
