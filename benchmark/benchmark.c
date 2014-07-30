@@ -41,7 +41,7 @@ void measure_alignment (void)
 {
 	uint32_t start	 = 0;
 	uint32_t end	 = 0;
-	uint64_t delta	 = 0;
+	uint64_t latency = 0;
 
 	/*
 	 * Init the measure block context
@@ -56,6 +56,27 @@ void measure_alignment (void)
 	/*
 	 * The measure process  
 	 */
+	int exp = 1000;
+
+	reset_cyccnt ();
+
+	start = *fetch_cyccnt ();
+
+	for (int i = 0; i < exp; ++i) {
+		memcpy (src, dest, MAX_BYTES);  
+	}
+
+	end = *fetch_cyccnt ();
+		
+	latency = (end - start) / exp;	
+
+	dbg_printf (DL_KDB, "%ld\n", latency);
+
+	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
+	
+	reset_cyccnt ();	
+
+	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
 }
 
 void measure_unalignment (void)
