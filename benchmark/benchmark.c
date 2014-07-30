@@ -169,7 +169,7 @@ void measure_alignment (void)
 		
 		latency = (end - start) / exp;	
 
-		dbg_printf (DL_KDB, "%ld\n", latency);
+		dbg_printf (DL_KDB, "%d %ld\n", measure_functions[j].offset, latency);
 
 		reset_cyccnt ();	
 	}
@@ -211,8 +211,6 @@ void measure_unalignment (void)
 
 void benchmark_main (void)
 {
-	dbg_printf (DL_KDB, "alignment\n");
-
 	measure_alignment ();
 }
 
