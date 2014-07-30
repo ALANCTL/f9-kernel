@@ -14,20 +14,20 @@ static uint32_t *SCB_DEMCR     = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_RE
 
 static int cnt_enable = 0;
 
-typedef void (*memcpy_function_t)(void);
+typedef void (*memcpy_function_t)(char*, char*);
 
 struct measure_t {
 	memcpy_function_t function;
 };
 
-void measure_offset_4bytes ();
-void measure_offset_8bytes ();
-void measure_offset_16bytes ();
-void measure_offset_32bytes ();
-void measure_offset_64bytes ();
-void measure_offset_128bytes ();
-void measure_offset_256bytes ();
-void measure_offset_512bytes ();
+void measure_offset_4bytes (char*, char*);
+void measure_offset_8bytes (char*, char*);
+void measure_offset_16bytes (char*, char*);
+void measure_offset_32bytes (char*, char*);
+void measure_offset_64bytes (char*, char*);
+void measure_offset_128bytes (char*, char*);
+void measure_offset_256bytes (char*, char*);
+void measure_offset_512bytes (char*, char*);
 
 struct measure_t measure_functions[] = {
 	{
