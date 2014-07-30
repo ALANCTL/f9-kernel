@@ -2,24 +2,24 @@
 #include <lib/string.h>
 #include <benchmark/benchmark.h>
 
-#define MAX_BYTES		256
+#define MAX_BYTES 512
 
-#define CYCLE_COUNT_REGADDR                                    0xE0001004
-#define CONTROL_REGADDR                                        0xE0001000 
-#define DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR                0xE000EDFC 
+#define CYCLE_COUNT_REGADDR	0xE0001004
+#define CONTROL_REGADDR 0xE0001000 
+#define DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR 0xE000EDFC 
 
 static uint32_t *DWT_CYCCNT    = (uint32_t *) CYCLE_COUNT_REGADDR; 
 static uint32_t *DWT_CONTROL   = (uint32_t *) CONTROL_REGADDR; 
 static uint32_t *SCB_DEMCR     = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_REGADDR; 
 
-static int cnt_enable = 0;                                                                                     
+static int cnt_enable = 0;
 
 void dwt_cfg (void)
 { 
 	*SCB_DEMCR = *SCB_DEMCR | 0x01000000;                                                      
     *DWT_CONTROL = *DWT_CONTROL | 1 ; 
      
-    if (!cnt_enable) {                                                                                         
+    if (!cnt_enable) {  
        cnt_enable  = 1;   
        *DWT_CYCCNT = 0;  
 	}
@@ -41,26 +41,12 @@ void measure_alignment (void)
 	/*
 	 * Init the measure block context
 	 */
-	char char_block[MAX_BYTES] __attribute__((aligned));
-	
-	for (int i = 0; i < (MAX_BYTES / 2); ++i) {
-        char_block[i] = 'A';
-    }
+	char src[MAX_BYTES] __attribute__((aligned));
+	char dest[MAX_BYTES] __attribute__((aligned));
 
 	/*
 	 * The measure process  
 	 */
-	for (uint32_t i = 1, offset = 4; i <= ((MAX_BYTES / 2) / 4); ++i, offset += 4) {
-		start = *fetch_cyccnt ();
-	
-		memcpy (char_block, char_block + offset - 1, offset);
-
-		end = *fetch_cyccnt ();
-
-		delta = end - start;
-
-		dbg_printf (DL_KDB, "%ld\n", delta);
-	}
 }
 
 void measure_unalignment (void)
@@ -102,10 +88,6 @@ void benchmark_main (void)
 	dbg_printf (DL_KDB, "alignment\n");
 
 	measure_alignment ();
-
-	dbg_printf (DL_KDB, "unalignment\n");
-
-	measure_unalignment ();
 }
 
 void benchmark_handler (void)
