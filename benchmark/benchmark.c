@@ -143,37 +143,37 @@ void measure_offset_512bytes (char* src, char* dest)
 
 void measure_offset_3bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 3);
+	memcpy (src + 3, dest + 3, 4);
 }
 
 void measure_offset_7bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 7); 
+	memcpy (src + 7, dest + 7, 8); 
 }
 
 void measure_offset_17bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 17);
+	memcpy (src + 17, dest + 17, 16);
 }
 
 void measure_offset_31bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 31);
+	memcpy (src + 31, dest + 31, 32);
 }
 
 void measure_offset_67bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 67);
+	memcpy (src + 67, dest + 67, 64);
 }
 
 void measure_offset_131bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 131);
+	memcpy (src + 131, dest + 131, 128);
 }
 
 void measure_offset_257bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 257);
+	memcpy (src + 251, dest + 251, 256);
 }
 
 void dwt_cfg (void)
