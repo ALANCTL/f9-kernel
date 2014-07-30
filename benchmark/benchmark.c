@@ -65,6 +65,8 @@ void measure_alignment (void)
 
 	reset_cyccnt ();
 
+	sleep (1000);	
+
 	start = *fetch_cyccnt ();
 
 	for (int i = 0; i < exp; ++i) {
@@ -80,6 +82,10 @@ void measure_alignment (void)
 	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
 	
 	reset_cyccnt ();	
+
+	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
+
+	sleep (1000);
 
 	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
 }
