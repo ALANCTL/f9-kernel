@@ -56,6 +56,11 @@ struct measure_t measure_functions[] = {
 	}
 };
 
+void measure_offset_4bytes (char* src, char* dest)
+{
+	memcpy (src, dest, 4);
+}
+
 void dwt_cfg (void)
 { 
 	*SCB_DEMCR = *SCB_DEMCR | 0x01000000;                                                      
