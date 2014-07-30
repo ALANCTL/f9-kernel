@@ -145,31 +145,25 @@ void measure_alignment (void)
 	 */
 	int exp = 1000;
 
-	reset_cyccnt ();
+	for (int j = 0; j < sizeof (measure_functions) / sizeof (struct measure_t); ++j) {
+		reset_cyccnt ();
 
-	sleep (1000);	
+		sleep (1000);	
 
-	start = *fetch_cyccnt ();
+		start = *fetch_cyccnt ();
 
-	for (int i = 0; i < exp; ++i) {
-		measure_functions[0].function;
-	}
+		for (int i = 0; i < exp; ++i) {
+			measure_functions[j].function (src, dest);
+		}
 
-	end = *fetch_cyccnt ();
+		end = *fetch_cyccnt ();
 		
-	latency = (end - start) / exp;	
+		latency = (end - start) / exp;	
 
-	dbg_printf (DL_KDB, "%ld\n", latency);
+		dbg_printf (DL_KDB, "%ld\n", latency);
 
-	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
-	
-	reset_cyccnt ();	
-
-	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
-
-	sleep (1000);
-
-	dbg_printf (DL_KDB, "%ld\n", *DWT_CYCCNT);
+		reset_cyccnt ();	
+	}
 }
 
 void measure_unalignment (void)
