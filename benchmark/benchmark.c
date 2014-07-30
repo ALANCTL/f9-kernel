@@ -28,7 +28,7 @@ void measure_offset_32bytes (char*, char*);
 void measure_offset_64bytes (char*, char*);
 void measure_offset_128bytes (char*, char*);
 void measure_offset_256bytes (char*, char*);
-void measure_offset_512bytes (char*, char*);
+void measure_offset_504bytes (char*, char*);
 
 void measure_offset_3bytes (char*, char*);
 void measure_offset_7bytes (char*, char*);
@@ -68,35 +68,35 @@ struct measure_t measure_functions[] = {
 		.function = measure_offset_256bytes
 	},
 	{
-		.offset = 512,
-		.function = measure_offset_512bytes
+		.offset = 504,
+		.function = measure_offset_504bytes
 	},
 	{
-		.offset = 3,	
+		.offset = 4,	
 		.function = measure_offset_3bytes
 	},
 	{
-		.offset = 7,
+		.offset = 8,
 		.function = measure_offset_7bytes
 	},
 	{
-		.offset = 17,
+		.offset = 16,
 		.function = measure_offset_17bytes
 	},
 	{
-		.offset = 31,	
+		.offset = 32,	
 		.function = measure_offset_31bytes
 	},
 	{
-		.offset = 67,
+		.offset = 64,
 		.function = measure_offset_67bytes
 	},
 	{
-		.offset = 131,
+		.offset = 128,
 		.function = measure_offset_131bytes
 	},
 	{
-		.offset = 257,
+		.offset = 256,
 		.function = measure_offset_257bytes
 	},
 };
@@ -136,9 +136,9 @@ void measure_offset_256bytes (char* src, char* dest)
 	memcpy (src, dest, 256);
 }
 
-void measure_offset_512bytes (char* src, char* dest)
+void measure_offset_504bytes (char* src, char* dest)
 {
-	memcpy (src, dest, 512);
+	memcpy (src, dest, 504);
 }
 
 void measure_offset_3bytes (char* src, char* dest)
