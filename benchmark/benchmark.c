@@ -133,7 +133,7 @@ void sleep (int n)
 	for (int i = 0; i < n; ++i);
 }
 
-void measure_alignment (void)
+void profiler_main (void)
 {
 	uint32_t start	 = 0;
 	uint32_t end	 = 0;
@@ -175,46 +175,7 @@ void measure_alignment (void)
 	}
 }
 
-void measure_unalignment (void)
-{
-	uint32_t start	 = 0;
-	uint32_t end	 = 0;
-	uint64_t delta	 = 0;
-
-	/*
-	 * Init the measure block context
-	 */
-	char char_block[MAX_BYTES] __attribute__((aligned));
-	
-	for (int i = 0; i < (MAX_BYTES / 2); ++i) {
-        char_block[i] = 'A';
-    }
-
-	/*
-	 * The measure process  
-	 */
-	for (uint32_t i = 1, offset = 3; i <= ((MAX_BYTES / 2) / 3) && offset <= 128; ++i, offset += 3) {
-		if (offset % 4 == 0)
-			offset += 1;
-
-		start = *fetch_cyccnt ();
-
-		memcpy (char_block, char_block + offset - 1, offset);
-
-		end = *fetch_cyccnt ();
-
-		delta = end - start;
-
-		dbg_printf (DL_KDB, "%ld\n", delta);
-	}
-}
-
-void benchmark_main (void)
-{
-	measure_alignment ();
-}
-
 void benchmark_handler (void)
 {
-	benchmark_main ();
+	profiler_main ();
 }
