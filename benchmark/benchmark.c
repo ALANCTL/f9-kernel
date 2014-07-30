@@ -18,7 +18,16 @@ typedef void (*memcpy_function_t)(void);
 
 struct measure_t {
 	memcpy_function_t function;
-}
+};
+
+void measure_offset_4bytes ();
+void measure_offset_8bytes ();
+void measure_offset_16bytes ();
+void measure_offset_32bytes ();
+void measure_offset_64bytes ();
+void measure_offset_128bytes ();
+void measure_offset_256bytes ();
+void measure_offset_512bytes ();
 
 void dwt_cfg (void)
 { 
