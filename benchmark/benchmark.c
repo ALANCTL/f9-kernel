@@ -17,6 +17,7 @@ static int cnt_enable = 0;
 typedef void (*memcpy_function_t)(char*, char*);
 
 struct measure_t {
+	int offset;
 	memcpy_function_t function;
 };
 
@@ -31,27 +32,35 @@ void measure_offset_512bytes (char*, char*);
 
 struct measure_t measure_functions[] = {
 	{
+		.offset = 4,	
 		.function = measure_offset_4bytes
 	},
 	{
+		.offset = 8,
 		.function = measure_offset_8bytes
 	},
 	{
+		.offset = 16,
 		.function = measure_offset_16bytes
 	},
 	{
+		.offset = 32,	
 		.function = measure_offset_32bytes
 	},
 	{
+		.offset = 64,
 		.function = measure_offset_64bytes
 	},
 	{
+		.offset = 128,
 		.function = measure_offset_128bytes
 	},
 	{
+		.offset = 256,
 		.function = measure_offset_256bytes
 	},
 	{
+		.offset = 512,
 		.function = measure_offset_512bytes
 	}
 };
