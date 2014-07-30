@@ -37,6 +37,11 @@ void reset_cyccnt (void)
 	*DWT_CYCCNT = 0;
 }
 
+void sleep (int n)
+{
+	for (int i = 0; i < n; ++i);
+}
+
 void measure_alignment (void)
 {
 	uint32_t start	 = 0;
