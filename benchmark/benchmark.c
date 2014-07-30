@@ -117,7 +117,7 @@ void measure_alignment (void)
 	start = *fetch_cyccnt ();
 
 	for (int i = 0; i < exp; ++i) {
-		memcpy (src, dest, MAX_BYTES);  
+		measure_functions[0].function;
 	}
 
 	end = *fetch_cyccnt ();
