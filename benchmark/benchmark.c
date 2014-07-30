@@ -101,7 +101,7 @@ struct measure_t measure_functions[] = {
 		.function = measure_offset_257bytes
 	},
 	{
-		.offset = 504
+		.offset = 504,
 		.function = measure_offset_509bytes
 	}
 };
