@@ -29,6 +29,33 @@ void measure_offset_128bytes ();
 void measure_offset_256bytes ();
 void measure_offset_512bytes ();
 
+struct measure_t measure_functions[] = {
+	{
+		.function = measure_offset_4bytes
+	},
+	{
+		.function = measure_offset_8bytes
+	},
+	{
+		.function = measure_offset_16bytes
+	},
+	{
+		.function = measure_offset_32bytes
+	},
+	{
+		.function = measure_offset_64bytes
+	},
+	{
+		.function = measure_offset_128bytes
+	},
+	{
+		.function = measure_offset_256bytes
+	},
+	{
+		.function = measure_offset_512bytes
+	}
+};
+
 void dwt_cfg (void)
 { 
 	*SCB_DEMCR = *SCB_DEMCR | 0x01000000;                                                      
