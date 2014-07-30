@@ -37,6 +37,7 @@ void measure_offset_31bytes (char*, char*);
 void measure_offset_67bytes (char*, char*);
 void measure_offset_131bytes (char*, char*);
 void measure_offset_257bytes (char*, char*);
+void measure_offset_509bytes (char*, char*);
 
 struct measure_t measure_functions[] = {	
 	{
@@ -99,6 +100,10 @@ struct measure_t measure_functions[] = {
 		.offset = 256,
 		.function = measure_offset_257bytes
 	},
+	{
+		.offset = 504
+		.function = measure_offset_509bytes
+	}
 };
 
 void measure_offset_4bytes (char* src, char* dest)
@@ -174,6 +179,11 @@ void measure_offset_131bytes (char* src, char* dest)
 void measure_offset_257bytes (char* src, char* dest)
 {
 	memcpy (src + 251, dest + 251, 256);
+}
+
+void measure_offset_509bytes (char* src, char* dest)
+{
+	memcpy (src + 3, dest + 3, 504);
 }
 
 void dwt_cfg (void)
