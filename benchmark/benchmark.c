@@ -44,6 +44,10 @@ void measure_alignment (void)
 	char src[MAX_BYTES] __attribute__((aligned));
 	char dest[MAX_BYTES] __attribute__((aligned));
 
+	for (int i = 0; i < MAX_BYTES; ++i) {
+        src[i] = 'A';
+    }
+
 	/*
 	 * The measure process  
 	 */
