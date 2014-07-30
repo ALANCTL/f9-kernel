@@ -32,6 +32,11 @@ uint32_t *fetch_cyccnt (void)
 	return DWT_CYCCNT;
 }                              
 
+void reset_cyccnt (void)
+{
+	*DWT_CYCCNT = 0;
+}
+
 void measure_alignment (void)
 {
 	uint32_t start	 = 0;
