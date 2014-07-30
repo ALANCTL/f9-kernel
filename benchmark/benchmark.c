@@ -48,15 +48,24 @@ void profiler_main (void)
 	uint32_t end	 = 0;
 	uint64_t latency = 0;
 	
-	/*
-	 * Init the measure block context
-	 */
 	char src[MAX_BYTES] __attribute__((aligned (4)));
 	char dest[MAX_BYTES] __attribute__((aligned (4)));
-}
 
-void print_latency (void)
-{
+	for (int i = 0; i < MAX_BYTES; ++i) {
+		src[i] = 'G';
+	}
+
+	reset_cyccnt ();
+
+	start = *fetch_cyccnt ();
+
+	memcpy (src, dest, MAX_BYTES);
+
+	end = *fetch_cyccnt ();
+
+	latency = (end - start);
+			
+	dbg_printf (DL_KDB, "The latency: %ld\n", latency);
 }
 
 void benchmark_handler (void)
