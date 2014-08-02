@@ -55,17 +55,22 @@ void profiler_main (void)
 		src[i] = 'G';
 	}
 
+	dbg_printf (DL_KDB, "src: %p\n", src);
+	dbg_printf (DL_KDB, "dest: %p\n", dest);
+	
+	dbg_printf (DL_KDB, "Start: %ld\n", latency);
+	
 	reset_cyccnt ();
 
 	start = *fetch_cyccnt ();
 
-	memcpy (src, dest, MAX_BYTES);
+	//memcpy (src, dest, MAX_BYTES);
 
 	end = *fetch_cyccnt ();
 
 	latency = (end - start);
 			
-	dbg_printf (DL_KDB, "The latency: %ld\n", latency);
+	dbg_printf (DL_KDB, "End: %ld\n", latency);
 }
 
 void benchmark_handler (void)
