@@ -8,7 +8,6 @@
 #include <debug.h>
 #include <init_hook.h>
 #include <softirq.h>
-#include <benchmark/benchmark.h>
 
 typedef void (*kdb_function_t)(void);
 
