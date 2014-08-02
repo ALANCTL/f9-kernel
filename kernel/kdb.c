@@ -148,18 +148,6 @@ void dispatch_handler(void)
 void kdb_init(void)
 {
 	softirq_register(KDB_SOFTIRQ, dispatch_handler);
-	
-	dbg_puts ("======== Welcome Back, Developer =======\n");
-	dbg_puts ("----------------------------------------\n");
-	dbg_puts ("-------------- SELECT ----------KEY-----\n");
-	dbg_puts ("----------------------------------------\n");
-	dbg_puts ("------------- Main Menu --------[M]-----\n");
-	dbg_puts ("----------------------------------------\n");
-	dbg_puts ("---------- KDB Debug Mode ------[D]-----\n");
-	dbg_puts ("----------------------------------------\n");
-	dbg_puts ("------------- Benchmark --------[B]-----\n");
-	dbg_puts ("----------------------------------------\n");
-	dbg_puts ("========================================\n");
 }
 
 INIT_HOOK(kdb_init, INIT_LEVEL_KERNEL);
