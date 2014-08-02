@@ -1,3 +1,31 @@
-b start.c:main
+define set_breakpoint
+	b start.c:114
+	b start.c:54
+	b benchmark.c:78
+	b benchmark.c:49
+	b benchmark.c:58 
+end
 
-p "OK"
+document set_breakpoint
+	jump to the profiler
+end 
+
+define init
+	c
+	si
+
+	c
+	si
+
+	c
+	si
+end 
+
+document init
+	init the debug behaviors
+end
+
+set_breakpoint
+init
+
+
