@@ -29,7 +29,7 @@
 #define LSR_RXFE	0x80
 
 #define SEND_BUFSIZE    2048
-#define RECV_BUFSIZE    32
+#define RECV_BUFSIZE    2048
 
 struct dbg_uart_t {
 	uint32_t status;
