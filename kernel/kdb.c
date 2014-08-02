@@ -142,13 +142,7 @@ int kdb_dump_error()
 
 void dispatch_handler(void)
 {	
-	char c = dbg_getchar ();
-
-	if (c == '?')
-		kdb_handler (c);
-
-	if (c == 'B')	
-		benchmark_handler ();
+	kdb_handler (dbg_getchar ());
 }
 
 void kdb_init(void)
