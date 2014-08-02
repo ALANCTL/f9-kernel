@@ -8,6 +8,7 @@
 #include <debug.h>
 #include <init_hook.h>
 #include <softirq.h>
+#include <benchmark/benchmark.h>
 
 typedef void (*kdb_function_t)(void);
 
@@ -70,6 +71,12 @@ struct kdb_t kdb_functions[] = {
 		.name = "AS",
 		.menuentry = "dump address spaces",
 		.function = kdb_dump_as
+	},
+	{
+		.option = 'b',
+		.name = "profiler",
+		.menuentry = "Benchmark result",
+		.function = benchmark_handler
 	},
 #ifdef CONFIG_SYMMAP
 	{
