@@ -25,6 +25,7 @@
 #include <ksym.h>
 #include <init_hook.h>
 #include <lib/stdio.h>
+#include <benchmark/benchmark.h>
 
 static char banner[] =
 	"\n"
@@ -49,6 +50,8 @@ int main(void)
 	run_init_hook(INIT_LEVEL_PLATFORM);
 
 	__l4_printf("%s", banner);
+
+	benchmark_handler ();
 
 	run_init_hook(INIT_LEVEL_KERNEL_EARLY);
 
