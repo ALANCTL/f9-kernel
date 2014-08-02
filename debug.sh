@@ -1,4 +1,4 @@
-kill st-util
+pkill st-util
 
 st-util &
 
