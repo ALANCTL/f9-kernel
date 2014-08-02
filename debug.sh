@@ -2,4 +2,4 @@ kill st-util
 
 st-util &
 
-arm-none-eabi-gdb build/discoveryf4/f9.elf
+arm-none-eabi-gdb -x ./gdbscript/.gdbinit build/discoveryf4/f9.elf
