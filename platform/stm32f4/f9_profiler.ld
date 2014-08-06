@@ -138,7 +138,7 @@ SECTIONS {
 	} > RamLoc
 
 	.src_pool 0x20011900:
-	ALIGN (0xFF)
+	ALIGN (4)
 	{
 		.src_pool_start = .;
 		KEEP(*(.src_pool))
