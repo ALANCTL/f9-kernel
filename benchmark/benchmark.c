@@ -14,6 +14,8 @@ static uint32_t *SCB_DEMCR     = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_RE
 
 static int cnt_enable = 0;
 
+char src[MAX_BYTES] __attribute ((section (".src_pool"))) = { 'T' };
+
 void dwt_cfg (void)
 { 
 	*SCB_DEMCR = *SCB_DEMCR | 0x01000000; 
@@ -44,6 +46,7 @@ void sleep (int n)
 
 void profiler_main (void)
 {
+
 }
 
 void benchmark_handler (void)
