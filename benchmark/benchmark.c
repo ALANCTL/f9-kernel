@@ -46,7 +46,7 @@ void sleep (int n)
 
 void profiler_main (void)
 {
-
+	dbg_printf (DL_KDB, "Testing the src pool: %p", src);
 }
 
 void benchmark_handler (void)
