@@ -16,7 +16,7 @@ static int cnt_enable = 0;
 
 void dwt_cfg (void)
 { 
-	*SCB_DEMCR = *SCB_DEMCR | 0x01000000;                                                      
+	*SCB_DEMCR = *SCB_DEMCR | 0x01000000; 
     *DWT_CONTROL = *DWT_CONTROL | 1 ; 
      
     if (!cnt_enable) {  
@@ -44,33 +44,6 @@ void sleep (int n)
 
 void profiler_main (void)
 {
-	uint32_t start	 = 0;
-	uint32_t end	 = 0;
-	uint64_t latency = 0;
-	
-	char src[MAX_BYTES] __attribute__((aligned (4)));
-	char dest[MAX_BYTES] __attribute__((aligned (4)));
-
-	for (int i = 0; i < MAX_BYTES; ++i) {
-		src[i] = 'G';
-	}
-
-	dbg_printf (DL_KDB, "src: %p\n", src);
-	dbg_printf (DL_KDB, "dest: %p\n", dest);
-	
-	dbg_printf (DL_KDB, "Start: %ld\n", latency);
-	
-	reset_cyccnt ();
-
-	start = *fetch_cyccnt ();
-
-	//memcpy (src, dest, MAX_BYTES);
-
-	end = *fetch_cyccnt ();
-
-	latency = (end - start);
-			
-	dbg_printf (DL_KDB, "End: %ld\n", latency);
 }
 
 void benchmark_handler (void)
