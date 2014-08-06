@@ -4,7 +4,7 @@
 ifeq "$(CONFIG_LOADER)" "y"
 
 EXEC_FORMAT = elf32-littlearm
-F9_LD_FILE = f9_sram.ld
+F9_LD_FILE = f9_profiler.ld
 
 loader-objs := $(loader-all-y)
 kernel-obj := $(out)/kernel.loader.o
@@ -44,7 +44,7 @@ $(out)/%.loader.o: %.c
 
 else
 
-F9_LD_FILE = f9_flash.ld
+F9_LD_FILE = f9_profiler.ld
 all: bare
 
 endif
