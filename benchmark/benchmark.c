@@ -2,7 +2,7 @@
 #include <lib/string.h>
 #include <benchmark/benchmark.h>
 
-#define MAX_BYTES 65536
+#define MAX_BYTES 0xA100
 
 #define CYCLE_COUNT_REGADDR	0xE0001004
 #define CONTROL_REGADDR 0xE0001000 
