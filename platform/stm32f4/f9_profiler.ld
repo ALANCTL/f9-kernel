@@ -137,6 +137,15 @@ SECTIONS {
 		user_bss_end = .;
 	} > RamLoc
 
+	.src_pool 0x20011900:
+	ALIGN (0xFF)
+	{
+		.src_pool_start = .;
+		KEEP(*(.src_pool))
+		. += 0xFF;
+		.src_pool_end = .;
+	} > RamLoc
+	
 	.data_AHB (NOLOAD) :
 	{
 		kernel_ahb_start = .;
