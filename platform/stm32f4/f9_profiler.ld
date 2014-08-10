@@ -127,7 +127,7 @@ SECTIONS {
 		. = ALIGN (256);
 		user_data_end = .;
 	} > RamLoc
-
+	
 	.user_bss (NOLOAD) :
 	ALIGN (256)
 	{
@@ -137,15 +137,11 @@ SECTIONS {
 		user_bss_end = .;
 	} > RamLoc
 
-	.src_pool 0x20011900:
-	ALIGN (4)
+	.src_pool (NOLOAD) :
 	{
-		.src_pool_start = .;
 		KEEP(*(.src_pool))
-		. += 0xFF;
-		.src_pool_end = .;
 	} > RamLoc
-	
+
 	.data_AHB (NOLOAD) :
 	{
 		kernel_ahb_start = .;
@@ -154,7 +150,7 @@ SECTIONS {
 		bitmap_end = .;
 		kernel_ahb_end = .;
 	} > RamCCM
-
+	
 	.sym_tab ( 0x800c000 + SIZEOF(.user_text) + SIZEOF(.user_data) ) :
 	{
 		symtab_start = .;
