@@ -151,6 +151,11 @@ SECTIONS {
 		kernel_ahb_end = .;
 	} > RamCCM
 	
+	.dest_pool (NOLOAD) :
+	{
+		KEEP(*(.dest_pool))
+	} > RamCCM
+
 	.sym_tab ( 0x800c000 + SIZEOF(.user_text) + SIZEOF(.user_data) ) :
 	{
 		symtab_start = .;
