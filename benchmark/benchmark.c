@@ -2,7 +2,7 @@
 #include <lib/string.h>
 #include <benchmark/benchmark.h>
 
-#define MAX_BYTES 0xA100
+#define MAX_BYTES 0xA700
 
 #define CYCLE_COUNT_REGADDR	0xE0001004
 #define CONTROL_REGADDR 0xE0001000 
@@ -14,7 +14,8 @@ static uint32_t *SCB_DEMCR     = (uint32_t *) DEBUG_EXCEPTION_MONITOR_CONTROL_RE
 
 static int cnt_enable = 0;
 
-char src[MAX_BYTES] __attribute ((section (".src_pool"))) = { 'T' };
+__attribute__ ((section (".src_pool"))) char src[MAX_BYTES]  = { 'T' };
+__attribute__ ((section (".dest_pool"))) char dest[MAX_BYTES] = { 'D' };
 
 void dwt_cfg (void)
 { 
@@ -46,7 +47,18 @@ void sleep (int n)
 
 void profiler_main (void)
 {
-	dbg_printf (DL_KDB, "Testing the src pool: %p", src);
+	dbg_printf (DL_KDB, "Testing the src pool: %p\n", src);
+	dbg_printf (DL_KDB, "Testing the dest pool: %p\n", dest);
+
+	reset_cyccnt ();	
+
+	uint32_t start = *fetch_cyccnt ();		
+
+	memcpy (src, dest, MAX_BYTES);
+
+	uint32_t end = *fetch_cyccnt ();
+
+	dbg_printf (DL_KDB, "Time: %ld\n", end - start);
 }
 
 void benchmark_handler (void)
