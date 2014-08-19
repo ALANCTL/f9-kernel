@@ -1,9 +1,9 @@
 define set_breakpoint
 	b start.c:114
 	b start.c:54
-	b benchmark.c:78
-	b benchmark.c:49
-	b benchmark.c:58 
+	b benchmark.c:93
+	b benchmark.c:60
+	b benchmark.c:88
 end
 
 document set_breakpoint
@@ -15,17 +15,31 @@ define init
 	si
 
 	c
-	si
 
 	c
 	si
+
+	c
+	c
 end 
 
 document init
 	init the debug behaviors
 end
 
+define print_result
+	set $i = 0
+	set $MAX = RESULT_BYTES
+	while $i < $MAX
+		printf "%f\n", result[$i] / 1000.0
+
+		set $i = $i + 1
+	end
+end 
+
 set_breakpoint
 init
+print_result
+show logging
 
 
