@@ -60,7 +60,7 @@ void profiler_main (void)
 	uint32_t start = 0;
 	uint32_t end = 0;
 	uint32_t offset = 4;
-	int n_iteration = 1000;
+	int n_iteration = 10000;
 
 	for (uint32_t j = 0; j < RESULT_BYTES; ++j) {
 		offset = offset + 4;
@@ -68,7 +68,7 @@ void profiler_main (void)
 		end = 0;
 		reset_cyccnt ();	
 		
-		//sleep (1000);
+		sleep (10000);
 		
 		start = *fetch_cyccnt ();
 		for (int i = 0; i < n_iteration; ++i) {
@@ -80,7 +80,7 @@ void profiler_main (void)
 
 		reset_cyccnt ();	
 
-		//sleep (1000);
+		sleep (10000);
 		start = 0;
 		end = 0;
 	}
