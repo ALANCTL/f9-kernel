@@ -139,7 +139,14 @@ SECTIONS {
 
 	.src_pool (NOLOAD) :
 	{
+		. = ALIGN (4);
 		KEEP(*(.src_pool))
+	} > RamLoc
+
+	.dest_pool (NOLOAD) :
+	{
+		. = ALIGN (4);
+		KEEP(*(.dest_pool))
 	} > RamLoc
 
 	.data_AHB (NOLOAD) :
@@ -151,9 +158,9 @@ SECTIONS {
 		kernel_ahb_end = .;
 	} > RamCCM
 	
-	.dest_pool (NOLOAD) :
+	.result_pool (NOLOAD) :
 	{
-		KEEP(*(.dest_pool))
+		KEEP(*(.result_pool))
 	} > RamCCM
 
 	.sym_tab ( 0x800c000 + SIZEOF(.user_text) + SIZEOF(.user_data) ) :
