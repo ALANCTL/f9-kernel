@@ -1,9 +1,9 @@
 define set_breakpoint
 	b start.c:114
-	b start.c:54
-	b benchmark.c:93
-	b benchmark.c:60
-	b benchmark.c:88
+	b start.c:52
+	b benchmark.c:45
+	b benchmark.c:21
+	b benchmark.c:40
 end
 
 document set_breakpoint
@@ -13,12 +13,9 @@ end
 define init
 	c
 	si
-
 	c
-
 	c
 	si
-
 	c
 	c
 end 
