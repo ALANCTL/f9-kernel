@@ -12,6 +12,11 @@ __attribute__ ((section (".src_pool"))) char src[MAX_BYTES]  = { 'T' };
 __attribute__ ((section (".dest_pool"))) char dest[MAX_BYTES] = { 'D' };
 __attribute__ ((section (".result_pool"))) uint64_t result[RESULT_BYTES] = { 0 };
 
+uint64_t abs (uint32_t m, uint32_t n)
+{
+	return m >= n ? (m - n) : (n - m);
+}
+
 #pragma GCC optimize ("O0")
 void profiler_main (void)
 {
@@ -34,7 +39,7 @@ void profiler_main (void)
 
 		end = *SYSTICK_VAL;
 
-		result[j] = start - end;
+		result[j] = abs (start, end);
 	}
     
 	dbg_printf (DL_KDB, "The Measurement has finished.\n");
