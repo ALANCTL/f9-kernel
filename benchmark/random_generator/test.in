@@ -1,0 +1,19 @@
+define print_result
+	set $i = 0
+	set $size = 0xFF
+
+	while $i < $size
+		printf "%ld\n", random_sequence[$i]
+
+		set $i = $i + 1
+	end
+end 
+
+set breakpoint pending on
+set logging on
+b main
+r
+b lcg.c:19
+c
+print_result
+show loggin
