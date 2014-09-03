@@ -1,0 +1,40 @@
+define set_breakpoint
+	#b start.c:114
+	#b start.c:52
+	#b benchmark.c:50
+	#b benchmark.c:26
+	b main.c:189
+end
+
+document set_breakpoint
+	jump to the profiler
+end 
+
+define init
+	c
+	#si
+	#c
+	#c
+	#si
+	#c
+	#c
+end 
+
+document init
+	init the debug behaviors
+end
+
+define print_result
+	set $i = 0
+	set $MAX = 14
+	set $offset = 4
+	set $ticks = msTicks
+	while $i < $MAX
+		printf "%d %f\n", $offset, (result[$i] * msTicks) / 1000.0
+		
+		set $i = $i + 1
+		set $offset = 4 << $i
+	end
+end 
+
+set logging on

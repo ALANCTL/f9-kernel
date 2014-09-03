@@ -1,0 +1,56 @@
+
+;; Function GPIO_DeInit (GPIO_DeInit)
+
+deleting insn with uid = 295.
+
+;; Function GPIO_Init (GPIO_Init)
+
+deleting insn with uid = 402.
+
+;; Function GPIO_StructInit (GPIO_StructInit)
+
+deleting insn with uid = 28.
+
+;; Function GPIO_PinLockConfig (GPIO_PinLockConfig)
+
+deleting insn with uid = 32.
+
+;; Function GPIO_ReadInputDataBit (GPIO_ReadInputDataBit)
+
+deleting insn with uid = 30.
+
+;; Function GPIO_ReadInputData (GPIO_ReadInputData)
+
+deleting insn with uid = 26.
+
+;; Function GPIO_ReadOutputDataBit (GPIO_ReadOutputDataBit)
+
+deleting insn with uid = 30.
+
+;; Function GPIO_ReadOutputData (GPIO_ReadOutputData)
+
+deleting insn with uid = 26.
+
+;; Function GPIO_SetBits (GPIO_SetBits)
+
+deleting insn with uid = 18.
+
+;; Function GPIO_ResetBits (GPIO_ResetBits)
+
+deleting insn with uid = 18.
+
+;; Function GPIO_WriteBit (GPIO_WriteBit)
+
+deleting insn with uid = 32.
+
+;; Function GPIO_Write (GPIO_Write)
+
+deleting insn with uid = 18.
+
+;; Function GPIO_ToggleBits (GPIO_ToggleBits)
+
+deleting insn with uid = 19.
+
+;; Function GPIO_PinAFConfig (GPIO_PinAFConfig)
+
+deleting insn with uid = 40.

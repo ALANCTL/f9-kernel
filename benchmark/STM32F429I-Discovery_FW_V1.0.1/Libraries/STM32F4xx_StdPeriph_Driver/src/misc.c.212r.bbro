@@ -1,0 +1,1180 @@
+
+;; Function NVIC_PriorityGroupConfig (NVIC_PriorityGroupConfig)
+
+
+
+try_optimize_cfg iteration 1
+
+
+
+try_optimize_cfg iteration 1
+
+Reordered sequence:
+ 2 bb 2  [10000]
+
+
+NVIC_PriorityGroupConfig
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 14 [lr] 15 [pc] 16 [f0] 17 [f1] 18 [f2] 19 [f3] 20 [f4] 21 [f5] 22 [f6] 23 [f7] 24 [cc] 27 [mv0] 28 [mv1] 29 [mv2] 30 [mv3] 31 [mv4] 32 [mv5] 33 [mv6] 34 [mv7] 35 [mv8] 36 [mv9] 37 [mv10] 38 [mv11] 39 [mv12] 40 [mv13] 41 [mv14] 42 [mv15] 43 [wcgr0] 44 [wcgr1] 45 [wcgr2] 46 [wcgr3] 47 [wr0] 48 [wr1] 49 [wr2] 50 [wr3] 51 [wr4] 52 [wr5] 53 [wr6] 54 [wr7] 55 [wr8] 56 [wr9] 57 [wr10] 58 [wr11] 59 [wr12] 60 [wr13] 61 [wr14] 62 [wr15] 63 [s0] 64 [s1] 65 [s2] 66 [s3] 67 [s4] 68 [s5] 69 [s6] 70 [s7] 71 [s8] 72 [s9] 73 [s10] 74 [s11] 75 [s12] 76 [s13] 77 [s14] 78 [s15] 79 [s16] 80 [s17] 81 [s18] 82 [s19] 83 [s20] 84 [s21] 85 [s22] 86 [s23] 87 [s24] 88 [s25] 89 [s26] 90 [s27] 91 [s28] 92 [s29] 93 [s30] 94 [s31] 95 [d16] 96 [?16] 97 [d17] 98 [?17] 99 [d18] 100 [?18] 101 [d19] 102 [?19] 103 [d20] 104 [?20] 105 [d21] 106 [?21] 107 [d22] 108 [?22] 109 [d23] 110 [?23] 111 [d24] 112 [?24] 113 [d25] 114 [?25] 115 [d26] 116 [?26] 117 [d27] 118 [?27] 119 [d28] 120 [?28] 121 [d29] 122 [?29] 123 [d30] 124 [?30] 125 [d31] 126 [?31] 127 [vfpcc]
+;;  hardware regs used 	 13 [sp]
+;;  regular block artificial uses 	 13 [sp]
+;;  eh block artificial uses 	 13 [sp] 26 [afp]
+;;  entry block defs 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;;  exit block uses 	 13 [sp] 14 [lr]
+;;  regs ever live 	 0[r0] 1[r1] 3[r3]
+;;  ref usage 	r0={2d,2u} r1={2d,1u} r2={1d} r3={3d,2u} r13={1d,2u} r14={1d,1u} r135={1e} 
+;;    total ref usage 19{10d,8u,1e} in 6{6 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 13 [sp]
+;; lr  def 	 0 [r0] 1 [r1] 3 [r3]
+;; live  in  	 0 [r0] 13 [sp] 14 [lr]
+;; live  gen 	 0 [r0] 1 [r1] 3 [r3]
+;; live  kill	
+
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 4 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 4 2 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 37 3 2 NOTE_INSN_DELETED)
+
+(note 3 2 13 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 13 3 6 2 (set (reg/f:SI 3 r3 [138])
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 60672 [0xed00])
+        (nil)))
+
+(insn 6 13 14 2 (set (reg:SI 1 r1 [136])
+        (ior:SI (reg:SI 0 r0 [ NVIC_PriorityGroup ])
+            (const_int 99614720 [0x5f00000]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 91 {*iorsi3_insn}
+     (nil))
+
+(insn 14 6 7 2 (set (zero_extract:SI (reg/f:SI 3 r3 [138])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 7 14 10 2 (set (reg:SI 0 r0 [orig:134 D.7644 ] [134])
+        (ior:SI (reg:SI 1 r1 [136])
+            (const_int 655360 [0xa0000]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [136])
+        (expr_list:REG_EQUAL (ior:SI (reg/v:SI 135 [ NVIC_PriorityGroup ])
+                (const_int 100270080 [0x5fa0000]))
+            (nil))))
+
+(insn 10 7 38 2 (set (mem/s/v:SI (plus:SI (reg/f:SI 3 r3 [138])
+                (const_int 12 [0xc])) [3 MEM[(struct SCB_Type *)3758157056B].AIRCR+0 S4 A32])
+        (reg:SI 0 r0 [orig:134 D.7644 ] [134])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 3 r3 [138])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [orig:134 D.7644 ] [134])
+            (nil))))
+
+(note 38 10 39 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 39 38 40 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:125 733 {*thumb2_return}
+     (nil)
+ -> return)
+;; End of basic block 2 -> ( 1)
+;; lr  out 	 13 [sp] 14 [lr]
+;; live  out 	 13 [sp] 14 [lr]
+
+
+;; Succ edge  EXIT [100.0%] 
+
+(barrier 40 39 15)
+
+(note 15 40 16 NOTE_INSN_DELETED)
+
+(note 16 15 0 NOTE_INSN_DELETED)
+
+
+;; Function NVIC_Init (NVIC_Init)
+
+
+
+try_optimize_cfg iteration 1
+
+Removing jump 78.
+deleting insn with uid = 78.
+
+
+try_optimize_cfg iteration 2
+
+
+
+try_optimize_cfg iteration 1
+
+rescanning insn with uid = 8.
+deleting insn with uid = 8.
+rescanning insn with uid = 8.
+deleting insn with uid = 8.
+deleting insn with uid = 107.
+deleting insn with uid = 106.
+STC - round 1
+Getting bb 2
+Basic block 2 was visited in trace 0
+  Possible start of next round: 3 (key: -3900)
+Basic block 4 was visited in trace 0
+Block 5 can't be copied because its size = 44.
+Basic block 5 was visited in trace 0
+STC - round 2
+Getting bb 3
+Basic block 3 was visited in trace 1
+STC - round 3
+STC - round 4
+Trace 1 (round 1):  2 [10000] 4 [6100] 5 [10000]
+Trace 2 (round 2):  3 [3900]
+Block 5 can't be copied because its size = 44.
+Final order:
+2 4 5 3 
+Reordered sequence:
+ 2 bb 2  [10000]
+ 3 bb 4  [6100]
+ 4 bb 5  [10000]
+ 5 bb 3  [3900]
+
+6 basic blocks, 6 edges.
+
+Basic block 0 , next 2, loop_depth 0, count 0, freq 10000, maybe hot.
+Predecessors: 
+;; bb 0 artificial_defs: { d-1(0){ }d-1(1){ }d-1(2){ }d-1(3){ }d-1(4){ }d-1(5){ }d-1(13){ }d-1(14){ }}
+;; bb 0 artificial_uses: { }
+;; lr  in  	
+;; lr  use 	
+;; lr  def 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  in  	
+;; live  gen 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  kill	
+
+Successors:  2 [100.0%]  (fallthru)
+;; lr  out 	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+Basic block 2 , prev 0, next 3, loop_depth 0, count 0, freq 10000, maybe hot.
+Predecessors:  ENTRY [100.0%]  (fallthru)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 4 [r4] 5 [r5] 13 [sp]
+;; lr  def 	 3 [r3] 13 [sp] 24 [cc]
+;; live  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  gen 	 3 [r3] 13 [sp]
+;; live  kill	 24 [cc]
+
+Successors:  5 [39.0%]  (fallthru,can_fallthru) 3 [61.0%]  (can_fallthru)
+;; lr  out 	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+Basic block 3 , prev 2, next 4, loop_depth 0, count 0, freq 6100, maybe hot.
+Predecessors:  2 [61.0%]  (can_fallthru)
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 13 [sp]
+;; lr  def 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 24 [cc]
+;; live  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  gen 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip]
+;; live  kill	 24 [cc]
+
+Successors:  4 [100.0%]  (fallthru,can_fallthru)
+;; lr  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+Basic block 4 , prev 3, next 5, loop_depth 0, count 0, freq 10000, maybe hot.
+Predecessors:  3 [100.0%]  (fallthru,can_fallthru) 5 [100.0%]  (fallthru,can_fallthru)
+;; bb 4 artificial_defs: { }
+;; bb 4 artificial_uses: { u-1(13){ }}
+;; lr  in  	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  use 	 13 [sp]
+;; lr  def 	
+;; live  in  	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  gen 	
+;; live  kill	
+
+Successors:  EXIT [100.0%] 
+;; lr  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+Basic block 5 , prev 4, next 1, loop_depth 0, count 0, freq 3900, maybe hot.
+Predecessors:  2 [39.0%]  (fallthru,can_fallthru)
+;; bb 5 artificial_defs: { }
+;; bb 5 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 13 [sp]
+;; lr  def 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 4 [r4] 5 [r5] 12 [ip] 24 [cc]
+;; live  in  	 0 [r0] 13 [sp] 14 [lr]
+;; live  gen 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 4 [r4] 5 [r5] 12 [ip]
+;; live  kill	 24 [cc]
+
+Successors:  4 [100.0%]  (fallthru,can_fallthru)
+;; lr  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+Basic block 1 , prev 5, loop_depth 0, count 0, freq 10000, maybe hot.
+Predecessors:  4 [100.0%] 
+;; bb 1 artificial_defs: { }
+;; bb 1 artificial_uses: { u-1(4){ }u-1(5){ }u-1(13){ }u-1(14){ }}
+;; lr  in  	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  use 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  def 	
+;; live  in  	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  gen 	
+;; live  kill	
+
+Successors: 
+;; lr  out 	
+;; live  out 	
+
+
+
+
+try_optimize_cfg iteration 1
+
+Emitting label for block 5
+rescanning insn with uid = 8.
+deleting insn with uid = 8.
+scanning new insn with uid = 109.
+Reordered sequence:
+ 2 bb 2  [10000]
+ 3 bb 3  [6100]
+ 4 bb 4  [10000]
+ 5 bb 5  [3900]
+
+
+NVIC_Init
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 14 [lr] 15 [pc] 16 [f0] 17 [f1] 18 [f2] 19 [f3] 20 [f4] 21 [f5] 22 [f6] 23 [f7] 24 [cc] 27 [mv0] 28 [mv1] 29 [mv2] 30 [mv3] 31 [mv4] 32 [mv5] 33 [mv6] 34 [mv7] 35 [mv8] 36 [mv9] 37 [mv10] 38 [mv11] 39 [mv12] 40 [mv13] 41 [mv14] 42 [mv15] 43 [wcgr0] 44 [wcgr1] 45 [wcgr2] 46 [wcgr3] 47 [wr0] 48 [wr1] 49 [wr2] 50 [wr3] 51 [wr4] 52 [wr5] 53 [wr6] 54 [wr7] 55 [wr8] 56 [wr9] 57 [wr10] 58 [wr11] 59 [wr12] 60 [wr13] 61 [wr14] 62 [wr15] 63 [s0] 64 [s1] 65 [s2] 66 [s3] 67 [s4] 68 [s5] 69 [s6] 70 [s7] 71 [s8] 72 [s9] 73 [s10] 74 [s11] 75 [s12] 76 [s13] 77 [s14] 78 [s15] 79 [s16] 80 [s17] 81 [s18] 82 [s19] 83 [s20] 84 [s21] 85 [s22] 86 [s23] 87 [s24] 88 [s25] 89 [s26] 90 [s27] 91 [s28] 92 [s29] 93 [s30] 94 [s31] 95 [d16] 96 [?16] 97 [d17] 98 [?17] 99 [d18] 100 [?18] 101 [d19] 102 [?19] 103 [d20] 104 [?20] 105 [d21] 106 [?21] 107 [d22] 108 [?22] 109 [d23] 110 [?23] 111 [d24] 112 [?24] 113 [d25] 114 [?25] 115 [d26] 116 [?26] 117 [d27] 118 [?27] 119 [d28] 120 [?28] 121 [d29] 122 [?29] 123 [d30] 124 [?30] 125 [d31] 126 [?31] 127 [vfpcc]
+;;  hardware regs used 	 13 [sp]
+;;  regular block artificial uses 	 13 [sp]
+;;  eh block artificial uses 	 13 [sp] 26 [afp]
+;;  entry block defs 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;;  exit block uses 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;;  regs ever live 	 0[r0] 1[r1] 2[r2] 3[r3] 4[r4] 5[r5] 12[ip] 13[sp] 24[cc]
+;;  ref usage 	r0={4d,10u} r1={6d,5u} r2={8d,8u,2e} r3={7d,7u,1e} r4={5d,6u} r5={4d,5u} r12={8d,8u} r13={2d,7u} r14={1d,1u} r24={9d} 
+;;    total ref usage 114{54d,57u,3e} in 43{43 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 4 [r4] 5 [r5] 13 [sp]
+;; lr  def 	 3 [r3] 13 [sp] 24 [cc]
+;; live  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  gen 	 3 [r3] 13 [sp]
+;; live  kill	 24 [cc]
+
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 4 1 93 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn/f 93 4 94 2 (parallel [
+            (set (mem/c:BLK (pre_modify:SI (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -8 [0xfffffffffffffff8]))) [7 A8])
+                (unspec:BLK [
+                        (reg:SI 4 r4)
+                    ] 2))
+            (use (reg:SI 5 r5))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:137 319 {*push_multi}
+     (expr_list:REG_FRAME_RELATED_EXPR (sequence [
+                (set/f (reg/f:SI 13 sp)
+                    (plus:SI (reg/f:SI 13 sp)
+                        (const_int -8 [0xfffffffffffffff8])))
+                (set/f (mem/c:SI (reg/f:SI 13 sp) [7 S4 A32])
+                    (reg:SI 4 r4))
+                (set/f (mem/c:SI (plus:SI (reg/f:SI 13 sp)
+                            (const_int 4 [0x4])) [7 S4 A32])
+                    (reg:SI 5 r5))
+            ])
+        (nil)))
+
+(note 94 93 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 94 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 3 6 2 NOTE_INSN_DELETED)
+
+(insn 6 7 8 2 (set (reg:SI 3 r3 [orig:168 NVIC_InitStruct_4(D)->NVIC_IRQChannelCmd ] [168])
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167])
+                    (const_int 3 [0x3])) [5 NVIC_InitStruct_4(D)->NVIC_IRQChannelCmd+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:145 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(jump_insn 8 6 50 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 3 r3 [orig:168 NVIC_InitStruct_4(D)->NVIC_IRQChannelCmd ] [168])
+                        (const_int 0 [0]))
+                    (label_ref:SI 108)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:145 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:168 NVIC_InitStruct_4(D)->NVIC_IRQChannelCmd ] [168])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 108)
+;; End of basic block 2 -> ( 5 3)
+;; lr  out 	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+;; Succ edge  5 [39.0%]  (can_fallthru)
+;; Succ edge  3 [61.0%]  (fallthru,can_fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 13 [sp]
+;; lr  def 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 24 [cc]
+;; live  in  	 0 [r0] 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  gen 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip]
+;; live  kill	 24 [cc]
+
+;; Pred edge  2 [61.0%]  (fallthru,can_fallthru)
+(code_label 50 8 51 3 3 "" [0 uses])
+
+(note 51 50 53 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 53 51 52 3 NOTE_INSN_DELETED)
+
+(insn 52 53 80 3 (set (reg:SI 0 r0 [orig:161 D.7636 ] [161])
+        (zero_extend:SI (mem/s:QI (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167]) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannel+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 730 {thumb2_zero_extendqisi2_v6}
+     (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167])
+        (nil)))
+
+(insn 80 52 98 3 (set (reg/f:SI 12 ip [194])
+        (const_int 57600 [0xe100])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 57600 [0xe100])
+        (nil)))
+
+(insn 98 80 55 3 (parallel [
+            (set (reg:SI 1 r1 [orig:163 D.7639 ] [163])
+                (lshiftrt:SI (reg:SI 0 r0 [orig:161 D.7636 ] [161])
+                    (const_int 5 [0x5])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 55 98 81 3 (set (reg:SI 2 r2 [192])
+        (and:SI (reg:SI 0 r0 [orig:161 D.7636 ] [161])
+            (const_int 31 [0x1f]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:167 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [orig:161 D.7636 ] [161])
+        (nil)))
+
+(insn 81 55 99 3 (set (zero_extract:SI (reg/f:SI 12 ip [194])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 99 81 100 3 (parallel [
+            (set (reg:SI 1 r1 [195])
+                (plus:SI (reg:SI 1 r1 [orig:163 D.7639 ] [163])
+                    (const_int 32 [0x20])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 741 {*thumb2_addsi_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 100 99 57 3 (parallel [
+            (set (reg:SI 3 r3 [193])
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:167 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 57 100 61 3 (set (reg:SI 0 r0 [orig:166 D.7641 ] [166])
+        (ashift:SI (reg:SI 3 r3 [193])
+            (reg:SI 2 r2 [192]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:167 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [193])
+        (expr_list:REG_EQUAL (ashift:SI (const_int 1 [0x1])
+                (reg:SI 2 r2 [192]))
+            (nil))))
+
+(insn 61 57 64 3 (set (mem/s/v:SI (plus:SI (mult:SI (reg:SI 1 r1 [195])
+                    (const_int 4 [0x4]))
+                (reg/f:SI 12 ip [194])) [3 S4 A32])
+        (reg:SI 0 r0 [orig:166 D.7641 ] [166])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 12 ip [194])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [orig:166 D.7641 ] [166])
+            (expr_list:REG_DEAD (reg:SI 1 r1 [195])
+                (nil)))))
+;; End of basic block 3 -> ( 4)
+;; lr  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+;; Succ edge  4 [100.0%]  (fallthru,can_fallthru)
+
+;; Start of basic block ( 3 5) -> 4
+;; bb 4 artificial_defs: { }
+;; bb 4 artificial_uses: { u-1(13){ }}
+;; lr  in  	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; lr  use 	 13 [sp]
+;; lr  def 	
+;; live  in  	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  gen 	
+;; live  kill	
+
+;; Pred edge  3 [100.0%]  (fallthru,can_fallthru)
+;; Pred edge  5 [100.0%]  (can_fallthru)
+(code_label 64 61 65 4 2 "" [1 uses])
+
+(note 65 64 95 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 95 65 96 4 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 96 95 97 4 (unspec_volatile [
+            (return)
+        ] 1) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:169 315 {*epilogue_insns}
+     (nil)
+ -> return)
+;; End of basic block 4 -> ( 1)
+;; lr  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+;; Succ edge  EXIT [100.0%] 
+
+(barrier 97 96 108)
+
+;; Start of basic block ( 2) -> 5
+;; bb 5 artificial_defs: { }
+;; bb 5 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 13 [sp]
+;; lr  def 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 4 [r4] 5 [r5] 12 [ip] 24 [cc]
+;; live  in  	 0 [r0] 13 [sp] 14 [lr]
+;; live  gen 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 4 [r4] 5 [r5] 12 [ip]
+;; live  kill	 24 [cc]
+
+;; Pred edge  2 [39.0%]  (can_fallthru)
+(code_label 108 97 9 5 6 "" [1 uses])
+
+(note 9 108 14 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(note 14 9 15 5 NOTE_INSN_DELETED)
+
+(note 15 14 27 5 NOTE_INSN_DELETED)
+
+(note 27 15 29 5 NOTE_INSN_DELETED)
+
+(note 29 27 40 5 NOTE_INSN_DELETED)
+
+(note 40 29 82 5 NOTE_INSN_DELETED)
+
+(insn 82 40 83 5 (set (reg/f:SI 5 r5 [169])
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 60672 [0xed00])
+        (nil)))
+
+(insn 83 82 17 5 (set (zero_extract:SI (reg/f:SI 5 r5 [169])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 17 83 12 5 (set (reg:SI 2 r2 [orig:173 NVIC_InitStruct_4(D)->NVIC_IRQChannelPreemptionPriority ] [173])
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167])
+                    (const_int 1 [0x1])) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannelPreemptionPriority+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 12 17 25 5 (set (reg:SI 4 r4 [orig:135 D.7622 ] [135])
+        (mem/s/v:SI (plus:SI (reg/f:SI 5 r5 [169])
+                (const_int 12 [0xc])) [3 MEM[(struct SCB_Type *)3758157056B].AIRCR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 5 r5 [169])
+        (expr_list:REG_EQUAL (mem/s/v:SI (const_int -536810228 [0xffffffffe000ed0c]) [3 MEM[(struct SCB_Type *)3758157056B].AIRCR+0 S4 A32])
+            (nil))))
+
+(insn 25 12 33 5 (set (reg:SI 5 r5 [orig:180 NVIC_InitStruct_4(D)->NVIC_IRQChannelSubPriority ] [180])
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167])
+                    (const_int 2 [0x2])) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannelSubPriority+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 33 25 101 5 (set (reg:SI 1 r1 [orig:154 D.7637 ] [154])
+        (zero_extend:SI (mem/s:QI (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167]) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannel+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 101 33 16 5 (parallel [
+            (set (reg:SI 3 r3 [170])
+                (not:SI (reg:SI 4 r4 [orig:135 D.7622 ] [135])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 750 {*thumb2_one_cmplsi2_short}
+     (expr_list:REG_DEAD (reg:SI 4 r4 [orig:135 D.7622 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 16 101 18 5 (set (reg/v:SI 3 r3 [orig:139 tmppriority ] [139])
+        (zero_extract:SI (reg:SI 3 r3 [170])
+            (const_int 3 [0x3])
+            (const_int 8 [0x8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 131 {extzv_t2}
+     (nil))
+
+(insn 18 16 19 5 (set (reg:SI 4 r4 [174])
+        (minus:SI (const_int 4 [0x4])
+            (reg/v:SI 3 r3 [orig:139 tmppriority ] [139]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:149 29 {*arm_subsi3_insn}
+     (nil))
+
+(insn 19 18 20 5 (set (reg:SI 12 ip [175])
+        (zero_extend:SI (reg:QI 4 r4 [174]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 20 19 102 5 (set (reg:SI 4 r4 [orig:147 D.7632 ] [147])
+        (ashift:SI (reg:SI 2 r2 [orig:173 NVIC_InitStruct_4(D)->NVIC_IRQChannelPreemptionPriority ] [173])
+            (reg:SI 12 ip [175]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 12 ip [175])
+        (expr_list:REG_DEAD (reg:SI 2 r2 [orig:173 NVIC_InitStruct_4(D)->NVIC_IRQChannelPreemptionPriority ] [173])
+            (nil))))
+
+(insn 102 20 23 5 (parallel [
+            (set (reg:SI 2 r2 [177])
+                (const_int 15 [0xf]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:150 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 23 102 21 5 (set (reg:SI 12 ip [176])
+        (ashiftrt:SI (reg:SI 2 r2 [177])
+            (reg/v:SI 3 r3 [orig:139 tmppriority ] [139]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:150 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [177])
+        (expr_list:REG_EQUAL (ashiftrt:SI (const_int 15 [0xf])
+                (reg/v:SI 3 r3 [orig:139 tmppriority ] [139]))
+            (nil))))
+
+(insn 21 23 28 5 (set (reg/v:SI 4 r4 [orig:148 tmppriority ] [148])
+        (zero_extend:SI (reg:QI 4 r4 [orig:147 D.7632 ] [147]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 28 21 86 5 (set (reg:SI 2 r2 [orig:150 D.7634 ] [150])
+        (and:SI (reg:SI 12 ip [176])
+            (reg:SI 5 r5 [orig:180 NVIC_InitStruct_4(D)->NVIC_IRQChannelSubPriority ] [180]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [176])
+        (nil)))
+
+(insn 86 28 30 5 (set (reg/f:SI 12 ip [185])
+        (const_int 57600 [0xe100])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 57600 [0xe100])
+        (nil)))
+
+(insn 30 86 87 5 (set (reg:SI 3 r3 [orig:151 tmppriority ] [151])
+        (ior:SI (reg:SI 2 r2 [orig:150 D.7634 ] [150])
+            (reg/v:SI 4 r4 [orig:148 tmppriority ] [148]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 91 {*iorsi3_insn}
+     (nil))
+
+(insn 87 30 103 5 (set (zero_extract:SI (reg/f:SI 12 ip [185])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 103 87 88 5 (parallel [
+            (set (reg:SI 2 r2 [183])
+                (ashift:SI (reg:SI 3 r3 [orig:151 tmppriority ] [151])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:155 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:151 tmppriority ] [151])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 88 103 38 5 (set (reg/f:SI 1 r1 [185])
+        (plus:SI (reg:SI 1 r1 [orig:154 D.7637 ] [154])
+            (reg/f:SI 12 ip [185]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 4 {*arm_addsi3}
+     (expr_list:REG_DEAD (reg/f:SI 12 ip [185])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [orig:154 D.7637 ] [154])
+            (nil))))
+
+(insn 38 88 39 5 (set (mem/s/v/j:QI (plus:SI (reg/f:SI 1 r1 [185])
+                (const_int 768 [0x300])) [0 MEM[(struct NVIC_Type *)3758153984B].IP S1 A8])
+        (reg:QI 2 r2 [orig:152 tmppriority ] [152])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 187 {*arm_movqi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 1 r1 [185])
+        (expr_list:REG_DEAD (reg:QI 2 r2 [orig:152 tmppriority ] [152])
+            (nil))))
+
+(insn 39 38 84 5 (set (reg:SI 2 r2 [orig:155 D.7636 ] [155])
+        (zero_extend:SI (mem/s:QI (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167]) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannel+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 730 {thumb2_zero_extendqisi2_v6}
+     (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:167 NVIC_InitStruct ] [167])
+        (nil)))
+
+(insn 84 39 85 5 (set (reg/f:SI 12 ip [184])
+        (const_int 57600 [0xe100])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 57600 [0xe100])
+        (nil)))
+
+(insn 85 84 104 5 (set (zero_extract:SI (reg/f:SI 12 ip [184])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 104 85 42 5 (parallel [
+            (set (reg:SI 1 r1 [orig:157 D.7639 ] [157])
+                (lshiftrt:SI (reg:SI 2 r2 [orig:155 D.7636 ] [155])
+                    (const_int 5 [0x5])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 42 104 105 5 (set (reg:SI 3 r3 [188])
+        (and:SI (reg:SI 2 r2 [orig:155 D.7636 ] [155])
+            (const_int 31 [0x1f]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:161 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 105 42 44 5 (parallel [
+            (set (reg:SI 0 r0 [189])
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:161 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 44 105 47 5 (set (reg:SI 2 r2 [orig:160 D.7641 ] [160])
+        (ashift:SI (reg:SI 0 r0 [189])
+            (reg:SI 3 r3 [188]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:161 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [188])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [189])
+            (expr_list:REG_EQUAL (ashift:SI (const_int 1 [0x1])
+                    (reg:SI 2 r2 [188]))
+                (nil)))))
+
+(insn 47 44 109 5 (set (mem/s/v:SI (plus:SI (mult:SI (reg:SI 1 r1 [orig:157 D.7639 ] [157])
+                    (const_int 4 [0x4]))
+                (reg/f:SI 12 ip [184])) [3 S4 A32])
+        (reg:SI 2 r2 [orig:160 D.7641 ] [160])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 12 ip [184])
+        (expr_list:REG_DEAD (reg:SI 2 r2 [orig:160 D.7641 ] [160])
+            (expr_list:REG_DEAD (reg:SI 1 r1 [orig:157 D.7639 ] [157])
+                (nil)))))
+
+(jump_insn 109 47 110 5 (set (pc)
+        (label_ref 64)) -1
+     (nil)
+ -> 64)
+;; End of basic block 5 -> ( 4)
+;; lr  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+;; live  out 	 4 [r4] 5 [r5] 13 [sp] 14 [lr]
+
+
+;; Succ edge  4 [100.0%]  (can_fallthru)
+
+(barrier 110 109 89)
+
+(note 89 110 92 NOTE_INSN_DELETED)
+
+(note 92 89 0 NOTE_INSN_DELETED)
+
+
+;; Function NVIC_SetVectorTable (NVIC_SetVectorTable)
+
+
+
+try_optimize_cfg iteration 1
+
+
+
+try_optimize_cfg iteration 1
+
+Reordered sequence:
+ 2 bb 2  [10000]
+
+
+NVIC_SetVectorTable
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 14 [lr] 15 [pc] 16 [f0] 17 [f1] 18 [f2] 19 [f3] 20 [f4] 21 [f5] 22 [f6] 23 [f7] 24 [cc] 27 [mv0] 28 [mv1] 29 [mv2] 30 [mv3] 31 [mv4] 32 [mv5] 33 [mv6] 34 [mv7] 35 [mv8] 36 [mv9] 37 [mv10] 38 [mv11] 39 [mv12] 40 [mv13] 41 [mv14] 42 [mv15] 43 [wcgr0] 44 [wcgr1] 45 [wcgr2] 46 [wcgr3] 47 [wr0] 48 [wr1] 49 [wr2] 50 [wr3] 51 [wr4] 52 [wr5] 53 [wr6] 54 [wr7] 55 [wr8] 56 [wr9] 57 [wr10] 58 [wr11] 59 [wr12] 60 [wr13] 61 [wr14] 62 [wr15] 63 [s0] 64 [s1] 65 [s2] 66 [s3] 67 [s4] 68 [s5] 69 [s6] 70 [s7] 71 [s8] 72 [s9] 73 [s10] 74 [s11] 75 [s12] 76 [s13] 77 [s14] 78 [s15] 79 [s16] 80 [s17] 81 [s18] 82 [s19] 83 [s20] 84 [s21] 85 [s22] 86 [s23] 87 [s24] 88 [s25] 89 [s26] 90 [s27] 91 [s28] 92 [s29] 93 [s30] 94 [s31] 95 [d16] 96 [?16] 97 [d17] 98 [?17] 99 [d18] 100 [?18] 101 [d19] 102 [?19] 103 [d20] 104 [?20] 105 [d21] 106 [?21] 107 [d22] 108 [?22] 109 [d23] 110 [?23] 111 [d24] 112 [?24] 113 [d25] 114 [?25] 115 [d26] 116 [?26] 117 [d27] 118 [?27] 119 [d28] 120 [?28] 121 [d29] 122 [?29] 123 [d30] 124 [?30] 125 [d31] 126 [?31] 127 [vfpcc]
+;;  hardware regs used 	 13 [sp]
+;;  regular block artificial uses 	 13 [sp]
+;;  eh block artificial uses 	 13 [sp] 26 [afp]
+;;  entry block defs 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;;  exit block uses 	 13 [sp] 14 [lr]
+;;  regs ever live 	 0[r0] 1[r1] 2[r2] 3[r3] 12[ip]
+;;  ref usage 	r0={1d,1u} r1={2d,2u} r2={2d,1u} r3={3d,2u} r12={1d,1u} r13={1d,2u} r14={1d,1u} r137={1e} 
+;;    total ref usage 22{11d,10u,1e} in 7{7 regular + 0 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 1 [r1] 13 [sp]
+;; lr  def 	 1 [r1] 2 [r2] 3 [r3] 12 [ip]
+;; live  in  	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+;; live  gen 	 1 [r1] 2 [r2] 3 [r3] 12 [ip]
+;; live  kill	
+
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 5 1 19 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 19 5 2 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 19 3 2 NOTE_INSN_DELETED)
+
+(note 3 2 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 7 4 15 2 (set (reg:SI 12 ip [139])
+        (and:SI (reg:SI 1 r1 [ Offset ])
+            (const_int 536870911 [0x1fffffff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 15 7 8 2 (set (reg/f:SI 3 r3 [141])
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 60672 [0xed00])
+        (nil)))
+
+(insn 8 15 16 2 (set (reg:SI 2 r2 [138])
+        (and:SI (reg:SI 12 ip [139])
+            (const_int -128 [0xffffffffffffff80]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [139])
+        (expr_list:REG_EQUAL (and:SI (reg/v:SI 137 [ Offset ])
+                (const_int 536870784 [0x1fffff80]))
+            (nil))))
+
+(insn 16 8 9 2 (set (zero_extract:SI (reg/f:SI 3 r3 [141])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 9 16 12 2 (set (reg:SI 1 r1 [orig:135 D.7617 ] [135])
+        (ior:SI (reg:SI 2 r2 [138])
+            (reg:SI 0 r0 [ NVIC_VectTab ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [138])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [ NVIC_VectTab ])
+            (nil))))
+
+(insn 12 9 20 2 (set (mem/s/v:SI (plus:SI (reg/f:SI 3 r3 [141])
+                (const_int 8 [0x8])) [3 MEM[(struct SCB_Type *)3758157056B].VTOR+0 S4 A32])
+        (reg:SI 1 r1 [orig:135 D.7617 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 3 r3 [141])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [orig:135 D.7617 ] [135])
+            (nil))))
+
+(note 20 12 21 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 21 20 22 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:187 733 {*thumb2_return}
+     (nil)
+ -> return)
+;; End of basic block 2 -> ( 1)
+;; lr  out 	 13 [sp] 14 [lr]
+;; live  out 	 13 [sp] 14 [lr]
+
+
+;; Succ edge  EXIT [100.0%] 
+
+(barrier 22 21 17)
+
+(note 17 22 18 NOTE_INSN_DELETED)
+
+(note 18 17 0 NOTE_INSN_DELETED)
+
+
+;; Function NVIC_SystemLPConfig (NVIC_SystemLPConfig)
+
+
+
+try_optimize_cfg iteration 1
+
+rescanning insn with uid = 8.
+deleting insn with uid = 8.
+rescanning insn with uid = 8.
+deleting insn with uid = 8.
+STC - round 1
+Getting bb 2
+Basic block 2 was visited in trace 0
+  Possible start of next round: 3 (key: -3900)
+Basic block 4 was visited in trace 0
+STC - round 2
+Getting bb 3
+Basic block 3 was visited in trace 1
+STC - round 3
+STC - round 4
+Trace 1 (round 1):  2 [10000] 4 [6100]
+Trace 2 (round 2):  3 [3900]
+Final order:
+2 4 3 
+Reordered sequence:
+ 2 bb 2  [10000]
+ 3 bb 4  [6100]
+ 4 bb 3  [3900]
+
+5 basic blocks, 5 edges.
+
+Basic block 0 , next 2, loop_depth 0, count 0, freq 10000, maybe hot.
+Predecessors: 
+;; bb 0 artificial_defs: { d-1(0){ }d-1(1){ }d-1(2){ }d-1(3){ }d-1(13){ }d-1(14){ }}
+;; bb 0 artificial_uses: { }
+;; lr  in  	
+;; lr  use 	
+;; lr  def 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  in  	
+;; live  gen 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  kill	
+
+Successors:  2 [100.0%]  (fallthru)
+;; lr  out 	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+;; live  out 	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+
+
+Basic block 2 , prev 0, next 3, loop_depth 0, count 0, freq 10000, maybe hot.
+Predecessors:  ENTRY [100.0%]  (fallthru)
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+;; lr  use 	 1 [r1] 13 [sp]
+;; lr  def 	 2 [r2] 3 [r3] 24 [cc]
+;; live  in  	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+;; live  gen 	 2 [r2] 3 [r3]
+;; live  kill	 24 [cc]
+
+Successors:  4 [39.0%]  (fallthru,can_fallthru) 3 [61.0%]  (can_fallthru)
+;; lr  out 	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  out 	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+
+
+Basic block 3 , prev 2, next 4, loop_depth 0, count 0, freq 6100, maybe hot.
+Predecessors:  2 [61.0%]  (can_fallthru)
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 2 [r2] 3 [r3] 13 [sp]
+;; lr  def 	 1 [r1]
+;; live  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  gen 	 1 [r1]
+;; live  kill	
+
+Successors:  EXIT [100.0%] 
+;; lr  out 	 13 [sp] 14 [lr]
+;; live  out 	 13 [sp] 14 [lr]
+
+
+Basic block 4 , prev 3, next 1, loop_depth 0, count 0, freq 3900, maybe hot.
+Predecessors:  2 [39.0%]  (fallthru,can_fallthru)
+;; bb 4 artificial_defs: { }
+;; bb 4 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 2 [r2] 3 [r3] 13 [sp]
+;; lr  def 	 0 [r0]
+;; live  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  gen 	 0 [r0]
+;; live  kill	
+
+Successors:  EXIT [100.0%] 
+;; lr  out 	 13 [sp] 14 [lr]
+;; live  out 	 13 [sp] 14 [lr]
+
+
+Basic block 1 , prev 4, loop_depth 0, count 0, freq 10000, maybe hot.
+Predecessors:  3 [100.0%]  4 [100.0%] 
+;; bb 1 artificial_defs: { }
+;; bb 1 artificial_uses: { u-1(13){ }u-1(14){ }}
+;; lr  in  	 13 [sp] 14 [lr]
+;; lr  use 	 13 [sp] 14 [lr]
+;; lr  def 	
+;; live  in  	 13 [sp] 14 [lr]
+;; live  gen 	
+;; live  kill	
+
+Successors: 
+;; lr  out 	
+;; live  out 	
+
+
+
+
+try_optimize_cfg iteration 1
+
+Emitting label for block 4
+rescanning insn with uid = 8.
+deleting insn with uid = 8.
+Reordered sequence:
+ 2 bb 2  [10000]
+ 3 bb 3  [6100]
+ 4 bb 4  [3900]
+
+
+NVIC_SystemLPConfig
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 14 [lr] 15 [pc] 16 [f0] 17 [f1] 18 [f2] 19 [f3] 20 [f4] 21 [f5] 22 [f6] 23 [f7] 24 [cc] 27 [mv0] 28 [mv1] 29 [mv2] 30 [mv3] 31 [mv4] 32 [mv5] 33 [mv6] 34 [mv7] 35 [mv8] 36 [mv9] 37 [mv10] 38 [mv11] 39 [mv12] 40 [mv13] 41 [mv14] 42 [mv15] 43 [wcgr0] 44 [wcgr1] 45 [wcgr2] 46 [wcgr3] 47 [wr0] 48 [wr1] 49 [wr2] 50 [wr3] 51 [wr4] 52 [wr5] 53 [wr6] 54 [wr7] 55 [wr8] 56 [wr9] 57 [wr10] 58 [wr11] 59 [wr12] 60 [wr13] 61 [wr14] 62 [wr15] 63 [s0] 64 [s1] 65 [s2] 66 [s3] 67 [s4] 68 [s5] 69 [s6] 70 [s7] 71 [s8] 72 [s9] 73 [s10] 74 [s11] 75 [s12] 76 [s13] 77 [s14] 78 [s15] 79 [s16] 80 [s17] 81 [s18] 82 [s19] 83 [s20] 84 [s21] 85 [s22] 86 [s23] 87 [s24] 88 [s25] 89 [s26] 90 [s27] 91 [s28] 92 [s29] 93 [s30] 94 [s31] 95 [d16] 96 [?16] 97 [d17] 98 [?17] 99 [d18] 100 [?18] 101 [d19] 102 [?19] 103 [d20] 104 [?20] 105 [d21] 106 [?21] 107 [d22] 108 [?22] 109 [d23] 110 [?23] 111 [d24] 112 [?24] 113 [d25] 114 [?25] 115 [d26] 116 [?26] 117 [d27] 118 [?27] 119 [d28] 120 [?28] 121 [d29] 122 [?29] 123 [d30] 124 [?30] 125 [d31] 126 [?31] 127 [vfpcc]
+;;  hardware regs used 	 13 [sp]
+;;  regular block artificial uses 	 13 [sp]
+;;  eh block artificial uses 	 13 [sp] 26 [afp]
+;;  entry block defs 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;;  exit block uses 	 13 [sp] 14 [lr]
+;;  regs ever live 	 0[r0] 1[r1] 2[r2] 3[r3] 24[cc]
+;;  ref usage 	r0={2d,3u} r1={2d,2u} r2={2d,2u} r3={3d,4u} r13={1d,4u} r14={1d,1u} r24={1d} 
+;;    total ref usage 28{12d,16u,0e} in 10{10 regular + 0 call} insns.
+(note 1 0 5 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+;; lr  use 	 1 [r1] 13 [sp]
+;; lr  def 	 2 [r2] 3 [r3] 24 [cc]
+;; live  in  	 0 [r0] 1 [r1] 13 [sp] 14 [lr]
+;; live  gen 	 2 [r2] 3 [r3]
+;; live  kill	 24 [cc]
+
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 5 1 41 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 41 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 41 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 37 2 NOTE_INSN_DELETED)
+
+(insn 37 7 38 2 (set (reg/f:SI 3 r3 [143])
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 60672 [0xed00])
+        (nil)))
+
+(insn 38 37 12 2 (set (zero_extract:SI (reg/f:SI 3 r3 [143])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 12 38 8 2 (set (reg:SI 2 r2 [orig:134 D.7608 ] [134])
+        (mem/s/v:SI (plus:SI (reg/f:SI 3 r3 [143])
+                (const_int 16 [0x10])) [3 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (mem/s/v:SI (const_int -536810224 [0xffffffffe000ed10]) [3 S4 A32])
+        (nil)))
+
+(jump_insn 8 12 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 45)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:205 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 45)
+;; End of basic block 2 -> ( 4 3)
+;; lr  out 	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  out 	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+
+
+;; Succ edge  4 [39.0%]  (can_fallthru)
+;; Succ edge  3 [61.0%]  (fallthru,can_fallthru)
+
+;; Start of basic block ( 2) -> 3
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 2 [r2] 3 [r3] 13 [sp]
+;; lr  def 	 1 [r1]
+;; live  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  gen 	 1 [r1]
+;; live  kill	
+
+;; Pred edge  2 [61.0%]  (fallthru,can_fallthru)
+(code_label 19 8 20 3 9 "" [0 uses])
+
+(note 20 19 24 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 24 20 25 3 NOTE_INSN_DELETED)
+
+(insn 25 24 28 3 (set (reg:SI 1 r1 [orig:140 D.7614 ] [140])
+        (and:SI (not:SI (reg/v:SI 0 r0 [orig:141 LowPowerMode ] [141]))
+            (reg:SI 2 r2 [orig:137 D.7612 ] [137]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 83 {andsi_notsi_si}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:137 D.7612 ] [137])
+        (nil)))
+
+(insn 28 25 44 3 (set (mem/s/v:SI (plus:SI (reg/f:SI 3 r3 [145])
+                (const_int 16 [0x10])) [3 S4 A32])
+        (reg:SI 1 r1 [orig:140 D.7614 ] [140])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 3 r3 [145])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [orig:140 D.7614 ] [140])
+            (nil))))
+
+(jump_insn 44 28 43 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+;; End of basic block 3 -> ( 1)
+;; lr  out 	 13 [sp] 14 [lr]
+;; live  out 	 13 [sp] 14 [lr]
+
+
+;; Succ edge  EXIT [100.0%] 
+
+(barrier 43 44 45)
+
+;; Start of basic block ( 2) -> 4
+;; bb 4 artificial_defs: { }
+;; bb 4 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 2 [r2] 3 [r3] 13 [sp]
+;; lr  def 	 0 [r0]
+;; live  in  	 0 [r0] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;; live  gen 	 0 [r0]
+;; live  kill	
+
+;; Pred edge  2 [39.0%]  (can_fallthru)
+(code_label 45 43 9 4 11 "" [1 uses])
+
+(note 9 45 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 13 9 16 4 (set (reg:SI 0 r0 [orig:136 D.7610 ] [136])
+        (ior:SI (reg/v:SI 0 r0 [orig:141 LowPowerMode ] [141])
+            (reg:SI 2 r2 [orig:134 D.7608 ] [134]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:134 D.7608 ] [134])
+        (nil)))
+
+(insn 16 13 42 4 (set (mem/s/v:SI (plus:SI (reg/f:SI 3 r3 [143])
+                (const_int 16 [0x10])) [3 S4 A32])
+        (reg:SI 0 r0 [orig:136 D.7610 ] [136])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 3 r3 [143])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [orig:136 D.7610 ] [136])
+            (nil))))
+
+(jump_insn 42 16 34 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+;; End of basic block 4 -> ( 1)
+;; lr  out 	 13 [sp] 14 [lr]
+;; live  out 	 13 [sp] 14 [lr]
+
+
+;; Succ edge  EXIT [100.0%] 
+
+(barrier 34 42 39)
+
+(note 39 34 40 NOTE_INSN_DELETED)
+
+(note 40 39 0 NOTE_INSN_DELETED)
+
+
+;; Function SysTick_CLKSourceConfig (SysTick_CLKSourceConfig)
+
+
+
+try_optimize_cfg iteration 1
+
+
+
+try_optimize_cfg iteration 1
+
+Reordered sequence:
+ 2 bb 2  [10000]
+
+
+SysTick_CLKSourceConfig
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 14 [lr] 15 [pc] 16 [f0] 17 [f1] 18 [f2] 19 [f3] 20 [f4] 21 [f5] 22 [f6] 23 [f7] 24 [cc] 27 [mv0] 28 [mv1] 29 [mv2] 30 [mv3] 31 [mv4] 32 [mv5] 33 [mv6] 34 [mv7] 35 [mv8] 36 [mv9] 37 [mv10] 38 [mv11] 39 [mv12] 40 [mv13] 41 [mv14] 42 [mv15] 43 [wcgr0] 44 [wcgr1] 45 [wcgr2] 46 [wcgr3] 47 [wr0] 48 [wr1] 49 [wr2] 50 [wr3] 51 [wr4] 52 [wr5] 53 [wr6] 54 [wr7] 55 [wr8] 56 [wr9] 57 [wr10] 58 [wr11] 59 [wr12] 60 [wr13] 61 [wr14] 62 [wr15] 63 [s0] 64 [s1] 65 [s2] 66 [s3] 67 [s4] 68 [s5] 69 [s6] 70 [s7] 71 [s8] 72 [s9] 73 [s10] 74 [s11] 75 [s12] 76 [s13] 77 [s14] 78 [s15] 79 [s16] 80 [s17] 81 [s18] 82 [s19] 83 [s20] 84 [s21] 85 [s22] 86 [s23] 87 [s24] 88 [s25] 89 [s26] 90 [s27] 91 [s28] 92 [s29] 93 [s30] 94 [s31] 95 [d16] 96 [?16] 97 [d17] 98 [?17] 99 [d18] 100 [?18] 101 [d19] 102 [?19] 103 [d20] 104 [?20] 105 [d21] 106 [?21] 107 [d22] 108 [?22] 109 [d23] 110 [?23] 111 [d24] 112 [?24] 113 [d25] 114 [?25] 115 [d26] 116 [?26] 117 [d27] 118 [?27] 119 [d28] 120 [?28] 121 [d29] 122 [?29] 123 [d30] 124 [?30] 125 [d31] 126 [?31] 127 [vfpcc]
+;;  hardware regs used 	 13 [sp]
+;;  regular block artificial uses 	 13 [sp]
+;;  eh block artificial uses 	 13 [sp] 26 [afp]
+;;  entry block defs 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 13 [sp] 14 [lr]
+;;  exit block uses 	 13 [sp] 14 [lr]
+;;  regs ever live 	 0[r0] 2[r2] 3[r3] 24[cc]
+;;  ref usage 	r0={1d,1u} r1={1d} r2={4d,5u} r3={3d,3u} r13={1d,2u} r14={1d,1u} r24={1d,2u} 
+;;    total ref usage 26{12d,14u,0e} in 8{8 regular + 0 call} insns.
+(note 1 0 4 NOTE_INSN_DELETED)
+
+;; Start of basic block ( 0) -> 2
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u-1(13){ }}
+;; lr  in  	 0 [r0] 13 [sp] 14 [lr]
+;; lr  use 	 0 [r0] 13 [sp]
+;; lr  def 	 2 [r2] 3 [r3] 24 [cc]
+;; live  in  	 0 [r0] 13 [sp] 14 [lr]
+;; live  gen 	 2 [r2] 3 [r3] 24 [cc]
+;; live  kill	
+
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 4 1 43 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 43 4 2 2 NOTE_INSN_PROLOGUE_END)
+
+(note 2 43 3 2 NOTE_INSN_DELETED)
+
+(note 3 2 36 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 36 3 37 2 (set (reg/f:SI 3 r3 [139])
+        (const_int 57360 [0xe010])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 57360 [0xe010])
+        (nil)))
+
+(insn 37 36 11 2 (set (zero_extract:SI (reg/f:SI 3 r3 [139])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 11 37 6 2 (set (reg:SI 2 r2 [orig:134 D.7600 ] [134])
+        (mem/s/v:SI (reg/f:SI 3 r3 [139]) [3 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (mem/s/v:SI (const_int -536813552 [0xffffffffe000e010]) [3 S4 A32])
+        (nil)))
+
+(insn 6 11 12 2 (set (reg:CC 24 cc)
+        (compare:CC (reg:SI 0 r0 [ SysTick_CLKSource ])
+            (const_int 4 [0x4]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:227 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [ SysTick_CLKSource ])
+        (nil)))
+
+(insn 12 6 23 2 (cond_exec (eq (reg:CC 24 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 2 r2 [orig:135 D.7601 ] [135])
+            (ior:SI (reg:SI 2 r2 [orig:134 D.7600 ] [134])
+                (const_int 4 [0x4])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 2804 {*p *iorsi3_insn}
+     (nil))
+
+(insn 23 12 26 2 (cond_exec (ne (reg:CC 24 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 2 r2 [orig:137 D.7604 ] [137])
+            (and:SI (reg:SI 2 r2 [orig:136 D.7603 ] [136])
+                (const_int -5 [0xfffffffffffffffb])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 2789 {*p *arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (nil)))
+
+(insn 26 23 46 2 (set (mem/s/v:SI (reg/f:SI 3 r3 [141]) [3 S4 A32])
+        (reg:SI 2 r2 [orig:137 D.7604 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/f:SI 3 r3 [141])
+        (expr_list:REG_DEAD (reg:SI 2 r2 [orig:137 D.7604 ] [137])
+            (nil))))
+
+(jump_insn 46 26 45 2 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+;; End of basic block 2 -> ( 1)
+;; lr  out 	 13 [sp] 14 [lr]
+;; live  out 	 13 [sp] 14 [lr]
+
+
+;; Succ edge  EXIT [100.0%] 
+
+(barrier 45 46 39)
+
+(note 39 45 40 NOTE_INSN_DELETED)
+
+(note 40 39 0 NOTE_INSN_DELETED)
+

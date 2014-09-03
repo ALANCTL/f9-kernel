@@ -1,0 +1,156 @@
+
+;; Function RCC_DeInit (RCC_DeInit)
+
+
+;; Function RCC_HSEConfig (RCC_HSEConfig)
+
+
+;; Function RCC_WaitForHSEStartUp (RCC_WaitForHSEStartUp)
+
+
+;; Function RCC_AdjustHSICalibrationValue (RCC_AdjustHSICalibrationValue)
+
+
+;; Function RCC_HSICmd (RCC_HSICmd)
+
+
+;; Function RCC_LSEConfig (RCC_LSEConfig)
+
+
+;; Function RCC_LSICmd (RCC_LSICmd)
+
+
+;; Function RCC_PLLConfig (RCC_PLLConfig)
+
+
+;; Function RCC_PLLCmd (RCC_PLLCmd)
+
+
+;; Function RCC_PLLI2SConfig (RCC_PLLI2SConfig)
+
+
+;; Function RCC_PLLI2SCmd (RCC_PLLI2SCmd)
+
+
+;; Function RCC_PLLSAIConfig (RCC_PLLSAIConfig)
+
+
+;; Function RCC_PLLSAICmd (RCC_PLLSAICmd)
+
+
+;; Function RCC_ClockSecuritySystemCmd (RCC_ClockSecuritySystemCmd)
+
+
+;; Function RCC_MCO1Config (RCC_MCO1Config)
+
+
+;; Function RCC_MCO2Config (RCC_MCO2Config)
+
+
+;; Function RCC_SYSCLKConfig (RCC_SYSCLKConfig)
+
+
+;; Function RCC_GetSYSCLKSource (RCC_GetSYSCLKSource)
+
+
+;; Function RCC_HCLKConfig (RCC_HCLKConfig)
+
+
+;; Function RCC_PCLK1Config (RCC_PCLK1Config)
+
+
+;; Function RCC_PCLK2Config (RCC_PCLK2Config)
+
+
+;; Function RCC_GetClocksFreq (RCC_GetClocksFreq)
+
+
+;; Function RCC_RTCCLKConfig (RCC_RTCCLKConfig)
+
+
+;; Function RCC_RTCCLKCmd (RCC_RTCCLKCmd)
+
+
+;; Function RCC_BackupResetCmd (RCC_BackupResetCmd)
+
+
+;; Function RCC_I2SCLKConfig (RCC_I2SCLKConfig)
+
+
+;; Function RCC_SAIPLLI2SClkDivConfig (RCC_SAIPLLI2SClkDivConfig)
+
+
+;; Function RCC_SAIPLLSAIClkDivConfig (RCC_SAIPLLSAIClkDivConfig)
+
+
+;; Function RCC_SAIBlockACLKConfig (RCC_SAIBlockACLKConfig)
+
+
+;; Function RCC_SAIBlockBCLKConfig (RCC_SAIBlockBCLKConfig)
+
+
+;; Function RCC_LTDCCLKDivConfig (RCC_LTDCCLKDivConfig)
+
+
+;; Function RCC_TIMCLKPresConfig (RCC_TIMCLKPresConfig)
+
+
+;; Function RCC_AHB1PeriphClockCmd (RCC_AHB1PeriphClockCmd)
+
+
+;; Function RCC_AHB2PeriphClockCmd (RCC_AHB2PeriphClockCmd)
+
+
+;; Function RCC_AHB3PeriphClockCmd (RCC_AHB3PeriphClockCmd)
+
+
+;; Function RCC_APB1PeriphClockCmd (RCC_APB1PeriphClockCmd)
+
+
+;; Function RCC_APB2PeriphClockCmd (RCC_APB2PeriphClockCmd)
+
+
+;; Function RCC_AHB1PeriphResetCmd (RCC_AHB1PeriphResetCmd)
+
+
+;; Function RCC_AHB2PeriphResetCmd (RCC_AHB2PeriphResetCmd)
+
+
+;; Function RCC_AHB3PeriphResetCmd (RCC_AHB3PeriphResetCmd)
+
+
+;; Function RCC_APB1PeriphResetCmd (RCC_APB1PeriphResetCmd)
+
+
+;; Function RCC_APB2PeriphResetCmd (RCC_APB2PeriphResetCmd)
+
+
+;; Function RCC_AHB1PeriphClockLPModeCmd (RCC_AHB1PeriphClockLPModeCmd)
+
+
+;; Function RCC_AHB2PeriphClockLPModeCmd (RCC_AHB2PeriphClockLPModeCmd)
+
+
+;; Function RCC_AHB3PeriphClockLPModeCmd (RCC_AHB3PeriphClockLPModeCmd)
+
+
+;; Function RCC_APB1PeriphClockLPModeCmd (RCC_APB1PeriphClockLPModeCmd)
+
+
+;; Function RCC_APB2PeriphClockLPModeCmd (RCC_APB2PeriphClockLPModeCmd)
+
+
+;; Function RCC_ITConfig (RCC_ITConfig)
+
+
+;; Function RCC_GetFlagStatus (RCC_GetFlagStatus)
+
+
+;; Function RCC_ClearFlag (RCC_ClearFlag)
+
+
+;; Function RCC_GetITStatus (RCC_GetITStatus)
+
+
+;; Function RCC_ClearITPendingBit (RCC_ClearITPendingBit)
+

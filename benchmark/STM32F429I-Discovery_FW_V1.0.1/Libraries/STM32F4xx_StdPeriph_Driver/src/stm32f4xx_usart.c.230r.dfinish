@@ -1,0 +1,87 @@
+
+;; Function USART_DeInit (USART_DeInit)
+
+
+;; Function USART_Init (USART_Init)
+
+
+;; Function USART_StructInit (USART_StructInit)
+
+
+;; Function USART_ClockInit (USART_ClockInit)
+
+
+;; Function USART_ClockStructInit (USART_ClockStructInit)
+
+
+;; Function USART_Cmd (USART_Cmd)
+
+
+;; Function USART_SetPrescaler (USART_SetPrescaler)
+
+
+;; Function USART_OverSampling8Cmd (USART_OverSampling8Cmd)
+
+
+;; Function USART_OneBitMethodCmd (USART_OneBitMethodCmd)
+
+
+;; Function USART_SendData (USART_SendData)
+
+
+;; Function USART_ReceiveData (USART_ReceiveData)
+
+
+;; Function USART_SetAddress (USART_SetAddress)
+
+
+;; Function USART_ReceiverWakeUpCmd (USART_ReceiverWakeUpCmd)
+
+
+;; Function USART_WakeUpConfig (USART_WakeUpConfig)
+
+
+;; Function USART_LINBreakDetectLengthConfig (USART_LINBreakDetectLengthConfig)
+
+
+;; Function USART_LINCmd (USART_LINCmd)
+
+
+;; Function USART_SendBreak (USART_SendBreak)
+
+
+;; Function USART_HalfDuplexCmd (USART_HalfDuplexCmd)
+
+
+;; Function USART_SetGuardTime (USART_SetGuardTime)
+
+
+;; Function USART_SmartCardCmd (USART_SmartCardCmd)
+
+
+;; Function USART_SmartCardNACKCmd (USART_SmartCardNACKCmd)
+
+
+;; Function USART_IrDAConfig (USART_IrDAConfig)
+
+
+;; Function USART_IrDACmd (USART_IrDACmd)
+
+
+;; Function USART_DMACmd (USART_DMACmd)
+
+
+;; Function USART_ITConfig (USART_ITConfig)
+
+
+;; Function USART_GetFlagStatus (USART_GetFlagStatus)
+
+
+;; Function USART_ClearFlag (USART_ClearFlag)
+
+
+;; Function USART_GetITStatus (USART_GetITStatus)
+
+
+;; Function USART_ClearITPendingBit (USART_ClearITPendingBit)
+

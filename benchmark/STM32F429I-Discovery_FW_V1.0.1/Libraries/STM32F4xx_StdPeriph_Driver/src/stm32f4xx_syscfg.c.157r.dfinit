@@ -1,0 +1,23 @@
+
+;; Function SYSCFG_DeInit (SYSCFG_DeInit)
+
+verify found no changes in insn with uid = 7.
+verify found no changes in insn with uid = 10.
+
+;; Function SYSCFG_MemoryRemapConfig (SYSCFG_MemoryRemapConfig)
+
+
+;; Function SYSCFG_MemorySwappingBank (SYSCFG_MemorySwappingBank)
+
+
+;; Function SYSCFG_EXTILineConfig (SYSCFG_EXTILineConfig)
+
+
+;; Function SYSCFG_ETH_MediaInterfaceConfig (SYSCFG_ETH_MediaInterfaceConfig)
+
+
+;; Function SYSCFG_CompensationCellCmd (SYSCFG_CompensationCellCmd)
+
+
+;; Function SYSCFG_GetCompensationCellStatus (SYSCFG_GetCompensationCellStatus)
+

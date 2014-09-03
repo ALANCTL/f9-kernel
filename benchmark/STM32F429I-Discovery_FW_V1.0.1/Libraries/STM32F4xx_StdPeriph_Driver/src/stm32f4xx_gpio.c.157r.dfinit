@@ -1,0 +1,64 @@
+
+;; Function GPIO_DeInit (GPIO_DeInit)
+
+verify found no changes in insn with uid = 13.
+verify found no changes in insn with uid = 16.
+verify found no changes in insn with uid = 27.
+verify found no changes in insn with uid = 30.
+verify found no changes in insn with uid = 41.
+verify found no changes in insn with uid = 44.
+verify found no changes in insn with uid = 55.
+verify found no changes in insn with uid = 58.
+verify found no changes in insn with uid = 69.
+verify found no changes in insn with uid = 72.
+verify found no changes in insn with uid = 83.
+verify found no changes in insn with uid = 86.
+verify found no changes in insn with uid = 97.
+verify found no changes in insn with uid = 100.
+verify found no changes in insn with uid = 111.
+verify found no changes in insn with uid = 114.
+verify found no changes in insn with uid = 125.
+verify found no changes in insn with uid = 128.
+verify found no changes in insn with uid = 139.
+verify found no changes in insn with uid = 142.
+verify found no changes in insn with uid = 153.
+verify found no changes in insn with uid = 156.
+
+;; Function GPIO_Init (GPIO_Init)
+
+
+;; Function GPIO_StructInit (GPIO_StructInit)
+
+
+;; Function GPIO_PinLockConfig (GPIO_PinLockConfig)
+
+
+;; Function GPIO_ReadInputDataBit (GPIO_ReadInputDataBit)
+
+
+;; Function GPIO_ReadInputData (GPIO_ReadInputData)
+
+
+;; Function GPIO_ReadOutputDataBit (GPIO_ReadOutputDataBit)
+
+
+;; Function GPIO_ReadOutputData (GPIO_ReadOutputData)
+
+
+;; Function GPIO_SetBits (GPIO_SetBits)
+
+
+;; Function GPIO_ResetBits (GPIO_ResetBits)
+
+
+;; Function GPIO_WriteBit (GPIO_WriteBit)
+
+
+;; Function GPIO_Write (GPIO_Write)
+
+
+;; Function GPIO_ToggleBits (GPIO_ToggleBits)
+
+
+;; Function GPIO_PinAFConfig (GPIO_PinAFConfig)
+

@@ -1,0 +1,498 @@
+
+;; Function GPIO_Init (GPIO_Init)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+;; Following path with 5 sets: 2 
+deferring rescan insn with uid = 14.
+;; Following path with 5 sets: 3 
+;; Following path with 16 sets: 4 
+;; Following path with 18 sets: 5 
+;; Following path with 8 sets: 6 
+;; Following path with 4 sets: 7 
+deferring deletion of insn with uid = 27.
+Deleted 1 trivially dead insns
+
+
+GPIO_Init
+
+Dataflow summary:
+;;  invalidated by call 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 12 [ip] 14 [lr] 15 [pc] 16 [f0] 17 [f1] 18 [f2] 19 [f3] 20 [f4] 21 [f5] 22 [f6] 23 [f7] 24 [cc] 27 [mv0] 28 [mv1] 29 [mv2] 30 [mv3] 31 [mv4] 32 [mv5] 33 [mv6] 34 [mv7] 35 [mv8] 36 [mv9] 37 [mv10] 38 [mv11] 39 [mv12] 40 [mv13] 41 [mv14] 42 [mv15] 43 [wcgr0] 44 [wcgr1] 45 [wcgr2] 46 [wcgr3] 47 [wr0] 48 [wr1] 49 [wr2] 50 [wr3] 51 [wr4] 52 [wr5] 53 [wr6] 54 [wr7] 55 [wr8] 56 [wr9] 57 [wr10] 58 [wr11] 59 [wr12] 60 [wr13] 61 [wr14] 62 [wr15] 63 [s0] 64 [s1] 65 [s2] 66 [s3] 67 [s4] 68 [s5] 69 [s6] 70 [s7] 71 [s8] 72 [s9] 73 [s10] 74 [s11] 75 [s12] 76 [s13] 77 [s14] 78 [s15] 79 [s16] 80 [s17] 81 [s18] 82 [s19] 83 [s20] 84 [s21] 85 [s22] 86 [s23] 87 [s24] 88 [s25] 89 [s26] 90 [s27] 91 [s28] 92 [s29] 93 [s30] 94 [s31] 95 [d16] 96 [?16] 97 [d17] 98 [?17] 99 [d18] 100 [?18] 101 [d19] 102 [?19] 103 [d20] 104 [?20] 105 [d21] 106 [?21] 107 [d22] 108 [?22] 109 [d23] 110 [?23] 111 [d24] 112 [?24] 113 [d25] 114 [?25] 115 [d26] 116 [?26] 117 [d27] 118 [?27] 119 [d28] 120 [?28] 121 [d29] 122 [?29] 123 [d30] 124 [?30] 125 [d31] 126 [?31] 127 [vfpcc]
+;;  hardware regs used 	 13 [sp] 25 [sfp] 26 [afp]
+;;  regular block artificial uses 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp]
+;;  eh block artificial uses 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp]
+;;  entry block defs 	 0 [r0] 1 [r1] 2 [r2] 3 [r3] 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp]
+;;  exit block uses 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp]
+;;  regs ever live 	 0[r0] 1[r1] 24[cc]
+;;  ref usage 	r0={1d,1u} r1={1d,1u} r2={1d} r3={1d} r7={1d,8u} r13={1d,8u} r14={1d,1u} r24={3d,3u} r25={1d,8u} r26={1d,7u} r143={1d,2u} r144={1d,2u} r145={1d,1u} r146={1d} r148={1d,3u} r149={1d,1u} r150={1d,1u} r151={1d,2u} r156={1d,1u} r159={1d,1u} r161={2d,4u,1e} r162={1d,1u} r163={1d,1u} r168={1d,1u} r169={1d,1u} r171={1d,1u} r172={1d,1u} r180={1d,1u} r181={1d,1u} r182={2d,6u,1e} r183={1d,1u} r184={1d,1u} r187={1d,1u} r189={1d,1u} r194={1d,16u} r195={1d,5u} r196={1d,1u} r197={1d,1u} r198={1d,1u} r199={1d,1u} r200={1d,1u} r201={1d,1u} r202={1d,1u} r203={1d,1u} r204={1d,1u} r205={1d,1u} r206={1d,1u} r207={1d,1u} r208={1d,1u} r209={1d,1u} 
+;;    total ref usage 164{54d,108u,2e} in 55{55 regular + 0 call} insns.
+;; Start of basic block ( 0) -> 2
+;; bb 2 artificial_defs: { }
+;; bb 2 artificial_uses: { u0(7){ }u1(13){ }u2(25){ }u3(26){ }}
+;; lr  in  	 0 [r0] 1 [r1] 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp]
+;; lr  use 	 0 [r0] 1 [r1] 7 [r7] 13 [sp] 25 [sfp] 26 [afp]
+;; lr  def 	 161 182 187 194 195
+;; live  in  	 0 [r0] 1 [r1] 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp]
+;; live  gen 	 161 182 187 194 195
+;; live  kill	
+
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 15 0 10 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 15 11 2 (set (reg/v/f:SI 194 [ GPIOx ])
+        (reg:SI 0 r0 [ GPIOx ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:203 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [ GPIOx ])
+        (nil)))
+
+(insn 11 10 12 2 (set (reg/v/f:SI 195 [ GPIO_InitStruct ])
+        (reg:SI 1 r1 [ GPIO_InitStruct ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:203 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ GPIO_InitStruct ])
+        (nil)))
+
+(note 12 11 17 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 17 12 13 2 (set (reg:SI 187 [ pretmp.14 ])
+        (mem/s:SI (reg/v/f:SI 195 [ GPIO_InitStruct ]) [3 GPIO_InitStruct_8(D)->GPIO_Pin+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:214 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 13 17 14 2 (set (reg:SI 182 [ ivtmp.36 ])
+        (const_int 0 [0])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:203 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 14 13 75 2 (set (reg/v:SI 161 [ pinpos ])
+        (reg:SI 182 [ ivtmp.36 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:214 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 0 [0])
+        (nil)))
+;; End of basic block 2 -> ( 3)
+;; lr  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+;; live  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+
+
+;; Succ edge  3 [100.0%]  (fallthru)
+
+;; Start of basic block ( 7 2) -> 3
+;; bb 3 artificial_defs: { }
+;; bb 3 artificial_uses: { u8(7){ }u9(13){ }u10(25){ }u11(26){ }}
+;; lr  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+;; lr  use 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp] 161 187
+;; lr  def 	 24 [cc] 143 144 196
+;; live  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+;; live  gen 	 24 [cc] 143 144 196
+;; live  kill	
+
+;; Pred edge  7 [93.8%]  (dfs_back)
+;; Pred edge  2 [100.0%]  (fallthru)
+(code_label 75 14 18 3 28 "" [1 uses])
+
+(note 18 75 20 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 20 18 21 3 (set (reg:SI 196)
+        (const_int 1 [0x1])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:216 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 21 20 22 3 (set (reg/v:SI 143 [ pos ])
+        (ashift:SI (reg:SI 196)
+            (reg/v:SI 161 [ pinpos ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:216 119 {*arm_shiftsi3}
+     (expr_list:REG_EQUAL (ashift:SI (const_int 1 [0x1])
+            (reg/v:SI 161 [ pinpos ]))
+        (expr_list:REG_DEAD (reg:SI 196)
+            (nil))))
+
+(insn 22 21 23 3 (set (reg/v:SI 144 [ currentpin ])
+        (and:SI (reg/v:SI 143 [ pos ])
+            (reg:SI 187 [ pretmp.14 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:218 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 23 22 24 3 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 144 [ currentpin ])
+            (reg/v:SI 143 [ pos ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:220 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg/v:SI 143 [ pos ])
+        (nil)))
+
+(jump_insn 24 23 25 3 (set (pc)
+        (if_then_else (ne (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref 71)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:220 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 7200 [0x1c20])
+            (nil)))
+ -> 71)
+;; End of basic block 3 -> ( 4 7)
+;; lr  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 161 182 187 194 195
+;; live  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 161 182 187 194 195
+
+
+;; Succ edge  4 [28.0%]  (fallthru)
+;; Succ edge  7 [72.0%] 
+
+;; Start of basic block ( 3) -> 4
+;; bb 4 artificial_defs: { }
+;; bb 4 artificial_uses: { u20(7){ }u21(13){ }u22(25){ }u23(26){ }}
+;; lr  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 161 182 187 194 195
+;; lr  use 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp] 182 194 195
+;; lr  def 	 24 [cc] 145 146 148 149 150 151 156 197 198 199 200 201
+;; live  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 161 182 187 194 195
+;; live  gen 	 24 [cc] 145 146 148 149 150 151 156 197 198 199 200 201
+;; live  kill	
+
+;; Pred edge  3 [28.0%]  (fallthru)
+(note 25 24 26 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 26 25 28 4 (set (reg:SI 145 [ D.7695 ])
+        (mem/s/v:SI (reg/v/f:SI 194 [ GPIOx ]) [3 GPIOx_11(D)->MODER+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:222 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 28 26 29 4 (set (reg:SI 198)
+        (const_int 3 [0x3])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:222 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 29 28 30 4 (set (reg:SI 197)
+        (ashift:SI (reg:SI 198)
+            (reg:SI 182 [ ivtmp.36 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:222 119 {*arm_shiftsi3}
+     (expr_list:REG_EQUAL (ashift:SI (const_int 3 [0x3])
+            (reg:SI 182 [ ivtmp.36 ]))
+        (expr_list:REG_DEAD (reg:SI 198)
+            (nil))))
+
+(insn 30 29 31 4 (set (reg:SI 148 [ D.7699 ])
+        (not:SI (reg:SI 197))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:222 143 {*arm_one_cmplsi2}
+     (expr_list:REG_DEAD (reg:SI 197)
+        (nil)))
+
+(insn 31 30 32 4 (set (reg:SI 149 [ D.7700 ])
+        (and:SI (reg:SI 148 [ D.7699 ])
+            (reg:SI 145 [ D.7695 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:222 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 145 [ D.7695 ])
+        (nil)))
+
+(insn 32 31 33 4 (set (mem/s/v:SI (reg/v/f:SI 194 [ GPIOx ]) [3 GPIOx_11(D)->MODER+0 S4 A32])
+        (reg:SI 149 [ D.7700 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:222 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 149 [ D.7700 ])
+        (nil)))
+
+(insn 33 32 34 4 (set (reg:SI 150 [ D.7701 ])
+        (mem/s/v:SI (reg/v/f:SI 194 [ GPIOx ]) [3 GPIOx_11(D)->MODER+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:223 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 34 33 35 4 (set (reg:SI 151 [ D.7702 ])
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 195 [ GPIO_InitStruct ])
+                    (const_int 4 [0x4])) [7 GPIO_InitStruct_8(D)->GPIO_Mode+0 S1 A32]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:223 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 35 34 36 4 (set (reg:SI 199)
+        (ashift:SI (reg:SI 151 [ D.7702 ])
+            (reg:SI 182 [ ivtmp.36 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:223 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 36 35 37 4 (set (reg:SI 156 [ D.7705 ])
+        (ior:SI (reg:SI 199)
+            (reg:SI 150 [ D.7701 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:223 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 199)
+        (expr_list:REG_DEAD (reg:SI 150 [ D.7701 ])
+            (nil))))
+
+(insn 37 36 38 4 (set (mem/s/v:SI (reg/v/f:SI 194 [ GPIOx ]) [3 GPIOx_11(D)->MODER+0 S4 A32])
+        (reg:SI 156 [ D.7705 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:223 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 156 [ D.7705 ])
+        (nil)))
+
+(insn 38 37 39 4 (set (reg:SI 200)
+        (plus:SI (reg:SI 151 [ D.7702 ])
+            (const_int -1 [0xffffffffffffffff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:225 4 {*arm_addsi3}
+     (expr_list:REG_DEAD (reg:SI 151 [ D.7702 ])
+        (nil)))
+
+(insn 39 38 40 4 (set (reg:SI 201)
+        (zero_extend:SI (subreg:QI (reg:SI 200) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:225 730 {thumb2_zero_extendqisi2_v6}
+     (expr_list:REG_DEAD (reg:SI 200)
+        (nil)))
+
+(insn 40 39 41 4 (set (reg:CC 24 cc)
+        (compare:CC (reg:SI 201)
+            (const_int 1 [0x1]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:225 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 201)
+        (nil)))
+
+(jump_insn 41 40 42 4 (set (pc)
+        (if_then_else (gtu (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref 61)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:225 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 7300 [0x1c84])
+            (nil)))
+ -> 61)
+;; End of basic block 4 -> ( 5 6)
+;; lr  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 148 161 182 187 194 195
+;; live  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 148 161 182 187 194 195
+
+
+;; Succ edge  5 [27.0%]  (fallthru)
+;; Succ edge  6 [73.0%] 
+
+;; Start of basic block ( 4) -> 5
+;; bb 5 artificial_defs: { }
+;; bb 5 artificial_uses: { u45(7){ }u46(13){ }u47(25){ }u48(26){ }}
+;; lr  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 148 161 182 187 194 195
+;; lr  use 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp] 144 148 161 182 194 195
+;; lr  def 	 159 162 163 168 169 171 172 180 202 203 204 205 206 207
+;; live  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 144 148 161 182 187 194 195
+;; live  gen 	 159 162 163 168 169 171 172 180 202 203 204 205 206 207
+;; live  kill	
+
+;; Pred edge  4 [27.0%]  (fallthru)
+(note 42 41 43 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 43 42 44 5 (set (reg:SI 159 [ D.7709 ])
+        (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 8 [0x8])) [3 GPIOx_11(D)->OSPEEDR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:231 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 44 43 45 5 (set (reg:SI 162 [ D.7710 ])
+        (and:SI (reg:SI 148 [ D.7699 ])
+            (reg:SI 159 [ D.7709 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:231 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 159 [ D.7709 ])
+        (nil)))
+
+(insn 45 44 46 5 (set (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 8 [0x8])) [3 GPIOx_11(D)->OSPEEDR+0 S4 A32])
+        (reg:SI 162 [ D.7710 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:231 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 162 [ D.7710 ])
+        (nil)))
+
+(insn 46 45 47 5 (set (reg:SI 163 [ D.7711 ])
+        (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 8 [0x8])) [3 GPIOx_11(D)->OSPEEDR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:232 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 47 46 48 5 (set (reg:SI 202 [ GPIO_InitStruct_8(D)->GPIO_Speed ])
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 195 [ GPIO_InitStruct ])
+                    (const_int 5 [0x5])) [8 GPIO_InitStruct_8(D)->GPIO_Speed+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:232 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 48 47 49 5 (set (reg:SI 203)
+        (ashift:SI (reg:SI 202 [ GPIO_InitStruct_8(D)->GPIO_Speed ])
+            (reg:SI 182 [ ivtmp.36 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:232 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 202 [ GPIO_InitStruct_8(D)->GPIO_Speed ])
+        (nil)))
+
+(insn 49 48 50 5 (set (reg:SI 168 [ D.7715 ])
+        (ior:SI (reg:SI 203)
+            (reg:SI 163 [ D.7711 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:232 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 203)
+        (expr_list:REG_DEAD (reg:SI 163 [ D.7711 ])
+            (nil))))
+
+(insn 50 49 51 5 (set (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 8 [0x8])) [3 GPIOx_11(D)->OSPEEDR+0 S4 A32])
+        (reg:SI 168 [ D.7715 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:232 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 168 [ D.7715 ])
+        (nil)))
+
+(insn 51 50 52 5 (set (reg:SI 169 [ D.7716 ])
+        (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 4 [0x4])) [3 GPIOx_11(D)->OTYPER+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:238 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 52 51 53 5 (set (reg:SI 204)
+        (not:SI (reg/v:SI 144 [ currentpin ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:238 143 {*arm_one_cmplsi2}
+     (expr_list:REG_DEAD (reg/v:SI 144 [ currentpin ])
+        (nil)))
+
+(insn 53 52 54 5 (set (reg:SI 171 [ D.7721 ])
+        (and:SI (reg:SI 204)
+            (reg:SI 169 [ D.7716 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:238 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 204)
+        (expr_list:REG_DEAD (reg:SI 169 [ D.7716 ])
+            (nil))))
+
+(insn 54 53 55 5 (set (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 4 [0x4])) [3 GPIOx_11(D)->OTYPER+0 S4 A32])
+        (reg:SI 171 [ D.7721 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:238 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 171 [ D.7721 ])
+        (nil)))
+
+(insn 55 54 56 5 (set (reg:SI 172 [ D.7722 ])
+        (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 4 [0x4])) [3 GPIOx_11(D)->OTYPER+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:239 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 56 55 57 5 (set (reg:SI 205 [ GPIO_InitStruct_8(D)->GPIO_OType ])
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 195 [ GPIO_InitStruct ])
+                    (const_int 6 [0x6])) [9 GPIO_InitStruct_8(D)->GPIO_OType+0 S1 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:239 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 57 56 58 5 (set (reg:SI 206)
+        (ashift:SI (reg:SI 205 [ GPIO_InitStruct_8(D)->GPIO_OType ])
+            (reg/v:SI 161 [ pinpos ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:239 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 205 [ GPIO_InitStruct_8(D)->GPIO_OType ])
+        (nil)))
+
+(insn 58 57 59 5 (set (reg:SI 207)
+        (zero_extend:SI (subreg:HI (reg:SI 206) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:239 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:SI 206)
+        (nil)))
+
+(insn 59 58 60 5 (set (reg:SI 180 [ D.7728 ])
+        (ior:SI (reg:SI 207)
+            (reg:SI 172 [ D.7722 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:239 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 207)
+        (expr_list:REG_DEAD (reg:SI 172 [ D.7722 ])
+            (nil))))
+
+(insn 60 59 61 5 (set (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 4 [0x4])) [3 GPIOx_11(D)->OTYPER+0 S4 A32])
+        (reg:SI 180 [ D.7728 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:239 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 180 [ D.7728 ])
+        (nil)))
+;; End of basic block 5 -> ( 6)
+;; lr  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 148 161 182 187 194 195
+;; live  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 148 161 182 187 194 195
+
+
+;; Succ edge  6 [100.0%]  (fallthru)
+
+;; Start of basic block ( 4 5) -> 6
+;; bb 6 artificial_defs: { }
+;; bb 6 artificial_uses: { u77(7){ }u78(13){ }u79(25){ }u80(26){ }}
+;; lr  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 148 161 182 187 194 195
+;; lr  use 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp] 148 182 194 195
+;; lr  def 	 181 183 184 189 208 209
+;; live  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 148 161 182 187 194 195
+;; live  gen 	 181 183 184 189 208 209
+;; live  kill	
+
+;; Pred edge  4 [73.0%] 
+;; Pred edge  5 [100.0%]  (fallthru)
+(code_label 61 60 62 6 27 "" [1 uses])
+
+(note 62 61 63 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 63 62 64 6 (set (reg:SI 181 [ D.7729 ])
+        (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 12 [0xc])) [3 GPIOx_11(D)->PUPDR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:243 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 64 63 65 6 (set (reg:SI 183 [ D.7733 ])
+        (and:SI (reg:SI 148 [ D.7699 ])
+            (reg:SI 181 [ D.7729 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:243 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 181 [ D.7729 ])
+        (expr_list:REG_DEAD (reg:SI 148 [ D.7699 ])
+            (nil))))
+
+(insn 65 64 66 6 (set (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 12 [0xc])) [3 GPIOx_11(D)->PUPDR+0 S4 A32])
+        (reg:SI 183 [ D.7733 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:243 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 183 [ D.7733 ])
+        (nil)))
+
+(insn 66 65 67 6 (set (reg:SI 184 [ D.7734 ])
+        (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 12 [0xc])) [3 GPIOx_11(D)->PUPDR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:244 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 67 66 68 6 (set (reg:SI 208 [ GPIO_InitStruct_8(D)->GPIO_PuPd ])
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 195 [ GPIO_InitStruct ])
+                    (const_int 7 [0x7])) [10 GPIO_InitStruct_8(D)->GPIO_PuPd+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:244 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 68 67 69 6 (set (reg:SI 209)
+        (ashift:SI (reg:SI 208 [ GPIO_InitStruct_8(D)->GPIO_PuPd ])
+            (reg:SI 182 [ ivtmp.36 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:244 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 208 [ GPIO_InitStruct_8(D)->GPIO_PuPd ])
+        (expr_list:REG_DEAD (reg:SI 146 [ D.7697 ])
+            (nil))))
+
+(insn 69 68 70 6 (set (reg:SI 189 [ D.7738 ])
+        (ior:SI (reg:SI 209)
+            (reg:SI 184 [ D.7734 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:244 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 209)
+        (expr_list:REG_DEAD (reg:SI 184 [ D.7734 ])
+            (nil))))
+
+(insn 70 69 71 6 (set (mem/s/v:SI (plus:SI (reg/v/f:SI 194 [ GPIOx ])
+                (const_int 12 [0xc])) [3 GPIOx_11(D)->PUPDR+0 S4 A32])
+        (reg:SI 189 [ D.7738 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:244 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 189 [ D.7738 ])
+        (nil)))
+;; End of basic block 6 -> ( 7)
+;; lr  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+;; live  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+
+
+;; Succ edge  7 [100.0%]  (fallthru)
+
+;; Start of basic block ( 3 6) -> 7
+;; bb 7 artificial_defs: { }
+;; bb 7 artificial_uses: { u94(7){ }u95(13){ }u96(25){ }u97(26){ }}
+;; lr  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+;; lr  use 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp] 161 182
+;; lr  def 	 24 [cc] 161 182
+;; live  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+;; live  gen 	 24 [cc] 161 182
+;; live  kill	
+
+;; Pred edge  3 [72.0%] 
+;; Pred edge  6 [100.0%]  (fallthru)
+(code_label 71 70 72 7 26 "" [1 uses])
+
+(note 72 71 73 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 73 72 74 7 (set (reg/v:SI 161 [ pinpos ])
+        (plus:SI (reg/v:SI 161 [ pinpos ])
+            (const_int 1 [0x1]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:214 4 {*arm_addsi3}
+     (nil))
+
+(insn 74 73 76 7 (set (reg:SI 182 [ ivtmp.36 ])
+        (plus:SI (reg:SI 182 [ ivtmp.36 ])
+            (const_int 2 [0x2]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:214 4 {*arm_addsi3}
+     (nil))
+
+(insn 76 74 77 7 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 161 [ pinpos ])
+            (const_int 16 [0x10]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:214 206 {*arm_cmpsi_insn}
+     (nil))
+
+(jump_insn 77 76 80 7 (set (pc)
+        (if_then_else (ne (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref 75)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c:214 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 9375 [0x249f])
+            (nil)))
+ -> 75)
+;; End of basic block 7 -> ( 3 8)
+;; lr  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+;; live  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp] 161 182 187 194 195
+
+
+;; Succ edge  3 [93.8%]  (dfs_back)
+;; Succ edge  8 [6.2%]  (fallthru)
+
+;; Start of basic block ( 7) -> 8
+;; bb 8 artificial_defs: { }
+;; bb 8 artificial_uses: { u102(7){ }u103(13){ }u104(25){ }u105(26){ }}
+;; lr  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp]
+;; lr  use 	 7 [r7] 13 [sp] 25 [sfp] 26 [afp]
+;; lr  def 	
+;; live  in  	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp]
+;; live  gen 	
+;; live  kill	
+
+;; Pred edge  7 [6.2%]  (fallthru)
+(note 80 77 0 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 8 -> ( 1)
+;; lr  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp]
+;; live  out 	 7 [r7] 13 [sp] 14 [lr] 25 [sfp] 26 [afp]
+
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+starting the processing of deferred insns
+deleting insn with uid = 27.
+rescanning insn with uid = 14.
+deleting insn with uid = 14.
+ending the processing of deferred insns

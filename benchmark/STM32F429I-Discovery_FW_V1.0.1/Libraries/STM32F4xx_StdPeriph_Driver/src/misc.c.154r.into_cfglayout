@@ -1,0 +1,725 @@
+
+;; Function NVIC_PriorityGroupConfig (NVIC_PriorityGroupConfig)
+
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+
+
+try_optimize_cfg iteration 2
+
+
+
+try_optimize_cfg iteration 1
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 4 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 4 3 2 (set (reg/v:SI 135 [ NVIC_PriorityGroup ])
+        (reg:SI 0 r0 [ NVIC_PriorityGroup ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:119 709 {*thumb2_movsi_insn}
+     (nil))
+
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 6 3 7 2 (set (reg:SI 136)
+        (ior:SI (reg/v:SI 135 [ NVIC_PriorityGroup ])
+            (const_int 99614720 [0x5f00000]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 91 {*iorsi3_insn}
+     (nil))
+
+(insn 7 6 8 2 (set (reg:SI 134 [ D.7644 ])
+        (ior:SI (reg:SI 136)
+            (const_int 655360 [0xa0000]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 91 {*iorsi3_insn}
+     (expr_list:REG_EQUAL (ior:SI (reg/v:SI 135 [ NVIC_PriorityGroup ])
+            (const_int 100270080 [0x5fa0000]))
+        (nil)))
+
+(insn 8 7 9 2 (set (reg/f:SI 137)
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 9 8 10 2 (set (zero_extract:SI (reg/f:SI 137)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 10 9 0 2 (set (mem/s/v:SI (plus:SI (reg/f:SI 137)
+                (const_int 12 [0xc])) [3 MEM[(struct SCB_Type *)3758157056B].AIRCR+0 S4 A32])
+        (reg:SI 134 [ D.7644 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:124 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 2 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function NVIC_Init (NVIC_Init)
+
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Removing jump 48.
+Fallthru edge 4->7 redirected to 7
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+
+
+try_optimize_cfg iteration 2
+
+
+
+try_optimize_cfg iteration 1
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 4 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 4 3 2 (set (reg/v/f:SI 167 [ NVIC_InitStruct ])
+        (reg:SI 0 r0 [ NVIC_InitStruct ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:137 709 {*thumb2_movsi_insn}
+     (nil))
+
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 6 3 7 2 (set (reg:SI 168)
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 167 [ NVIC_InitStruct ])
+                    (const_int 3 [0x3])) [5 NVIC_InitStruct_4(D)->NVIC_IRQChannelCmd+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:145 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 7 6 8 2 (set (reg:CC 24 cc)
+        (compare:CC (reg:SI 168)
+            (const_int 0 [0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:145 206 {*arm_cmpsi_insn}
+     (nil))
+
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref 50)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:145 218 {*arm_cond_branch}
+     (expr_list:REG_BR_PROB (const_int 6100 [0x17d4])
+        (nil))
+ -> 50)
+;; End of basic block 2 -> ( 4 5)
+
+;; Succ edge  4 [39.0%]  (fallthru)
+;; Succ edge  5 [61.0%] 
+
+;; Start of basic block ( 2) -> 4
+;; Pred edge  2 [39.0%]  (fallthru)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 9 11 4 (set (reg/f:SI 169)
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 11 10 12 4 (set (zero_extract:SI (reg/f:SI 169)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 12 11 13 4 (set (reg:SI 135 [ D.7622 ])
+        (mem/s/v:SI (plus:SI (reg/f:SI 169)
+                (const_int 12 [0xc])) [3 MEM[(struct SCB_Type *)3758157056B].AIRCR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 13 12 14 4 (set (reg:SI 170)
+        (not:SI (reg:SI 135 [ D.7622 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 143 {*arm_one_cmplsi2}
+     (nil))
+
+(insn 14 13 15 4 (set (reg:SI 171)
+        (and:SI (reg:SI 170)
+            (const_int 1792 [0x700]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 15 14 16 4 (set (reg:SI 172)
+        (lshiftrt:SI (reg:SI 171)
+            (const_int 8 [0x8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 16 15 17 4 (set (reg/v:SI 139 [ tmppriority ])
+        (zero_extend:SI (subreg:QI (reg:SI 172) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:148 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 17 16 18 4 (set (reg:SI 173)
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 167 [ NVIC_InitStruct ])
+                    (const_int 1 [0x1])) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannelPreemptionPriority+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 18 17 19 4 (set (reg:SI 174)
+        (minus:SI (const_int 4 [0x4])
+            (reg/v:SI 139 [ tmppriority ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:149 29 {*arm_subsi3_insn}
+     (nil))
+
+(insn 19 18 20 4 (set (reg:SI 175)
+        (zero_extend:SI (subreg:QI (reg:SI 174) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 20 19 21 4 (set (reg:SI 147 [ D.7632 ])
+        (ashift:SI (reg:SI 173)
+            (reg:SI 175))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 21 20 22 4 (set (reg/v:SI 148 [ tmppriority ])
+        (zero_extend:SI (subreg:QI (reg:SI 147 [ D.7632 ]) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:152 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 22 21 23 4 (set (reg:SI 177)
+        (const_int 15 [0xf])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:150 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 23 22 24 4 (set (reg:SI 176)
+        (ashiftrt:SI (reg:SI 177)
+            (reg/v:SI 139 [ tmppriority ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:150 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 24 23 25 4 (set (reg:QI 178)
+        (subreg:QI (reg:SI 176) 0)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 187 {*arm_movqi_insn}
+     (nil))
+
+(insn 25 24 26 4 (set (reg:SI 180)
+        (zero_extend:SI (mem/s:QI (plus:SI (reg/v/f:SI 167 [ NVIC_InitStruct ])
+                    (const_int 2 [0x2])) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannelSubPriority+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 26 25 27 4 (set (reg:QI 179)
+        (subreg:QI (reg:SI 180) 0)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 187 {*arm_movqi_insn}
+     (nil))
+
+(insn 27 26 28 4 (set (reg:SI 181)
+        (and:SI (subreg:SI (reg:QI 178) 0)
+            (subreg:SI (reg:QI 179) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 28 27 29 4 (set (reg:SI 150 [ D.7634 ])
+        (zero_extend:SI (subreg:QI (reg:SI 181) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 29 28 30 4 (set (reg:SI 182)
+        (ior:SI (reg:SI 150 [ D.7634 ])
+            (reg/v:SI 148 [ tmppriority ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 91 {*iorsi3_insn}
+     (nil))
+
+(insn 30 29 31 4 (set (reg/v:SI 151 [ tmppriority ])
+        (zero_extend:SI (subreg:QI (reg:SI 182) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:153 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 31 30 32 4 (set (reg:SI 183)
+        (ashift:SI (reg/v:SI 151 [ tmppriority ])
+            (const_int 4 [0x4]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:155 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 32 31 33 4 (set (reg/v:SI 152 [ tmppriority ])
+        (zero_extend:SI (subreg:QI (reg:SI 183) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:155 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 33 32 34 4 (set (reg:SI 154 [ D.7637 ])
+        (zero_extend:SI (mem/s:QI (reg/v/f:SI 167 [ NVIC_InitStruct ]) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannel+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 34 33 35 4 (set (reg/f:SI 184)
+        (const_int 57600 [0xe100])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 35 34 36 4 (set (zero_extract:SI (reg/f:SI 184)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 36 35 37 4 (set (reg/f:SI 185)
+        (plus:SI (reg/f:SI 184)
+            (reg:SI 154 [ D.7637 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 4 {*arm_addsi3}
+     (nil))
+
+(insn 37 36 38 4 (set (reg:QI 186)
+        (subreg/s/u:QI (reg/v:SI 152 [ tmppriority ]) 0)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 187 {*arm_movqi_insn}
+     (nil))
+
+(insn 38 37 39 4 (set (mem/s/v/j:QI (plus:SI (reg/f:SI 185)
+                (const_int 768 [0x300])) [0 MEM[(struct NVIC_Type *)3758153984B].IP S1 A8])
+        (reg:QI 186)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:157 187 {*arm_movqi_insn}
+     (nil))
+
+(insn 39 38 40 4 (set (reg:SI 155 [ D.7636 ])
+        (zero_extend:SI (mem/s:QI (reg/v/f:SI 167 [ NVIC_InitStruct ]) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannel+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 40 39 41 4 (set (reg:SI 187)
+        (lshiftrt:SI (reg:SI 155 [ D.7636 ])
+            (const_int 5 [0x5]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 41 40 42 4 (set (reg:SI 157 [ D.7639 ])
+        (zero_extend:SI (subreg:QI (reg:SI 187) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 42 41 43 4 (set (reg:SI 188)
+        (and:SI (reg:SI 155 [ D.7636 ])
+            (const_int 31 [0x1f]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:161 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 43 42 44 4 (set (reg:SI 189)
+        (const_int 1 [0x1])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:161 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 44 43 45 4 (set (reg:SI 160 [ D.7641 ])
+        (ashift:SI (reg:SI 189)
+            (reg:SI 188))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:161 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 45 44 46 4 (set (reg/f:SI 190)
+        (const_int 57600 [0xe100])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 46 45 47 4 (set (zero_extract:SI (reg/f:SI 190)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 47 46 50 4 (set (mem/s/v:SI (plus:SI (mult:SI (reg:SI 157 [ D.7639 ])
+                    (const_int 4 [0x4]))
+                (reg/f:SI 190)) [3 MEM[(struct NVIC_Type *)3758153984B].ISER S4 A32])
+        (reg:SI 160 [ D.7641 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:160 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 4 -> ( 7)
+
+;; Succ edge  7 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 5
+;; Pred edge  2 [61.0%] 
+(code_label 50 47 51 5 3 "" [1 uses])
+
+(note 51 50 52 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 52 51 53 5 (set (reg:SI 161 [ D.7636 ])
+        (zero_extend:SI (mem/s:QI (reg/v/f:SI 167 [ NVIC_InitStruct ]) [0 NVIC_InitStruct_4(D)->NVIC_IRQChannel+0 S1 A8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 53 52 54 5 (set (reg:SI 191)
+        (lshiftrt:SI (reg:SI 161 [ D.7636 ])
+            (const_int 5 [0x5]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 54 53 55 5 (set (reg:SI 163 [ D.7639 ])
+        (zero_extend:SI (subreg:QI (reg:SI 191) 0))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 730 {thumb2_zero_extendqisi2_v6}
+     (nil))
+
+(insn 55 54 56 5 (set (reg:SI 192)
+        (and:SI (reg:SI 161 [ D.7636 ])
+            (const_int 31 [0x1f]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:167 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 56 55 57 5 (set (reg:SI 193)
+        (const_int 1 [0x1])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:167 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 57 56 58 5 (set (reg:SI 166 [ D.7641 ])
+        (ashift:SI (reg:SI 193)
+            (reg:SI 192))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:167 119 {*arm_shiftsi3}
+     (nil))
+
+(insn 58 57 59 5 (set (reg/f:SI 194)
+        (const_int 57600 [0xe100])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 59 58 60 5 (set (zero_extract:SI (reg/f:SI 194)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 60 59 61 5 (set (reg:SI 195)
+        (plus:SI (reg:SI 163 [ D.7639 ])
+            (const_int 32 [0x20]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 4 {*arm_addsi3}
+     (nil))
+
+(insn 61 60 64 5 (set (mem/s/v:SI (plus:SI (mult:SI (reg:SI 195)
+                    (const_int 4 [0x4]))
+                (reg/f:SI 194)) [3 MEM[(struct NVIC_Type *)3758153984B].ICER S4 A32])
+        (reg:SI 166 [ D.7641 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:166 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 5 -> ( 7)
+
+;; Succ edge  7 [100.0%]  (fallthru)
+
+;; Start of basic block ( 5 4) -> 7
+;; Pred edge  5 [100.0%]  (fallthru)
+;; Pred edge  4 [100.0%]  (fallthru)
+(code_label 64 61 65 7 2 "" [0 uses])
+
+(note 65 64 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 7 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function NVIC_SetVectorTable (NVIC_SetVectorTable)
+
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+
+
+try_optimize_cfg iteration 2
+
+
+
+try_optimize_cfg iteration 1
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 5 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 5 3 2 (set (reg/v:SI 136 [ NVIC_VectTab ])
+        (reg:SI 0 r0 [ NVIC_VectTab ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:181 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 3 2 4 2 (set (reg/v:SI 137 [ Offset ])
+        (reg:SI 1 r1 [ Offset ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:181 709 {*thumb2_movsi_insn}
+     (nil))
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 7 4 8 2 (set (reg:SI 139)
+        (and:SI (reg/v:SI 137 [ Offset ])
+            (const_int 536870911 [0x1fffffff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 8 7 9 2 (set (reg:SI 138)
+        (and:SI (reg:SI 139)
+            (const_int -128 [0xffffffffffffff80]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 69 {*arm_andsi3_insn}
+     (expr_list:REG_EQUAL (and:SI (reg/v:SI 137 [ Offset ])
+            (const_int 536870784 [0x1fffff80]))
+        (nil)))
+
+(insn 9 8 10 2 (set (reg:SI 135 [ D.7617 ])
+        (ior:SI (reg:SI 138)
+            (reg/v:SI 136 [ NVIC_VectTab ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 91 {*iorsi3_insn}
+     (nil))
+
+(insn 10 9 11 2 (set (reg/f:SI 140)
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 11 10 12 2 (set (zero_extract:SI (reg/f:SI 140)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 12 11 0 2 (set (mem/s/v:SI (plus:SI (reg/f:SI 140)
+                (const_int 8 [0x8])) [3 MEM[(struct SCB_Type *)3758157056B].VTOR+0 S4 A32])
+        (reg:SI 135 [ D.7617 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:186 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 2 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function NVIC_SystemLPConfig (NVIC_SystemLPConfig)
+
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Removing jump 17.
+Fallthru edge 4->7 redirected to 7
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+
+
+try_optimize_cfg iteration 2
+
+
+
+try_optimize_cfg iteration 1
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 5 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 5 3 2 (set (reg/v:SI 141 [ LowPowerMode ])
+        (reg:SI 0 r0 [ LowPowerMode ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:200 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 3 2 4 2 (set (reg/v:SI 142 [ NewState ])
+        (reg:SI 1 r1 [ NewState ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:200 709 {*thumb2_movsi_insn}
+     (nil))
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 7 4 8 2 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 142 [ NewState ])
+            (const_int 0 [0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:205 206 {*arm_cmpsi_insn}
+     (nil))
+
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref 19)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:205 218 {*arm_cond_branch}
+     (expr_list:REG_BR_PROB (const_int 6100 [0x17d4])
+        (nil))
+ -> 19)
+;; End of basic block 2 -> ( 4 5)
+
+;; Succ edge  4 [39.0%]  (fallthru)
+;; Succ edge  5 [61.0%] 
+
+;; Start of basic block ( 2) -> 4
+;; Pred edge  2 [39.0%]  (fallthru)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 10 9 11 4 (set (reg/f:SI 143)
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 11 10 12 4 (set (zero_extract:SI (reg/f:SI 143)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 12 11 13 4 (set (reg:SI 134 [ D.7608 ])
+        (mem/s/v:SI (plus:SI (reg/f:SI 143)
+                (const_int 16 [0x10])) [3 MEM[(struct SCB_Type *)3758157056B].SCR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 13 12 14 4 (set (reg:SI 136 [ D.7610 ])
+        (ior:SI (reg/v:SI 141 [ LowPowerMode ])
+            (reg:SI 134 [ D.7608 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 91 {*iorsi3_insn}
+     (nil))
+
+(insn 14 13 15 4 (set (reg/f:SI 144)
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 15 14 16 4 (set (zero_extract:SI (reg/f:SI 144)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 16 15 19 4 (set (mem/s/v:SI (plus:SI (reg/f:SI 144)
+                (const_int 16 [0x10])) [3 MEM[(struct SCB_Type *)3758157056B].SCR+0 S4 A32])
+        (reg:SI 136 [ D.7610 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:207 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 4 -> ( 7)
+
+;; Succ edge  7 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 5
+;; Pred edge  2 [61.0%] 
+(code_label 19 16 20 5 9 "" [1 uses])
+
+(note 20 19 21 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 21 20 22 5 (set (reg/f:SI 145)
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 22 21 23 5 (set (zero_extract:SI (reg/f:SI 145)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 23 22 24 5 (set (reg:SI 137 [ D.7612 ])
+        (mem/s/v:SI (plus:SI (reg/f:SI 145)
+                (const_int 16 [0x10])) [3 MEM[(struct SCB_Type *)3758157056B].SCR+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 24 23 25 5 (set (reg:SI 146)
+        (not:SI (reg/v:SI 141 [ LowPowerMode ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 143 {*arm_one_cmplsi2}
+     (nil))
+
+(insn 25 24 26 5 (set (reg:SI 140 [ D.7614 ])
+        (and:SI (reg:SI 146)
+            (reg:SI 137 [ D.7612 ]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 26 25 27 5 (set (reg/f:SI 147)
+        (const_int 60672 [0xed00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 27 26 28 5 (set (zero_extract:SI (reg/f:SI 147)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 28 27 31 5 (set (mem/s/v:SI (plus:SI (reg/f:SI 147)
+                (const_int 16 [0x10])) [3 MEM[(struct SCB_Type *)3758157056B].SCR+0 S4 A32])
+        (reg:SI 140 [ D.7614 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:211 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 5 -> ( 7)
+
+;; Succ edge  7 [100.0%]  (fallthru)
+
+;; Start of basic block ( 5 4) -> 7
+;; Pred edge  5 [100.0%]  (fallthru)
+;; Pred edge  4 [100.0%]  (fallthru)
+(code_label 31 28 32 7 8 "" [0 uses])
+
+(note 32 31 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 7 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+
+
+;; Function SysTick_CLKSourceConfig (SysTick_CLKSourceConfig)
+
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Removing jump 16.
+Fallthru edge 4->7 redirected to 7
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+
+
+try_optimize_cfg iteration 2
+
+
+
+try_optimize_cfg iteration 1
+
+;; Start of basic block ( 0) -> 2
+;; Pred edge  ENTRY [100.0%]  (fallthru)
+(note 4 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(insn 2 4 3 2 (set (reg/v:SI 138 [ SysTick_CLKSource ])
+        (reg:SI 0 r0 [ SysTick_CLKSource ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:224 709 {*thumb2_movsi_insn}
+     (nil))
+
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 6 3 7 2 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 138 [ SysTick_CLKSource ])
+            (const_int 4 [0x4]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:227 206 {*arm_cmpsi_insn}
+     (nil))
+
+(jump_insn 7 6 8 2 (set (pc)
+        (if_then_else (ne (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref 18)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:227 218 {*arm_cond_branch}
+     (expr_list:REG_BR_PROB (const_int 8009 [0x1f49])
+        (nil))
+ -> 18)
+;; End of basic block 2 -> ( 4 5)
+
+;; Succ edge  4 [19.9%]  (fallthru)
+;; Succ edge  5 [80.1%] 
+
+;; Start of basic block ( 2) -> 4
+;; Pred edge  2 [19.9%]  (fallthru)
+(note 8 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 9 8 10 4 (set (reg/f:SI 139)
+        (const_int 57360 [0xe010])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 10 9 11 4 (set (zero_extract:SI (reg/f:SI 139)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 11 10 12 4 (set (reg:SI 134 [ D.7600 ])
+        (mem/s/v:SI (reg/f:SI 139) [3 MEM[(struct SysTick_Type *)3758153744B].CTRL+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 12 11 13 4 (set (reg:SI 135 [ D.7601 ])
+        (ior:SI (reg:SI 134 [ D.7600 ])
+            (const_int 4 [0x4]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 91 {*iorsi3_insn}
+     (nil))
+
+(insn 13 12 14 4 (set (reg/f:SI 140)
+        (const_int 57360 [0xe010])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 14 13 15 4 (set (zero_extract:SI (reg/f:SI 140)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 15 14 18 4 (set (mem/s/v:SI (reg/f:SI 140) [3 MEM[(struct SysTick_Type *)3758153744B].CTRL+0 S4 A32])
+        (reg:SI 135 [ D.7601 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:229 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 4 -> ( 7)
+
+;; Succ edge  7 [100.0%]  (fallthru)
+
+;; Start of basic block ( 2) -> 5
+;; Pred edge  2 [80.1%] 
+(code_label 18 15 19 5 13 "" [1 uses])
+
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 20 19 21 5 (set (reg/f:SI 141)
+        (const_int 57360 [0xe010])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 21 20 22 5 (set (zero_extract:SI (reg/f:SI 141)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 22 21 23 5 (set (reg:SI 136 [ D.7603 ])
+        (mem/s/v:SI (reg/f:SI 141) [3 MEM[(struct SysTick_Type *)3758153744B].CTRL+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 23 22 24 5 (set (reg:SI 137 [ D.7604 ])
+        (and:SI (reg:SI 136 [ D.7603 ])
+            (const_int -5 [0xfffffffffffffffb]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 24 23 25 5 (set (reg/f:SI 142)
+        (const_int 57360 [0xe010])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 25 24 26 5 (set (zero_extract:SI (reg/f:SI 142)
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 57344 [0xe000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 26 25 29 5 (set (mem/s/v:SI (reg/f:SI 142) [3 MEM[(struct SysTick_Type *)3758153744B].CTRL+0 S4 A32])
+        (reg:SI 137 [ D.7604 ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c:233 709 {*thumb2_movsi_insn}
+     (nil))
+;; End of basic block 5 -> ( 7)
+
+;; Succ edge  7 [100.0%]  (fallthru)
+
+;; Start of basic block ( 5 4) -> 7
+;; Pred edge  5 [100.0%]  (fallthru)
+;; Pred edge  4 [100.0%]  (fallthru)
+(code_label 29 26 30 7 12 "" [0 uses])
+
+(note 30 29 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+;; End of basic block 7 -> ( 1)
+
+;; Succ edge  EXIT [100.0%]  (fallthru)
+

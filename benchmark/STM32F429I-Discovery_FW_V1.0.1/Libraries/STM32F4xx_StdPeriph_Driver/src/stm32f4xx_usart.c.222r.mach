@@ -1,0 +1,4370 @@
+
+;; Function USART_DeInit (USART_DeInit)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 4 NOTE_INSN_DELETED)
+
+(note 4 1 3 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 3 4 159 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn/f 159 3 160 2 (parallel [
+            (set (mem/c:BLK (pre_modify:SI (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -8 [0xfffffffffffffff8]))) [2 A8])
+                (unspec:BLK [
+                        (reg:SI 3 r3)
+                    ] 2))
+            (use (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:188 319 {*push_multi}
+     (expr_list:REG_DEAD (reg:SI 3 r3)
+        (expr_list:REG_FRAME_RELATED_EXPR (sequence [
+                    (set/f (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -8 [0xfffffffffffffff8])))
+                    (set/f (mem/c:SI (reg/f:SI 13 sp) [2 S4 A32])
+                        (reg:SI 3 r3))
+                    (set/f (mem/c:SI (plus:SI (reg/f:SI 13 sp)
+                                (const_int 4 [0x4])) [2 S4 A32])
+                        (reg:SI 14 lr))
+                ])
+            (nil))))
+
+(note 160 159 155 2 NOTE_INSN_PROLOGUE_END)
+
+(insn 155 160 156 2 (set (reg:SI 3 r3 [135])
+        (const_int 4096 [0x1000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:192 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 4096 [0x1000])
+        (nil)))
+
+(insn 156 155 8 2 (set (zero_extract:SI (reg:SI 3 r3 [135])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16385 [0x4001])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:192 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 8 156 9 2 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 3 r3 [135]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:192 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [135])
+        (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                (const_int 1073811456 [0x40011000]))
+            (nil))))
+
+(jump_insn 9 8 19 2 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 201)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:192 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 441 [0x1b9])
+            (nil)))
+ -> 201)
+
+(note 19 9 153 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 153 19 154 3 (set (reg:SI 1 r1 [136])
+        (const_int 17408 [0x4400])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:197 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 17408 [0x4400])
+        (nil)))
+
+(insn 154 153 22 3 (set (zero_extract:SI (reg:SI 1 r1 [136])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16384 [0x4000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:197 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 22 154 23 3 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 1 r1 [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:197 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [136])
+        (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                (const_int 1073759232 [0x40004400]))
+            (nil))))
+
+(jump_insn 23 22 33 3 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 202)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:197 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 441 [0x1b9])
+            (nil)))
+ -> 202)
+
+(note 33 23 151 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 151 33 152 4 (set (reg:SI 2 r2 [137])
+        (const_int 18432 [0x4800])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:202 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 18432 [0x4800])
+        (nil)))
+
+(insn 152 151 36 4 (set (zero_extract:SI (reg:SI 2 r2 [137])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16384 [0x4000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:202 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 36 152 37 4 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 2 r2 [137]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:202 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [137])
+        (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                (const_int 1073760256 [0x40004800]))
+            (nil))))
+
+(jump_insn 37 36 47 4 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 203)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:202 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 441 [0x1b9])
+            (nil)))
+ -> 203)
+
+(note 47 37 149 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 149 47 150 5 (set (reg:SI 12 ip [138])
+        (const_int 19456 [0x4c00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:207 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 19456 [0x4c00])
+        (nil)))
+
+(insn 150 149 50 5 (set (zero_extract:SI (reg:SI 12 ip [138])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16384 [0x4000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:207 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 50 150 51 5 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 12 ip [138]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:207 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [138])
+        (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                (const_int 1073761280 [0x40004c00]))
+            (nil))))
+
+(jump_insn 51 50 61 5 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 204)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:207 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 441 [0x1b9])
+            (nil)))
+ -> 204)
+
+(note 61 51 147 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(insn 147 61 148 6 (set (reg:SI 3 r3 [139])
+        (const_int 20480 [0x5000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:212 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 20480 [0x5000])
+        (nil)))
+
+(insn 148 147 64 6 (set (zero_extract:SI (reg:SI 3 r3 [139])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16384 [0x4000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:212 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 64 148 65 6 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 3 r3 [139]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:212 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [139])
+        (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                (const_int 1073762304 [0x40005000]))
+            (nil))))
+
+(jump_insn 65 64 75 6 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 205)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:212 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 441 [0x1b9])
+            (nil)))
+ -> 205)
+
+(note 75 65 145 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 145 75 146 7 (set (reg:SI 1 r1 [140])
+        (const_int 5120 [0x1400])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:217 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 5120 [0x1400])
+        (nil)))
+
+(insn 146 145 78 7 (set (zero_extract:SI (reg:SI 1 r1 [140])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16385 [0x4001])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:217 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 78 146 79 7 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 1 r1 [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:217 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [140])
+        (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                (const_int 1073812480 [0x40011400]))
+            (nil))))
+
+(jump_insn 79 78 89 7 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 206)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:217 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 441 [0x1b9])
+            (nil)))
+ -> 206)
+
+(note 89 79 143 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 143 89 144 8 (set (reg:SI 2 r2 [141])
+        (const_int 30720 [0x7800])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:222 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+
+(insn 144 143 92 8 (set (zero_extract:SI (reg:SI 2 r2 [141])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16384 [0x4000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:222 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 92 144 93 8 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 2 r2 [141]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:222 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [141])
+        (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                (const_int 1073772544 [0x40007800]))
+            (nil))))
+
+(jump_insn 93 92 103 8 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 207)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:222 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 441 [0x1b9])
+            (nil)))
+ -> 207)
+
+(note 103 93 141 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 141 103 142 9 (set (reg:SI 12 ip [142])
+        (const_int 31744 [0x7c00])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:229 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 31744 [0x7c00])
+        (nil)))
+
+(insn 142 141 106 9 (set (zero_extract:SI (reg:SI 12 ip [142])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16384 [0x4000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:229 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 106 142 107 9 (set (reg:CC 24 cc)
+        (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (reg:SI 12 ip [142]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:229 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [142])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+            (expr_list:REG_EQUAL (compare:CC (reg/v/f:SI 0 r0 [orig:134 USARTx ] [134])
+                    (const_int 1073773568 [0x40007c00]))
+                (nil)))))
+
+(jump_insn 107 106 119 9 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 208)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:229 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 1013 [0x3f5])
+            (nil)))
+ -> 208)
+
+(note 119 107 162 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(jump_insn 162 119 161 10 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 161 162 208)
+
+(code_label 208 161 108 11 18 "" [1 uses])
+
+(note 108 208 179 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+
+(insn 179 108 109 11 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:231 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 109 179 111 11 (set (reg:SI 0 r0)
+        (const_int -2147483648 [0xffffffff80000000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:231 709 {*thumb2_movsi_insn}
+     (nil))
+
+(call_insn 111 109 112 11 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:231 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 112 111 180 11 (set (reg:SI 0 r0)
+        (const_int -2147483648 [0xffffffff80000000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:232 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 180 112 209 11 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:232 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 209 180 164 11 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 164 209 114 11 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 114 164 115 11 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:232 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 115 114 201)
+
+(code_label 201 115 10 12 11 "" [1 uses])
+
+(note 10 201 195 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+(insn 195 10 196 12 (parallel [
+            (set (reg:SI 0 r0)
+                (const_int 16 [0x10]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:194 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 196 195 13 12 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:194 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(call_insn 13 196 197 12 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41]  <function_decl 0x55c2c000 RCC_APB2PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:194 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 197 13 198 12 (parallel [
+            (set (reg:SI 0 r0)
+                (const_int 16 [0x10]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:195 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 198 197 210 12 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:195 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 210 198 166 12 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 166 210 16 12 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 16 166 17 12 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41]  <function_decl 0x55c2c000 RCC_APB2PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:195 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 17 16 202)
+
+(code_label 202 17 24 13 12 "" [1 uses])
+
+(note 24 202 193 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+
+(insn 193 24 25 13 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:199 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 25 193 27 13 (set (reg:SI 0 r0)
+        (const_int 131072 [0x20000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:199 709 {*thumb2_movsi_insn}
+     (nil))
+
+(call_insn 27 25 28 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:199 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 28 27 194 13 (set (reg:SI 0 r0)
+        (const_int 131072 [0x20000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:200 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 194 28 211 13 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:200 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 211 194 168 13 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 168 211 30 13 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 30 168 31 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:200 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 31 30 203)
+
+(code_label 203 31 38 14 13 "" [1 uses])
+
+(note 38 203 191 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+
+(insn 191 38 39 14 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:204 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 39 191 41 14 (set (reg:SI 0 r0)
+        (const_int 262144 [0x40000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:204 709 {*thumb2_movsi_insn}
+     (nil))
+
+(call_insn 41 39 42 14 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:204 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 42 41 192 14 (set (reg:SI 0 r0)
+        (const_int 262144 [0x40000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:205 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 192 42 212 14 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:205 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 212 192 170 14 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 170 212 44 14 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 44 170 45 14 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:205 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 45 44 204)
+
+(code_label 204 45 52 15 14 "" [1 uses])
+
+(note 52 204 189 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+
+(insn 189 52 53 15 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:209 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 53 189 55 15 (set (reg:SI 0 r0)
+        (const_int 524288 [0x80000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:209 709 {*thumb2_movsi_insn}
+     (nil))
+
+(call_insn 55 53 56 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:209 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 56 55 190 15 (set (reg:SI 0 r0)
+        (const_int 524288 [0x80000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:210 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 190 56 213 15 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:210 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 213 190 172 15 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 172 213 58 15 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 58 172 59 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:210 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 59 58 205)
+
+(code_label 205 59 66 16 15 "" [1 uses])
+
+(note 66 205 187 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+
+(insn 187 66 67 16 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:214 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 67 187 69 16 (set (reg:SI 0 r0)
+        (const_int 1048576 [0x100000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:214 709 {*thumb2_movsi_insn}
+     (nil))
+
+(call_insn 69 67 70 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:214 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 70 69 188 16 (set (reg:SI 0 r0)
+        (const_int 1048576 [0x100000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:215 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 188 70 214 16 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:215 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 214 188 174 16 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 174 214 72 16 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 72 174 73 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:215 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 73 72 206)
+
+(code_label 206 73 80 17 16 "" [1 uses])
+
+(note 80 206 183 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+
+(insn 183 80 184 17 (parallel [
+            (set (reg:SI 0 r0)
+                (const_int 32 [0x20]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:219 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 184 183 83 17 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:219 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(call_insn 83 184 185 17 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41]  <function_decl 0x55c2c000 RCC_APB2PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:219 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 185 83 186 17 (parallel [
+            (set (reg:SI 0 r0)
+                (const_int 32 [0x20]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:220 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 186 185 215 17 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:220 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 215 186 176 17 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 176 215 86 17 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 86 176 87 17 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41]  <function_decl 0x55c2c000 RCC_APB2PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:220 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 87 86 207)
+
+(code_label 207 87 94 18 17 "" [1 uses])
+
+(note 94 207 181 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+
+(insn 181 94 95 18 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:224 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 95 181 97 18 (set (reg:SI 0 r0)
+        (const_int 1073741824 [0x40000000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:224 709 {*thumb2_movsi_insn}
+     (nil))
+
+(call_insn 97 95 98 18 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:224 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(insn 98 97 182 18 (set (reg:SI 0 r0)
+        (const_int 1073741824 [0x40000000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:225 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 182 98 216 18 (parallel [
+            (set (reg:SI 1 r1)
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:225 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(note 216 182 178 18 NOTE_INSN_EPILOGUE_BEG)
+
+(insn 178 216 100 18 (parallel [
+            (unspec:SI [
+                    (reg:SI 14 lr)
+                ] 6)
+            (unspec_volatile [
+                    (return)
+                ] 1)
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:235 314 {sibcall_epilogue}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (nil)))
+
+(call_insn/j 100 178 101 18 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41]  <function_decl 0x55c25f80 RCC_APB1PeriphResetCmd>) [0 S4 A32])
+                (const_int 0 [0]))
+            (return)
+            (use (const_int 0 [0]))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:225 246 {*sibcall_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1)
+        (expr_list:REG_DEAD (reg:SI 0 r0)
+            (nil)))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 1 r1))
+        (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+            (nil))))
+
+(barrier 101 100 157)
+
+(note 157 101 158 NOTE_INSN_DELETED)
+
+(note 158 157 0 NOTE_INSN_DELETED)
+
+;; Function USART_Init (USART_Init)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+df_worklist_dataflow_doublequeue:n_basic_blocks 11 n_edges 14 count 11 (    1)
+df_worklist_dataflow_doublequeue:n_basic_blocks 11 n_edges 14 count 11 (    1)
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 4 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 4 5 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 12 2 NOTE_INSN_DELETED)
+
+(note 12 8 17 2 NOTE_INSN_DELETED)
+
+(note 17 12 19 2 NOTE_INSN_DELETED)
+
+(note 19 17 28 2 NOTE_INSN_DELETED)
+
+(note 28 19 33 2 NOTE_INSN_DELETED)
+
+(note 33 28 37 2 NOTE_INSN_DELETED)
+
+(note 37 33 41 2 NOTE_INSN_DELETED)
+
+(note 41 37 46 2 NOTE_INSN_DELETED)
+
+(note 46 41 47 2 NOTE_INSN_DELETED)
+
+(note 47 46 51 2 NOTE_INSN_DELETED)
+
+(note 51 47 54 2 NOTE_INSN_DELETED)
+
+(note 54 51 55 2 NOTE_INSN_DELETED)
+
+(note 55 54 57 2 NOTE_INSN_DELETED)
+
+(note 57 55 7 2 NOTE_INSN_DELETED)
+
+(insn 7 57 36 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/f:SI 0 r0 [orig:219 USARTx ] [219])
+                    (const_int 16 [0x10])) [5 USARTx_10(D)->CR2+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:269 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 36 7 148 2 (set (reg:SI 12 ip [orig:237 USART_InitStruct_8(D)->USART_HardwareFlowControl ] [237])
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/f:SI 1 r1 [orig:220 USART_InitStruct ] [220])
+                    (const_int 12 [0xc])) [5 USART_InitStruct_8(D)->USART_HardwareFlowControl+0 S2 A32]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:305 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 148 36 170 2 (set (reg:SI 3 r3 [orig:139 tmpreg ] [139])
+        (and:SI (reg:SI 2 r2 [orig:221 USARTx_10(D)->CR2 ] [221])
+            (const_int 4294955007 [0xffffcfff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:272 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:221 USARTx_10(D)->CR2 ] [221])
+        (nil)))
+
+(insn/f 170 148 2 2 (parallel [
+            (set (mem/c:BLK (pre_modify:SI (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -20 [0xffffffffffffffec]))) [2 A8])
+                (unspec:BLK [
+                        (reg:SI 4 r4)
+                    ] 2))
+            (use (reg:SI 5 r5))
+            (use (reg:SI 6 r6))
+            (use (reg:SI 7 r7))
+            (use (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:247 319 {*push_multi}
+     (expr_list:REG_DEAD (reg:SI 14 lr)
+        (expr_list:REG_DEAD (reg:SI 7 r7)
+            (expr_list:REG_DEAD (reg:SI 6 r6)
+                (expr_list:REG_DEAD (reg:SI 5 r5)
+                    (expr_list:REG_DEAD (reg:SI 4 r4)
+                        (expr_list:REG_FRAME_RELATED_EXPR (sequence [
+                                    (set/f (reg/f:SI 13 sp)
+                                        (plus:SI (reg/f:SI 13 sp)
+                                            (const_int -20 [0xffffffffffffffec])))
+                                    (set/f (mem/c:SI (reg/f:SI 13 sp) [2 S4 A32])
+                                        (reg:SI 4 r4))
+                                    (set/f (mem/c:SI (plus:SI (reg/f:SI 13 sp)
+                                                (const_int 4 [0x4])) [2 S4 A32])
+                                        (reg:SI 5 r5))
+                                    (set/f (mem/c:SI (plus:SI (reg/f:SI 13 sp)
+                                                (const_int 8 [0x8])) [2 S4 A32])
+                                        (reg:SI 6 r6))
+                                    (set/f (mem/c:SI (plus:SI (reg/f:SI 13 sp)
+                                                (const_int 12 [0xc])) [2 S4 A32])
+                                        (reg:SI 7 r7))
+                                    (set/f (mem/c:SI (plus:SI (reg/f:SI 13 sp)
+                                                (const_int 16 [0x10])) [2 S4 A32])
+                                        (reg:SI 14 lr))
+                                ])
+                            (nil))))))))
+
+(insn 2 170 11 2 (set (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+        (reg:SI 0 r0 [ USARTx ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:247 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [ USARTx ])
+        (nil)))
+
+(insn 11 2 22 2 (set (reg:SI 14 lr [orig:222 USART_InitStruct_8(D)->USART_StopBits ] [222])
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/f:SI 1 r1 [orig:220 USART_InitStruct ] [220])
+                    (const_int 6 [0x6])) [5 USART_InitStruct_8(D)->USART_StopBits+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:276 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 22 11 25 2 (set (reg:SI 6 r6)
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/f:SI 1 r1 [orig:220 USART_InitStruct ] [220])
+                    (const_int 4 [0x4])) [5 USART_InitStruct_8(D)->USART_WordLength+0 S2 A32]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:291 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_EQUIV (mem/s:HI (plus:SI (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220])
+                (const_int 4 [0x4])) [5 USART_InitStruct_8(D)->USART_WordLength+0 S2 A32])
+        (nil)))
+
+(insn 25 22 21 2 (set (reg:SI 0 r0)
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/f:SI 1 r1 [orig:220 USART_InitStruct ] [220])
+                    (const_int 10 [0xa])) [5 USART_InitStruct_8(D)->USART_Mode+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:291 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_EQUIV (mem/s:HI (plus:SI (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220])
+                (const_int 10 [0xa])) [5 USART_InitStruct_8(D)->USART_Mode+0 S2 A16])
+        (nil)))
+
+(insn 21 25 3 2 (set (reg:SI 7 r7)
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/f:SI 1 r1 [orig:220 USART_InitStruct ] [220])
+                    (const_int 8 [0x8])) [5 USART_InitStruct_8(D)->USART_Parity+0 S2 A32]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:291 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_EQUIV (mem/s:HI (plus:SI (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220])
+                (const_int 8 [0x8])) [5 USART_InitStruct_8(D)->USART_Parity+0 S2 A32])
+        (nil)))
+
+(insn 3 21 185 2 (set (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220])
+        (reg:SI 1 r1 [ USART_InitStruct ])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:247 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_InitStruct ])
+        (nil)))
+
+(insn 185 3 186 2 (parallel [
+            (set (reg:SI 1 r1 [orig:139 tmpreg ] [139])
+                (ashift:SI (reg:SI 3 r3 [orig:139 tmpreg ] [139])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:272 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:139 tmpreg ] [139])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 186 185 13 2 (parallel [
+            (set (reg/v:SI 2 r2 [orig:139 tmpreg ] [139])
+                (lshiftrt:SI (reg:SI 1 r1 [orig:139 tmpreg ] [139])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:272 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:139 tmpreg ] [139])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 13 186 15 2 (set (reg:SI 3 r3 [orig:143 D.7898 ] [143])
+        (ior:SI (reg/v:SI 2 r2 [orig:139 tmpreg ] [139])
+            (reg:SI 14 lr [orig:222 USART_InitStruct_8(D)->USART_StopBits ] [222]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:279 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 14 lr [orig:222 USART_InitStruct_8(D)->USART_StopBits ] [222])
+        (expr_list:REG_DEAD (reg/v:SI 2 r2 [orig:139 tmpreg ] [139])
+            (nil))))
+
+(insn 15 13 16 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                (const_int 16 [0x10])) [5 USARTx_10(D)->CR2+0 S2 A16])
+        (reg:HI 3 r3 [orig:143 D.7898 ] [143])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:279 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:143 D.7898 ] [143])
+        (nil)))
+
+(insn 16 15 151 2 (set (reg:SI 1 r1)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                    (const_int 12 [0xc])) [5 USARTx_10(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:282 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 151 16 152 2 (set (reg:SI 2 r2 [orig:146 tmpreg ] [146])
+        (and:SI (reg:SI 1 r1 [orig:225 USARTx_10(D)->CR1 ] [225])
+            (const_int -5633 [0xffffffffffffe9ff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:285 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:225 USARTx_10(D)->CR1 ] [225])
+        (nil)))
+
+(insn 152 151 23 2 (set (reg/v:SI 3 r3 [orig:146 tmpreg ] [146])
+        (and:SI (reg:SI 2 r2 [orig:146 tmpreg ] [146])
+            (const_int -13 [0xfffffffffffffff3]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:285 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:146 tmpreg ] [146])
+        (nil)))
+
+(insn 23 152 187 2 (set (reg:SI 14 lr [229])
+        (ior:SI (reg:SI 7 r7 [orig:227 USART_InitStruct_8(D)->USART_Parity ] [227])
+            (reg:SI 6 r6 [orig:228 USART_InitStruct_8(D)->USART_WordLength ] [228]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:291 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 6 r6 [orig:228 USART_InitStruct_8(D)->USART_WordLength ] [228])
+        (nil)))
+
+(insn 187 23 26 2 (parallel [
+            (set (reg:SI 1 r1 [orig:146 tmpreg ] [146])
+                (ashift:SI (reg/v:SI 3 r3 [orig:146 tmpreg ] [146])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:285 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg/v:SI 3 r3 [orig:146 tmpreg ] [146])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 26 187 27 2 (set (reg:SI 6 r6 [232])
+        (ior:SI (reg:SI 14 lr [229])
+            (reg:SI 0 r0 [orig:231 USART_InitStruct_8(D)->USART_Mode ] [231]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:291 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 14 lr [229])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [orig:231 USART_InitStruct_8(D)->USART_Mode ] [231])
+            (nil))))
+
+(insn 27 26 188 2 (set (reg:SI 2 r2 [233])
+        (zero_extend:SI (reg:HI 6 r6 [232]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:291 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 6 r6 [232])
+        (nil)))
+
+(insn 188 27 29 2 (parallel [
+            (set (reg:SI 0 r0 [orig:146 tmpreg ] [146])
+                (lshiftrt:SI (reg:SI 1 r1 [orig:146 tmpreg ] [146])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:285 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:146 tmpreg ] [146])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 29 188 31 2 (set (reg:SI 3 r3 [orig:154 D.7898 ] [154])
+        (ior:SI (reg:SI 2 r2 [233])
+            (reg:SI 0 r0 [orig:146 tmpreg ] [146]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:295 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [233])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [orig:146 tmpreg ] [146])
+            (nil))))
+
+(insn 31 29 32 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                (const_int 12 [0xc])) [5 USARTx_10(D)->CR1+0 S2 A16])
+        (reg:HI 3 r3 [orig:154 D.7898 ] [154])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:295 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:154 D.7898 ] [154])
+        (nil)))
+
+(insn 32 31 155 2 (set (reg:SI 14 lr)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                    (const_int 20 [0x14])) [5 USARTx_10(D)->CR3+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:298 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 155 32 189 2 (set (reg:SI 1 r1 [orig:157 tmpreg ] [157])
+        (and:SI (reg:SI 14 lr [orig:236 USARTx_10(D)->CR3 ] [236])
+            (const_int 4294966527 [0xfffffcff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:301 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 14 lr [orig:236 USARTx_10(D)->CR3 ] [236])
+        (nil)))
+
+(insn 189 155 190 2 (parallel [
+            (set (reg:SI 6 r6 [orig:157 tmpreg ] [157])
+                (ashift:SI (reg:SI 1 r1 [orig:157 tmpreg ] [157])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:301 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:157 tmpreg ] [157])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 190 189 38 2 (parallel [
+            (set (reg:SI 2 r2 [orig:157 tmpreg ] [157])
+                (lshiftrt:SI (reg:SI 6 r6 [orig:157 tmpreg ] [157])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:301 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 6 r6 [orig:157 tmpreg ] [157])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 38 190 171 2 (set (reg:SI 0 r0 [orig:161 D.7898 ] [161])
+        (ior:SI (reg:SI 2 r2 [orig:157 tmpreg ] [157])
+            (reg:SI 12 ip [orig:237 USART_InitStruct_8(D)->USART_HardwareFlowControl ] [237]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:308 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [orig:237 USART_InitStruct_8(D)->USART_HardwareFlowControl ] [237])
+        (expr_list:REG_DEAD (reg:SI 2 r2 [orig:157 tmpreg ] [157])
+            (nil))))
+
+(insn/f 171 38 172 2 (set (reg/f:SI 13 sp)
+        (plus:SI (reg/f:SI 13 sp)
+            (const_int -20 [0xffffffffffffffec]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:247 4 {*arm_addsi3}
+     (nil))
+
+(note 172 171 40 2 NOTE_INSN_PROLOGUE_END)
+
+(insn 40 172 42 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                (const_int 20 [0x14])) [5 USARTx_10(D)->CR3+0 S2 A16])
+        (reg:HI 0 r0 [orig:161 D.7898 ] [161])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:308 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 0 r0 [orig:161 D.7898 ] [161])
+        (nil)))
+
+(insn 42 40 43 2 (set (reg:SI 0 r0)
+        (reg/f:SI 13 sp)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:312 709 {*thumb2_movsi_insn}
+     (nil))
+
+(call_insn 43 42 160 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41]  <function_decl 0x55c25600 RCC_GetClocksFreq>) [0 S4 A32])
+                (const_int 0 [0]))
+            (use (const_int 0 [0]))
+            (clobber (reg:SI 14 lr))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:312 242 {*call_symbol}
+     (expr_list:REG_DEAD (reg:SI 0 r0)
+        (nil))
+    (expr_list:REG_DEP_TRUE (use (reg:SI 0 r0))
+        (nil)))
+
+(insn 160 43 161 2 (set (reg:SI 3 r3 [246])
+        (const_int 4096 [0x1000])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 4096 [0x1000])
+        (nil)))
+
+(insn 161 160 191 2 (set (zero_extract:SI (reg:SI 3 r3 [246])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16385 [0x4001])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 191 161 192 2 (parallel [
+            (set (reg:SI 1 r1)
+                (minus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                    (reg:SI 3 r3 [246])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 742 {*thumb2_subsi_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [246])
+        (nil)))
+
+(insn 192 191 158 2 (parallel [
+            (set (reg:CC 24 cc)
+                (compare:CC (const_int 0 [0])
+                    (reg:SI 1 r1)))
+            (set (reg:SI 6 r6 [245])
+                (minus:SI (const_int 0 [0])
+                    (reg:SI 1 r1)))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 31 {*subsi3_compare}
+     (nil))
+
+(insn 158 192 159 2 (set (reg:SI 0 r0 [243])
+        (const_int 5120 [0x1400])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 5120 [0x1400])
+        (nil)))
+
+(insn 159 158 193 2 (set (zero_extract:SI (reg:SI 0 r0 [243])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 16385 [0x4001])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 193 159 56 2 (set (reg:SI 2 r2 [245])
+        (plus:SI (plus:SI (reg:SI 6 r6 [245])
+                (reg:SI 1 r1))
+            (geu:SI (reg:CC 24 cc)
+                (const_int 0 [0])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 15 {*addsi3_carryin_geu}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_DEAD (reg:SI 6 r6 [245])
+            (expr_list:REG_DEAD (reg:SI 1 r1)
+                (nil)))))
+
+(insn 56 193 58 2 (parallel [
+            (set (reg:SI 3 r3 [249])
+                (ior:SI (eq:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                        (reg:SI 0 r0 [243]))
+                    (reg:SI 2 r2 [245])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 724 {*thumb2_cond_arith}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [245])
+        (expr_list:REG_DEAD (reg:SI 0 r0 [243])
+            (expr_list:REG_UNUSED (reg:CC 24 cc)
+                (nil)))))
+
+(jump_insn 58 56 59 2 (parallel [
+            (set (pc)
+                (if_then_else (eq (reg:SI 3 r3 [249])
+                        (const_int 0 [0]))
+                    (label_ref 63)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:314 748 {*thumb2_cbz}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [249])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 5000 [0x1388])
+                (nil))))
+ -> 63)
+
+(note 59 58 69 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 69 59 68 3 NOTE_INSN_DELETED)
+
+(insn 68 69 60 3 (set (reg:SI 6 r6)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                    (const_int 12 [0xc])) [5 USARTx_10(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 60 68 70 3 (set (reg/v:SI 3 r3 [orig:135 apbclock ] [135])
+        (mem/s/c:SI (plus:SI (reg/f:SI 13 sp)
+                (const_int 12 [0xc])) [4 RCC_ClocksStatus.PCLK2_Frequency+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:316 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 70 60 71 3 (set (reg:SI 0 r0 [orig:251 D.7914 ] [251])
+        (sign_extend:SI (reg:HI 6 r6 [orig:250 USARTx_10(D)->CR1 ] [250]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 165 {*arm_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 6 r6 [orig:250 USARTx_10(D)->CR1 ] [250])
+        (nil)))
+
+(insn 71 70 72 3 (set (reg:CC 24 cc)
+        (compare:CC (reg:SI 0 r0 [orig:251 D.7914 ] [251])
+            (const_int 0 [0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [orig:251 D.7914 ] [251])
+        (nil)))
+
+(jump_insn 72 71 84 3 (set (pc)
+        (if_then_else (lt (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 200)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 2700 [0xa8c])
+            (nil)))
+ -> 200)
+
+(code_label 84 72 85 4 22 "" [1 uses])
+
+(note 85 84 87 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 87 85 89 4 NOTE_INSN_DELETED)
+
+(note 89 87 91 4 NOTE_INSN_DELETED)
+
+(insn 91 89 88 4 (set (reg:SI 6 r6 [orig:265 USART_InitStruct_8(D)->USART_BaudRate ] [265])
+        (mem/s:SI (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220]) [4 USART_InitStruct_8(D)->USART_BaudRate+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:332 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220])
+        (nil)))
+
+(insn 88 91 90 4 (set (reg:SI 3 r3 [261])
+        (plus:SI (mult:SI (reg/v:SI 3 r3 [orig:135 apbclock ] [135])
+                (const_int 4 [0x4]))
+            (reg/v:SI 3 r3 [orig:135 apbclock ] [135]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:332 262 {*arith_shiftsi}
+     (nil))
+
+(insn 90 88 183 4 (set (reg:SI 14 lr [263])
+        (plus:SI (mult:SI (reg:SI 3 r3 [261])
+                (const_int 4 [0x4]))
+            (reg:SI 3 r3 [261]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:332 262 {*arith_shiftsi}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [261])
+        (nil)))
+
+(insn 183 90 93 4 (parallel [
+            (set (reg:SI 0 r0 [264])
+                (ashift:SI (reg:SI 6 r6 [orig:265 USART_InitStruct_8(D)->USART_BaudRate ] [265])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:332 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 6 r6 [orig:265 USART_InitStruct_8(D)->USART_BaudRate ] [265])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 93 183 94 4 (set (reg/v:SI 1 r1 [orig:136 integerdivider ] [136])
+        (udiv:SI (reg:SI 14 lr [263])
+            (reg:SI 0 r0 [264]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:332 133 {udivsi3}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [264])
+        (nil)))
+
+(code_label 94 93 95 5 23 "" [1 uses])
+
+(note 95 94 100 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(note 100 95 103 5 NOTE_INSN_DELETED)
+
+(note 103 100 106 5 NOTE_INSN_DELETED)
+
+(note 106 103 145 5 NOTE_INSN_DELETED)
+
+(insn 145 106 105 5 (set (reg:SI 3 r3 [268])
+        (const_int 34079 [0x851f])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:334 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUAL (const_int 34079 [0x851f])
+        (nil)))
+
+(insn 105 145 146 5 (set (reg:SI 0 r0)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                    (const_int 12 [0xc])) [5 USARTx_10(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:340 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 146 105 98 5 (set (zero_extract:SI (reg:SI 3 r3 [268])
+            (const_int 16 [0x10])
+            (const_int 16 [0x10]))
+        (const_int 20971 [0x51eb])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:334 342 {*arm_movtas_ze}
+     (nil))
+
+(insn 98 146 180 5 (parallel [
+            (set (reg:SI 6 r6 [267])
+                (truncate:SI (lshiftrt:DI (mult:DI (zero_extend:DI (reg/v:SI 1 r1 [orig:136 integerdivider ] [136]))
+                            (zero_extend:DI (reg:SI 3 r3 [268])))
+                        (const_int 32 [0x20]))))
+            (clobber (reg:SI 5 r5))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:334 59 {*umulsi3_highpart_v6}
+     (expr_list:REG_UNUSED (reg:SI 5 r5)
+        (expr_list:REG_EQUAL (truncate:SI (lshiftrt:DI (mult:DI (zero_extend:DI (reg/v:SI 1 r1 [orig:136 integerdivider ] [136]))
+                        (const_int 1374389535 [0x51eb851f]))
+                    (const_int 32 [0x20])))
+            (nil))))
+
+(insn 180 98 107 5 (parallel [
+            (set (reg:SI 2 r2 [266])
+                (lshiftrt:SI (reg:SI 6 r6 [267])
+                    (const_int 5 [0x5])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:334 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 6 r6 [267])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 107 180 181 5 (set (reg:SI 12 ip [orig:273 D.7926 ] [273])
+        (sign_extend:SI (reg:HI 0 r0 [orig:272 USARTx_10(D)->CR1 ] [272]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:340 165 {*arm_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 0 r0 [orig:272 USARTx_10(D)->CR1 ] [272])
+        (nil)))
+
+(insn 181 107 182 5 (parallel [
+            (set (reg/v:SI 6 r6 [orig:174 tmpreg ] [174])
+                (ashift:SI (reg:SI 2 r2 [266])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:337 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 182 181 108 5 (parallel [
+            (set (reg:SI 5 r5 [271])
+                (const_int 100 [0x64]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:337 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 108 182 104 5 (set (reg:CC 24 cc)
+        (compare:CC (reg:SI 12 ip [orig:273 D.7926 ] [273])
+            (const_int 0 [0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:340 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [orig:273 D.7926 ] [273])
+        (nil)))
+
+(insn 104 108 109 5 (set (reg/v:SI 2 r2 [orig:177 fractionaldivider ] [177])
+        (minus:SI (reg/v:SI 1 r1 [orig:136 integerdivider ] [136])
+            (mult:SI (reg:SI 2 r2 [266])
+                (reg:SI 5 r5 [271])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:337 47 {*mulsi3subsi}
+     (expr_list:REG_DEAD (reg/v:SI 1 r1 [orig:136 integerdivider ] [136])
+        (nil)))
+
+(jump_insn 109 104 122 5 (set (pc)
+        (if_then_else (lt (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 201)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:340 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 1912 [0x778])
+            (nil)))
+ -> 201)
+
+(note 122 109 128 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(note 128 122 176 6 NOTE_INSN_DELETED)
+
+(insn 176 128 177 6 (parallel [
+            (set (reg:SI 0 r0 [280])
+                (ashift:SI (reg/v:SI 2 r2 [orig:177 fractionaldivider ] [177])
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:346 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg/v:SI 2 r2 [orig:177 fractionaldivider ] [177])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 177 176 127 6 (parallel [
+            (set (reg:SI 0 r0 [281])
+                (plus:SI (reg:SI 0 r0 [280])
+                    (const_int 50 [0x32])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:346 741 {*thumb2_addsi_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 127 177 129 6 (parallel [
+            (set (reg:SI 3 r3 [283])
+                (truncate:SI (lshiftrt:DI (mult:DI (zero_extend:DI (reg:SI 0 r0 [281]))
+                            (zero_extend:DI (reg:SI 3 r3 [268])))
+                        (const_int 32 [0x20]))))
+            (clobber (reg:SI 5 r5))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:346 59 {*umulsi3_highpart_v6}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [281])
+        (expr_list:REG_UNUSED (reg:SI 5 r5)
+            (expr_list:REG_EQUAL (truncate:SI (lshiftrt:DI (mult:DI (zero_extend:DI (reg:SI 2 r2 [281]))
+                            (const_int 1374389535 [0x51eb851f]))
+                        (const_int 32 [0x20])))
+                (nil)))))
+
+(insn 129 127 130 6 (set (reg:SI 5 r5 [285])
+        (zero_extract:SI (reg:SI 3 r3 [283])
+            (const_int 4 [0x4])
+            (const_int 5 [0x5]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:346 131 {extzv_t2}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [283])
+        (nil)))
+
+(insn 130 129 131 6 (set (reg/v:SI 3 r3 [orig:134 tmpreg ] [134])
+        (ior:SI (reg:SI 5 r5 [285])
+            (reg/v:SI 6 r6 [orig:174 tmpreg ] [174]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:346 91 {*iorsi3_insn}
+     (nil))
+
+(code_label 131 130 132 7 25 "" [1 uses])
+
+(note 132 131 135 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(insn 135 132 207 7 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                (const_int 8 [0x8])) [5 USARTx_10(D)->BRR+0 S2 A16])
+        (reg:HI 3 r3 [orig:188 D.7898 ] [188])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:350 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:188 D.7898 ] [188])
+        (nil)))
+
+(note 207 135 174 7 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 174 207 175 7 (unspec_volatile [
+            (return)
+        ] 1) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:351 315 {*epilogue_insns}
+     (nil)
+ -> return)
+
+(barrier 175 174 63)
+
+(code_label 63 175 64 8 20 "" [1 uses])
+
+(note 64 63 195 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 195 64 65 8 (set (reg:SI 6 r6)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 4 r4 [orig:219 USARTx ] [219])
+                    (const_int 12 [0xc])) [5 USARTx_10(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 65 195 196 8 (set (reg/v:SI 3 r3 [orig:135 apbclock ] [135])
+        (mem/s/c:SI (plus:SI (reg/f:SI 13 sp)
+                (const_int 8 [0x8])) [4 RCC_ClocksStatus.PCLK1_Frequency+0 S4 A64])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:320 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 196 65 197 8 (set (reg:SI 0 r0 [orig:251 D.7914 ] [251])
+        (sign_extend:SI (reg:HI 6 r6 [orig:250 USARTx_10(D)->CR1 ] [250]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 165 {*arm_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 6 r6 [orig:250 USARTx_10(D)->CR1 ] [250])
+        (nil)))
+
+(insn 197 196 198 8 (set (reg:CC 24 cc)
+        (compare:CC (reg:SI 0 r0 [orig:251 D.7914 ] [251])
+            (const_int 0 [0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg:SI 0 r0 [orig:251 D.7914 ] [251])
+        (nil)))
+
+(jump_insn 198 197 200 8 (set (pc)
+        (if_then_else (ge (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref 84)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:324 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 7300 [0x1c84])
+            (nil)))
+ -> 84)
+
+(code_label 200 198 73 9 26 "" [1 uses])
+
+(note 73 200 75 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(note 75 73 77 9 NOTE_INSN_DELETED)
+
+(note 77 75 79 9 NOTE_INSN_DELETED)
+
+(insn 79 77 76 9 (set (reg:SI 2 r2 [orig:258 USART_InitStruct_8(D)->USART_BaudRate ] [258])
+        (mem/s:SI (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220]) [4 USART_InitStruct_8(D)->USART_BaudRate+0 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:327 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg/v/f:SI 5 r5 [orig:220 USART_InitStruct ] [220])
+        (nil)))
+
+(insn 76 79 78 9 (set (reg:SI 12 ip [254])
+        (plus:SI (mult:SI (reg/v:SI 3 r3 [orig:135 apbclock ] [135])
+                (const_int 4 [0x4]))
+            (reg/v:SI 3 r3 [orig:135 apbclock ] [135]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:327 262 {*arith_shiftsi}
+     (expr_list:REG_DEAD (reg/v:SI 3 r3 [orig:135 apbclock ] [135])
+        (nil)))
+
+(insn 78 76 184 9 (set (reg:SI 1 r1 [256])
+        (plus:SI (mult:SI (reg:SI 12 ip [254])
+                (const_int 4 [0x4]))
+            (reg:SI 12 ip [254]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:327 262 {*arith_shiftsi}
+     (expr_list:REG_DEAD (reg:SI 12 ip [254])
+        (nil)))
+
+(insn 184 78 81 9 (parallel [
+            (set (reg:SI 5 r5 [257])
+                (ashift:SI (reg:SI 2 r2 [orig:258 USART_InitStruct_8(D)->USART_BaudRate ] [258])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:327 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:258 USART_InitStruct_8(D)->USART_BaudRate ] [258])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 81 184 208 9 (set (reg/v:SI 1 r1 [orig:136 integerdivider ] [136])
+        (udiv:SI (reg:SI 1 r1 [256])
+            (reg:SI 5 r5 [257]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:327 133 {udivsi3}
+     (expr_list:REG_DEAD (reg:SI 5 r5 [257])
+        (nil)))
+
+(jump_insn 208 81 209 9 (set (pc)
+        (label_ref 94)) 230 {*arm_jump}
+     (nil)
+ -> 94)
+
+(barrier 209 208 201)
+
+(code_label 201 209 110 10 27 "" [1 uses])
+
+(note 110 201 116 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(note 116 110 178 10 NOTE_INSN_DELETED)
+
+(insn 178 116 179 10 (parallel [
+            (set (reg:SI 2 r2 [274])
+                (ashift:SI (reg/v:SI 2 r2 [orig:177 fractionaldivider ] [177])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:342 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 179 178 115 10 (parallel [
+            (set (reg:SI 2 r2 [275])
+                (plus:SI (reg:SI 2 r2 [274])
+                    (const_int 50 [0x32])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:342 741 {*thumb2_addsi_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 115 179 117 10 (parallel [
+            (set (reg:SI 14 lr [277])
+                (truncate:SI (lshiftrt:DI (mult:DI (zero_extend:DI (reg:SI 2 r2 [275]))
+                            (zero_extend:DI (reg:SI 3 r3 [268])))
+                        (const_int 32 [0x20]))))
+            (clobber (reg:SI 1 r1))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:342 59 {*umulsi3_highpart_v6}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [268])
+        (expr_list:REG_DEAD (reg:SI 2 r2 [275])
+            (expr_list:REG_UNUSED (reg:SI 1 r1)
+                (expr_list:REG_EQUAL (truncate:SI (lshiftrt:DI (mult:DI (zero_extend:DI (reg:SI 2 r2 [275]))
+                                (const_int 1374389535 [0x51eb851f]))
+                            (const_int 32 [0x20])))
+                    (nil))))))
+
+(insn 117 115 118 10 (set (reg:SI 1 r1 [279])
+        (zero_extract:SI (reg:SI 14 lr [277])
+            (const_int 3 [0x3])
+            (const_int 5 [0x5]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:342 131 {extzv_t2}
+     (nil))
+
+(insn 118 117 210 10 (set (reg/v:SI 3 r3 [orig:134 tmpreg ] [134])
+        (ior:SI (reg:SI 1 r1 [279])
+            (reg/v:SI 6 r6 [orig:174 tmpreg ] [174]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:342 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [279])
+        (nil)))
+
+(jump_insn 210 118 211 10 (set (pc)
+        (label_ref 131)) 230 {*arm_jump}
+     (nil)
+ -> 131)
+
+(barrier 211 210 162)
+
+(note 162 211 164 NOTE_INSN_DELETED)
+
+(note 164 162 0 NOTE_INSN_DELETED)
+
+;; Function USART_StructInit (USART_StructInit)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 4 NOTE_INSN_DELETED)
+
+(note 4 1 28 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 28 4 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 28 17 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 17 3 32 2 NOTE_INSN_DELETED)
+
+(insn 32 17 6 2 (parallel [
+            (set (reg:SI 3 r3 [137])
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:363 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 6 32 33 2 (set (reg:SI 1 r1 [135])
+        (const_int 9600 [0x2580])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:362 709 {*thumb2_movsi_insn}
+     (expr_list:REG_EQUIV (const_int 9600 [0x2580])
+        (nil)))
+
+(insn 33 6 7 2 (parallel [
+            (set (reg:HI 2 r2)
+                (const_int 12 [0xc]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:366 739 {*thumb2_movhi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 7 33 10 2 (set (mem/s:SI (reg/v/f:SI 0 r0 [orig:134 USART_InitStruct ] [134]) [4 USART_InitStruct_1(D)->USART_BaudRate+0 S4 A32])
+        (reg:SI 1 r1 [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:362 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [135])
+        (nil)))
+
+(insn 10 7 13 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_InitStruct ] [134])
+                (const_int 4 [0x4])) [5 USART_InitStruct_1(D)->USART_WordLength+0 S2 A32])
+        (reg:HI 3 r3 [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:363 711 {*thumb2_movhi_insn}
+     (nil))
+
+(insn 13 10 16 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_InitStruct ] [134])
+                (const_int 6 [0x6])) [5 USART_InitStruct_1(D)->USART_StopBits+0 S2 A16])
+        (reg:HI 3 r3 [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:364 711 {*thumb2_movhi_insn}
+     (nil))
+
+(insn 16 13 19 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_InitStruct ] [134])
+                (const_int 8 [0x8])) [5 USART_InitStruct_1(D)->USART_Parity+0 S2 A32])
+        (reg:HI 3 r3 [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:365 711 {*thumb2_movhi_insn}
+     (nil))
+
+(insn 19 16 22 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_InitStruct ] [134])
+                (const_int 10 [0xa])) [5 USART_InitStruct_1(D)->USART_Mode+0 S2 A16])
+        (reg:HI 2 r2)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:366 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2)
+        (nil)))
+
+(insn 22 19 34 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_InitStruct ] [134])
+                (const_int 12 [0xc])) [5 USART_InitStruct_1(D)->USART_HardwareFlowControl+0 S2 A32])
+        (reg:HI 3 r3 [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:367 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:134 USART_InitStruct ] [134])
+            (nil))))
+
+(note 34 22 30 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 30 34 31 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:368 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 30 25)
+
+(note 25 31 26 NOTE_INSN_DELETED)
+
+(note 26 25 0 NOTE_INSN_DELETED)
+
+;; Function USART_ClockInit (USART_ClockInit)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 4 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 4 5 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 21 2 NOTE_INSN_DELETED)
+
+(note 21 8 12 2 NOTE_INSN_DELETED)
+
+(insn 12 21 7 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s:HI (reg/v/f:SI 1 r1 [orig:148 USART_ClockInitStruct ] [148]) [5 USART_ClockInitStruct_6(D)->USART_Clock+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 7 12 32 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:147 USARTx ] [147])
+                    (const_int 16 [0x10])) [5 USARTx_2(D)->CR2+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:390 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn/f 32 7 33 2 (parallel [
+            (set (mem/c:BLK (pre_modify:SI (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -8 [0xfffffffffffffff8]))) [2 A8])
+                (unspec:BLK [
+                        (reg:SI 4 r4)
+                    ] 2))
+            (use (reg:SI 5 r5))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:380 319 {*push_multi}
+     (expr_list:REG_DEAD (reg:SI 5 r5)
+        (expr_list:REG_DEAD (reg:SI 4 r4)
+            (expr_list:REG_FRAME_RELATED_EXPR (sequence [
+                        (set/f (reg/f:SI 13 sp)
+                            (plus:SI (reg/f:SI 13 sp)
+                                (const_int -8 [0xfffffffffffffff8])))
+                        (set/f (mem/c:SI (reg/f:SI 13 sp) [2 S4 A32])
+                            (reg:SI 4 r4))
+                        (set/f (mem/c:SI (plus:SI (reg/f:SI 13 sp)
+                                    (const_int 4 [0x4])) [2 S4 A32])
+                            (reg:SI 5 r5))
+                    ])
+                (nil)))))
+
+(note 33 32 11 2 NOTE_INSN_PROLOGUE_END)
+
+(insn 11 33 15 2 (set (reg:SI 5 r5)
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/v/f:SI 1 r1 [orig:148 USART_ClockInitStruct ] [148])
+                    (const_int 2 [0x2])) [5 USART_ClockInitStruct_6(D)->USART_CPOL+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 15 11 18 2 (set (reg:SI 4 r4)
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/v/f:SI 1 r1 [orig:148 USART_ClockInitStruct ] [148])
+                    (const_int 4 [0x4])) [5 USART_ClockInitStruct_6(D)->USART_CPHA+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 18 15 13 2 (set (reg:SI 1 r1)
+        (zero_extend:SI (mem/s:HI (plus:SI (reg/v/f:SI 1 r1 [orig:148 USART_ClockInitStruct ] [148])
+                    (const_int 6 [0x6])) [5 USART_ClockInitStruct_6(D)->USART_LastBit+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 13 18 16 2 (set (reg:SI 12 ip [152])
+        (ior:SI (reg:SI 5 r5 [orig:150 USART_ClockInitStruct_6(D)->USART_CPOL ] [150])
+            (reg:SI 2 r2 [orig:151 USART_ClockInitStruct_6(D)->USART_Clock ] [151]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:151 USART_ClockInitStruct_6(D)->USART_Clock ] [151])
+        (nil)))
+
+(insn 16 13 27 2 (set (reg:SI 2 r2 [155])
+        (ior:SI (reg:SI 12 ip [152])
+            (reg:SI 4 r4 [orig:154 USART_ClockInitStruct_6(D)->USART_CPHA ] [154]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [152])
+        (nil)))
+
+(insn 27 16 37 2 (set (reg/v:SI 3 r3 [orig:136 tmpreg ] [136])
+        (and:SI (reg:SI 3 r3 [orig:149 USARTx_2(D)->CR2 ] [149])
+            (const_int 4294963455 [0xfffff0ff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:392 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 37 27 19 2 (parallel [
+            (set (reg/v:SI 3 r3 [orig:136 tmpreg ] [136])
+                (ashift:SI (reg/v:SI 3 r3 [orig:136 tmpreg ] [136])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:392 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 19 37 20 2 (set (reg:SI 12 ip [158])
+        (ior:SI (reg:SI 2 r2 [155])
+            (reg:SI 1 r1 [orig:157 USART_ClockInitStruct_6(D)->USART_LastBit ] [157]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [155])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [orig:157 USART_ClockInitStruct_6(D)->USART_LastBit ] [157])
+            (nil))))
+
+(insn 20 19 38 2 (set (reg:SI 2 r2 [159])
+        (zero_extend:SI (reg:HI 12 ip [158]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:399 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 12 ip [158])
+        (nil)))
+
+(insn 38 20 22 2 (parallel [
+            (set (reg:SI 1 r1 [orig:136 tmpreg ] [136])
+                (lshiftrt:SI (reg/v:SI 3 r3 [orig:136 tmpreg ] [136])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:392 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg/v:SI 3 r3 [orig:136 tmpreg ] [136])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 22 38 24 2 (set (reg:SI 3 r3 [orig:146 D.7891 ] [146])
+        (ior:SI (reg:SI 2 r2 [159])
+            (reg:SI 1 r1 [orig:136 tmpreg ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:401 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [159])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [orig:136 tmpreg ] [136])
+            (nil))))
+
+(insn 24 22 39 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:147 USARTx ] [147])
+                (const_int 16 [0x10])) [5 USARTx_2(D)->CR2+0 S2 A16])
+        (reg:HI 3 r3 [orig:146 D.7891 ] [146])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:401 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:146 D.7891 ] [146])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:147 USARTx ] [147])
+            (nil))))
+
+(note 39 24 35 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 35 39 36 2 (unspec_volatile [
+            (return)
+        ] 1) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:402 315 {*epilogue_insns}
+     (nil)
+ -> return)
+
+(barrier 36 35 30)
+
+(note 30 36 31 NOTE_INSN_DELETED)
+
+(note 31 30 0 NOTE_INSN_DELETED)
+
+;; Function USART_ClockStructInit (USART_ClockStructInit)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 4 NOTE_INSN_DELETED)
+
+(note 4 1 22 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 22 4 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 22 26 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 26 3 8 2 (parallel [
+            (set (reg:SI 3 r3 [136])
+                (const_int 0 [0]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:413 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 8 26 11 2 (set (mem/s:HI (reg/v/f:SI 0 r0 [orig:134 USART_ClockInitStruct ] [134]) [5 USART_ClockInitStruct_1(D)->USART_Clock+0 S2 A16])
+        (reg:HI 3 r3 [136])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:413 711 {*thumb2_movhi_insn}
+     (nil))
+
+(insn 11 8 14 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_ClockInitStruct ] [134])
+                (const_int 2 [0x2])) [5 USART_ClockInitStruct_1(D)->USART_CPOL+0 S2 A16])
+        (reg:HI 3 r3 [136])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:414 711 {*thumb2_movhi_insn}
+     (nil))
+
+(insn 14 11 17 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_ClockInitStruct ] [134])
+                (const_int 4 [0x4])) [5 USART_ClockInitStruct_1(D)->USART_CPHA+0 S2 A16])
+        (reg:HI 3 r3 [136])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:415 711 {*thumb2_movhi_insn}
+     (nil))
+
+(insn 17 14 27 2 (set (mem/s:HI (plus:SI (reg/v/f:SI 0 r0 [orig:134 USART_ClockInitStruct ] [134])
+                (const_int 6 [0x6])) [5 USART_ClockInitStruct_1(D)->USART_LastBit+0 S2 A16])
+        (reg:HI 3 r3 [136])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:416 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [136])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:134 USART_ClockInitStruct ] [134])
+            (nil))))
+
+(note 27 17 24 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 24 27 25 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:417 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 25 24 20)
+
+(note 20 25 21 NOTE_INSN_DELETED)
+
+(note 21 20 0 NOTE_INSN_DELETED)
+
+;; Function USART_Cmd (USART_Cmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 12 [0xc])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:436 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:433 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7881 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR1 ] [143])
+            (const_int 4294959103 [0xffffdfff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:441 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR1 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7881 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7881 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:441 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7881 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7881 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7881 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:441 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7881 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7881 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:441 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7881 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 34 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7877 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR1 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:436 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR1 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7878 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7877 ] [134])
+            (const_int 8192 [0x2000]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:436 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7877 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7878 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:436 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7878 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_SetPrescaler (USART_SetPrescaler)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 23 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 23 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 23 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 15 2 NOTE_INSN_DELETED)
+
+(note 15 9 7 2 NOTE_INSN_DELETED)
+
+(insn 7 15 10 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                    (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:459 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 10 7 12 2 (set (reg:SI 3 r3 [orig:135 D.7871 ] [135])
+        (and:SI (reg:SI 2 r2 [orig:141 USARTx_1(D)->GTPR ] [141])
+            (const_int 65280 [0xff00]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:459 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:141 USARTx_1(D)->GTPR ] [141])
+        (nil)))
+
+(insn 12 10 13 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7871 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:459 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7871 ] [135])
+        (nil)))
+
+(insn 13 12 14 2 (set (reg:SI 12 ip)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                    (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:461 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 14 13 16 2 (set (reg:SI 2 r2 [orig:136 D.7872 ] [136])
+        (zero_extend:SI (reg:HI 12 ip [orig:144 USARTx_1(D)->GTPR ] [144]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:461 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 12 ip [orig:144 USARTx_1(D)->GTPR ] [144])
+        (nil)))
+
+(insn 16 14 18 2 (set (reg:SI 3 r3 [orig:138 D.7874 ] [138])
+        (ior:SI (reg:SI 1 r1 [ USART_Prescaler ])
+            (reg:SI 2 r2 [orig:136 D.7872 ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:461 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:136 D.7872 ] [136])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_Prescaler ])
+            (nil))))
+
+(insn 18 16 27 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16])
+        (reg:HI 3 r3 [orig:138 D.7874 ] [138])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:461 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:138 D.7874 ] [138])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+            (nil))))
+
+(note 27 18 25 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 25 27 26 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:462 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 26 25 21)
+
+(note 21 26 22 NOTE_INSN_DELETED)
+
+(note 22 21 0 NOTE_INSN_DELETED)
+
+;; Function USART_OverSampling8Cmd (USART_OverSampling8Cmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 39 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 39 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 39 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 12 [0xc])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:483 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 20 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 45)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:480 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 45)
+
+(note 20 8 22 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 22 20 23 3 NOTE_INSN_DELETED)
+
+(note 23 22 24 3 NOTE_INSN_DELETED)
+
+(note 24 23 43 3 NOTE_INSN_DELETED)
+
+(insn 43 24 44 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7869 ] [137])
+                (ashift:SI (reg:SI 3 r3 [orig:144 USARTx_2(D)->CR1 ] [144])
+                    (const_int 17 [0x11])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:488 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 44 43 27 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7869 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7869 ] [137])
+                    (const_int 17 [0x11])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:488 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7869 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 27 44 42 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7869 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:488 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7869 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 42 27 41 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 41 42 45)
+
+(code_label 45 41 9 4 39 "" [1 uses])
+
+(note 9 45 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 11 9 12 4 NOTE_INSN_DELETED)
+
+(insn 12 11 13 4 (set (reg:SI 1 r1 [142])
+        (not:SI (ashift:SI (reg:SI 3 r3 [orig:140 USARTx_2(D)->CR1 ] [140])
+                (const_int 17 [0x11])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:483 122 {*not_shiftsi}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:140 USARTx_2(D)->CR1 ] [140])
+        (nil)))
+
+(insn 13 12 16 4 (set (reg:SI 3 r3 [141])
+        (not:SI (lshiftrt:SI (reg:SI 1 r1 [142])
+                (const_int 17 [0x11])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:483 122 {*not_shiftsi}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [142])
+        (expr_list:REG_EQUAL (ior:SI (reg:SI 134 [ D.7865 ])
+                (const_int -32768 [0xffffffffffff8000]))
+            (nil))))
+
+(insn 16 13 40 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7866 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:483 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7866 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 16 34 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 34 40 37)
+
+(note 37 34 38 NOTE_INSN_DELETED)
+
+(note 38 37 0 NOTE_INSN_DELETED)
+
+;; Function USART_OneBitMethodCmd (USART_OneBitMethodCmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 20 [0x14])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:509 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:506 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7862 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+            (const_int 4294965247 [0xfffff7ff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:514 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7862 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7862 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:514 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7862 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7862 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7862 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:514 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7862 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7862 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:514 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7862 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 43 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7858 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:509 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7859 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7858 ] [134])
+            (const_int 2048 [0x800]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:509 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7858 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7859 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:509 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7859 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_SendData (USART_SendData)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 18 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 18 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 18 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 8 2 NOTE_INSN_DELETED)
+
+(note 8 7 22 2 NOTE_INSN_DELETED)
+
+(insn 22 8 23 2 (parallel [
+            (set (reg:SI 2 r2 [orig:134 D.7855 ] [134])
+                (ashift:SI (reg:SI 1 r1 [ Data ])
+                    (const_int 23 [0x17])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:564 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ Data ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 23 22 11 2 (parallel [
+            (set (reg:SI 1 r1 [orig:134 D.7855 ] [134])
+                (lshiftrt:SI (reg:SI 2 r2 [orig:134 D.7855 ] [134])
+                    (const_int 23 [0x17])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:564 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:134 D.7855 ] [134])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 11 23 24 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:135 USARTx ] [135])
+                (const_int 4 [0x4])) [5 USARTx_3(D)->DR+0 S2 A16])
+        (reg:HI 1 r1 [orig:134 D.7855 ] [134])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:564 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 1 r1 [orig:134 D.7855 ] [134])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:135 USARTx ] [135])
+            (nil))))
+
+(note 24 11 20 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 20 24 21 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:565 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 21 20 16)
+
+(note 16 21 17 NOTE_INSN_DELETED)
+
+(note 17 16 0 NOTE_INSN_DELETED)
+
+;; Function USART_ReceiveData (USART_ReceiveData)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 4 NOTE_INSN_DELETED)
+
+(note 4 1 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 25 4 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 25 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 3 8 2 NOTE_INSN_DELETED)
+
+(note 8 7 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 10 2 NOTE_INSN_DELETED)
+
+(note 10 9 6 2 NOTE_INSN_DELETED)
+
+(insn 6 10 29 2 (set (reg:SI 1 r1)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:137 USARTx ] [137])
+                    (const_int 4 [0x4])) [5 USARTx_1(D)->DR+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:579 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:137 USARTx ] [137])
+        (nil)))
+
+(insn 29 6 30 2 (parallel [
+            (set (reg/i:SI 0 r0)
+                (ashift:SI (reg:SI 1 r1 [orig:138 USARTx_1(D)->DR ] [138])
+                    (const_int 23 [0x17])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:580 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:138 USARTx_1(D)->DR ] [138])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 30 29 18 2 (parallel [
+            (set (reg/i:SI 0 r0)
+                (lshiftrt:SI (reg/i:SI 0 r0)
+                    (const_int 23 [0x17])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:580 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 18 30 31 2 (use (reg/i:SI 0 r0)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:580 -1
+     (nil))
+
+(note 31 18 27 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 27 31 28 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:580 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 28 27 23)
+
+(note 23 28 24 NOTE_INSN_DELETED)
+
+(note 24 23 0 NOTE_INSN_DELETED)
+
+;; Function USART_SetAddress (USART_SetAddress)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 26 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 26 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 26 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 15 2 NOTE_INSN_DELETED)
+
+(note 15 9 7 2 NOTE_INSN_DELETED)
+
+(insn 7 15 21 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                    (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:632 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 21 7 30 2 (set (reg:SI 3 r3 [orig:135 D.7848 ] [135])
+        (and:SI (reg:SI 2 r2 [orig:141 USARTx_1(D)->CR2 ] [141])
+            (const_int 4294967280 [0xfffffff0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:632 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:141 USARTx_1(D)->CR2 ] [141])
+        (nil)))
+
+(insn 30 21 31 2 (parallel [
+            (set (reg:SI 2 r2 [orig:135 D.7848 ] [135])
+                (ashift:SI (reg:SI 3 r3 [orig:135 D.7848 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:632 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:135 D.7848 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 31 30 12 2 (parallel [
+            (set (reg:SI 3 r3 [orig:135 D.7848 ] [135])
+                (lshiftrt:SI (reg:SI 2 r2 [orig:135 D.7848 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:632 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:135 D.7848 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 12 31 13 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7848 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:632 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7848 ] [135])
+        (nil)))
+
+(insn 13 12 14 2 (set (reg:SI 12 ip)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                    (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:634 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 14 13 16 2 (set (reg:SI 2 r2 [orig:136 D.7849 ] [136])
+        (zero_extend:SI (reg:HI 12 ip [orig:144 USARTx_1(D)->CR2 ] [144]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:634 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 12 ip [orig:144 USARTx_1(D)->CR2 ] [144])
+        (nil)))
+
+(insn 16 14 18 2 (set (reg:SI 3 r3 [orig:138 D.7851 ] [138])
+        (ior:SI (reg:SI 1 r1 [ USART_Address ])
+            (reg:SI 2 r2 [orig:136 D.7849 ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:634 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:136 D.7849 ] [136])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_Address ])
+            (nil))))
+
+(insn 18 16 32 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16])
+        (reg:HI 3 r3 [orig:138 D.7851 ] [138])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:634 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:138 D.7851 ] [138])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+            (nil))))
+
+(note 32 18 28 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 28 32 29 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:635 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 29 28 24)
+
+(note 24 29 25 NOTE_INSN_DELETED)
+
+(note 25 24 0 NOTE_INSN_DELETED)
+
+;; Function USART_ReceiverWakeUpCmd (USART_ReceiverWakeUpCmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 12 [0xc])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:654 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:651 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7846 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR1 ] [143])
+            (const_int 4294967293 [0xfffffffd]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:659 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR1 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7846 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7846 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:659 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7846 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7846 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7846 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:659 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7846 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7846 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:659 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7846 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 50 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7842 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR1 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:654 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR1 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7843 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7842 ] [134])
+            (const_int 2 [0x2]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:654 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7842 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7843 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:654 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7843 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_WakeUpConfig (USART_WakeUpConfig)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 26 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 26 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 26 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 15 2 NOTE_INSN_DELETED)
+
+(note 15 9 7 2 NOTE_INSN_DELETED)
+
+(insn 7 15 21 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 12 [0xc])) [5 USARTx_1(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:678 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 21 7 30 2 (set (reg:SI 3 r3 [orig:135 D.7837 ] [135])
+        (and:SI (reg:SI 2 r2 [orig:140 USARTx_1(D)->CR1 ] [140])
+            (const_int 4294965247 [0xfffff7ff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:678 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:140 USARTx_1(D)->CR1 ] [140])
+        (nil)))
+
+(insn 30 21 31 2 (parallel [
+            (set (reg:SI 2 r2 [orig:135 D.7837 ] [135])
+                (ashift:SI (reg:SI 3 r3 [orig:135 D.7837 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:678 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:135 D.7837 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 31 30 12 2 (parallel [
+            (set (reg:SI 3 r3 [orig:135 D.7837 ] [135])
+                (lshiftrt:SI (reg:SI 2 r2 [orig:135 D.7837 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:678 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:135 D.7837 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 12 31 13 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 USARTx_1(D)->CR1+0 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7837 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:678 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7837 ] [135])
+        (nil)))
+
+(insn 13 12 14 2 (set (reg:SI 12 ip)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 12 [0xc])) [5 USARTx_1(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:679 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 14 13 16 2 (set (reg:SI 2 r2 [orig:136 D.7838 ] [136])
+        (zero_extend:SI (reg:HI 12 ip [orig:143 USARTx_1(D)->CR1 ] [143]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:679 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 12 ip [orig:143 USARTx_1(D)->CR1 ] [143])
+        (nil)))
+
+(insn 16 14 18 2 (set (reg:SI 3 r3 [orig:137 D.7839 ] [137])
+        (ior:SI (reg:SI 1 r1 [ USART_WakeUp ])
+            (reg:SI 2 r2 [orig:136 D.7838 ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:679 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:136 D.7838 ] [136])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_WakeUp ])
+            (nil))))
+
+(insn 18 16 32 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 12 [0xc])) [5 USARTx_1(D)->CR1+0 S2 A16])
+        (reg:HI 3 r3 [orig:137 D.7839 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:679 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:137 D.7839 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(note 32 18 28 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 28 32 29 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:680 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 29 28 24)
+
+(note 24 29 25 NOTE_INSN_DELETED)
+
+(note 25 24 0 NOTE_INSN_DELETED)
+
+;; Function USART_LINBreakDetectLengthConfig (USART_LINBreakDetectLengthConfig)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 26 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 26 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 26 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 15 2 NOTE_INSN_DELETED)
+
+(note 15 9 7 2 NOTE_INSN_DELETED)
+
+(insn 7 15 21 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:747 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 21 7 30 2 (set (reg:SI 3 r3 [orig:135 D.7833 ] [135])
+        (and:SI (reg:SI 2 r2 [orig:140 USARTx_1(D)->CR2 ] [140])
+            (const_int 4294967263 [0xffffffdf]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:747 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:140 USARTx_1(D)->CR2 ] [140])
+        (nil)))
+
+(insn 30 21 31 2 (parallel [
+            (set (reg:SI 2 r2 [orig:135 D.7833 ] [135])
+                (ashift:SI (reg:SI 3 r3 [orig:135 D.7833 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:747 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:135 D.7833 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 31 30 12 2 (parallel [
+            (set (reg:SI 3 r3 [orig:135 D.7833 ] [135])
+                (lshiftrt:SI (reg:SI 2 r2 [orig:135 D.7833 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:747 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:135 D.7833 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 12 31 13 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7833 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:747 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7833 ] [135])
+        (nil)))
+
+(insn 13 12 14 2 (set (reg:SI 12 ip)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:748 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 14 13 16 2 (set (reg:SI 2 r2 [orig:136 D.7834 ] [136])
+        (zero_extend:SI (reg:HI 12 ip [orig:143 USARTx_1(D)->CR2 ] [143]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:748 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 12 ip [orig:143 USARTx_1(D)->CR2 ] [143])
+        (nil)))
+
+(insn 16 14 18 2 (set (reg:SI 3 r3 [orig:137 D.7835 ] [137])
+        (ior:SI (reg:SI 1 r1 [ USART_LINBreakDetectLength ])
+            (reg:SI 2 r2 [orig:136 D.7834 ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:748 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:136 D.7834 ] [136])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_LINBreakDetectLength ])
+            (nil))))
+
+(insn 18 16 32 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 16 [0x10])) [5 USARTx_1(D)->CR2+0 S2 A16])
+        (reg:HI 3 r3 [orig:137 D.7835 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:748 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:137 D.7835 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(note 32 18 28 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 28 32 29 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:749 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 29 28 24)
+
+(note 24 29 25 NOTE_INSN_DELETED)
+
+(note 25 24 0 NOTE_INSN_DELETED)
+
+;; Function USART_LINCmd (USART_LINCmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 16 [0x10])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:768 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:765 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7831 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR2 ] [143])
+            (const_int 4294950911 [0xffffbfff]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:773 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR2 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7831 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7831 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:773 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7831 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7831 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7831 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:773 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7831 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 16 [0x10])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7831 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:773 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7831 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 56 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7827 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR2 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:768 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR2 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7828 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7827 ] [134])
+            (const_int 16384 [0x4000]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:768 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7827 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 16 [0x10])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7828 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:768 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7828 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_SendBreak (USART_SendBreak)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 4 NOTE_INSN_DELETED)
+
+(note 4 1 16 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 16 4 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 16 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 3 6 2 NOTE_INSN_DELETED)
+
+(insn 6 8 7 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:136 USARTx ] [136])
+                    (const_int 12 [0xc])) [5 USARTx_1(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:789 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 7 6 9 2 (set (reg:SI 1 r1 [orig:134 D.7823 ] [134])
+        (zero_extend:SI (reg:HI 2 r2 [orig:137 USARTx_1(D)->CR1 ] [137]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:789 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 USARTx_1(D)->CR1 ] [137])
+        (nil)))
+
+(insn 9 7 11 2 (set (reg:SI 3 r3 [orig:135 D.7824 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7823 ] [134])
+            (const_int 1 [0x1]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:789 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7823 ] [134])
+        (nil)))
+
+(insn 11 9 20 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:136 USARTx ] [136])
+                (const_int 12 [0xc])) [5 USARTx_1(D)->CR1+0 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7824 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:789 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7824 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:136 USARTx ] [136])
+            (nil))))
+
+(note 20 11 18 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 18 20 19 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:790 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 19 18 14)
+
+(note 14 19 15 NOTE_INSN_DELETED)
+
+(note 15 14 0 NOTE_INSN_DELETED)
+
+;; Function USART_HalfDuplexCmd (USART_HalfDuplexCmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 20 [0x14])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:845 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:842 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7822 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+            (const_int 4294967287 [0xfffffff7]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:850 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7822 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7822 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:850 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7822 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7822 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7822 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:850 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7822 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7822 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:850 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7822 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 61 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7818 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:845 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7819 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7818 ] [134])
+            (const_int 8 [0x8]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:845 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7818 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7819 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:845 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7819 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_SetGuardTime (USART_SetGuardTime)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 25 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 25 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 25 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 15 2 NOTE_INSN_DELETED)
+
+(note 15 9 17 2 NOTE_INSN_DELETED)
+
+(note 17 15 7 2 NOTE_INSN_DELETED)
+
+(insn 7 17 10 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:140 USARTx ] [140])
+                    (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:926 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 10 7 12 2 (set (reg:SI 3 r3 [orig:135 D.7811 ] [135])
+        (zero_extend:SI (reg:QI 2 r2 [orig:142 USARTx_1(D)->GTPR ] [142]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:926 730 {thumb2_zero_extendqisi2_v6}
+     (expr_list:REG_DEAD (reg:QI 2 r2 [orig:142 USARTx_1(D)->GTPR ] [142])
+        (nil)))
+
+(insn 12 10 13 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:140 USARTx ] [140])
+                (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7811 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:926 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7811 ] [135])
+        (nil)))
+
+(insn 13 12 14 2 (set (reg:SI 12 ip)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:140 USARTx ] [140])
+                    (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:928 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 14 13 18 2 (set (reg:SI 2 r2 [orig:136 D.7812 ] [136])
+        (zero_extend:SI (reg:HI 12 ip [orig:145 USARTx_1(D)->GTPR ] [145]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:928 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 12 ip [orig:145 USARTx_1(D)->GTPR ] [145])
+        (nil)))
+
+(insn 18 14 20 2 (set (reg:SI 3 r3 [orig:139 D.7815 ] [139])
+        (ior:SI (ashift:SI (reg:SI 1 r1 [ USART_GuardTime ])
+                (const_int 8 [0x8]))
+            (reg:SI 2 r2 [orig:136 D.7812 ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:928 262 {*arith_shiftsi}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:136 D.7812 ] [136])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_GuardTime ])
+            (nil))))
+
+(insn 20 18 29 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:140 USARTx ] [140])
+                (const_int 24 [0x18])) [5 USARTx_1(D)->GTPR+0 S2 A16])
+        (reg:HI 3 r3 [orig:139 D.7815 ] [139])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:928 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:139 D.7815 ] [139])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:140 USARTx ] [140])
+            (nil))))
+
+(note 29 20 27 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 27 29 28 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:929 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 28 27 23)
+
+(note 23 28 24 NOTE_INSN_DELETED)
+
+(note 24 23 0 NOTE_INSN_DELETED)
+
+;; Function USART_SmartCardCmd (USART_SmartCardCmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 20 [0x14])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:947 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:944 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7809 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+            (const_int 4294967263 [0xffffffdf]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:952 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7809 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7809 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:952 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7809 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7809 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7809 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:952 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7809 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7809 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:952 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7809 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 66 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7805 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:947 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7806 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7805 ] [134])
+            (const_int 32 [0x20]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:947 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7805 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7806 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:947 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7806 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_SmartCardNACKCmd (USART_SmartCardNACKCmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 20 [0x14])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:972 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:969 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7802 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+            (const_int 4294967279 [0xffffffef]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:977 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7802 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7802 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:977 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7802 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7802 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7802 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:977 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7802 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7802 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:977 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7802 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 70 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7798 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:972 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7799 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7798 ] [134])
+            (const_int 16 [0x10]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:972 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7798 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7799 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:972 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7799 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_IrDAConfig (USART_IrDAConfig)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 26 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 26 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 26 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 15 2 NOTE_INSN_DELETED)
+
+(note 15 9 7 2 NOTE_INSN_DELETED)
+
+(insn 7 15 21 2 (set (reg:SI 2 r2)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 20 [0x14])) [5 USARTx_1(D)->CR3+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1041 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 21 7 30 2 (set (reg:SI 3 r3 [orig:135 D.7793 ] [135])
+        (and:SI (reg:SI 2 r2 [orig:140 USARTx_1(D)->CR3 ] [140])
+            (const_int 4294967291 [0xfffffffb]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1041 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:140 USARTx_1(D)->CR3 ] [140])
+        (nil)))
+
+(insn 30 21 31 2 (parallel [
+            (set (reg:SI 2 r2 [orig:135 D.7793 ] [135])
+                (ashift:SI (reg:SI 3 r3 [orig:135 D.7793 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1041 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:135 D.7793 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 31 30 12 2 (parallel [
+            (set (reg:SI 3 r3 [orig:135 D.7793 ] [135])
+                (lshiftrt:SI (reg:SI 2 r2 [orig:135 D.7793 ] [135])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1041 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:135 D.7793 ] [135])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 12 31 13 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 USARTx_1(D)->CR3+0 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7793 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1041 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7793 ] [135])
+        (nil)))
+
+(insn 13 12 14 2 (set (reg:SI 12 ip)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 20 [0x14])) [5 USARTx_1(D)->CR3+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1042 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 14 13 16 2 (set (reg:SI 2 r2 [orig:136 D.7794 ] [136])
+        (zero_extend:SI (reg:HI 12 ip [orig:143 USARTx_1(D)->CR3 ] [143]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1042 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 12 ip [orig:143 USARTx_1(D)->CR3 ] [143])
+        (nil)))
+
+(insn 16 14 18 2 (set (reg:SI 3 r3 [orig:137 D.7795 ] [137])
+        (ior:SI (reg:SI 1 r1 [ USART_IrDAMode ])
+            (reg:SI 2 r2 [orig:136 D.7794 ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1042 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [orig:136 D.7794 ] [136])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_IrDAMode ])
+            (nil))))
+
+(insn 18 16 32 2 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 USARTx_1(D)->CR3+0 S2 A16])
+        (reg:HI 3 r3 [orig:137 D.7795 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1042 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:137 D.7795 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(note 32 18 28 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 28 32 29 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1043 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 29 28 24)
+
+(note 24 29 25 NOTE_INSN_DELETED)
+
+(note 25 24 0 NOTE_INSN_DELETED)
+
+;; Function USART_IrDACmd (USART_IrDACmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 37 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 10 2 NOTE_INSN_DELETED)
+
+(insn 10 7 8 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                    (const_int 20 [0x14])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1062 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 8 10 19 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 1 r1 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 43)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1059 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 43)
+
+(note 19 8 21 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 19 22 3 NOTE_INSN_DELETED)
+
+(note 22 21 32 3 NOTE_INSN_DELETED)
+
+(insn 32 22 41 3 (set (reg:SI 1 r1 [orig:137 D.7791 ] [137])
+        (and:SI (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+            (const_int 4294967293 [0xfffffffd]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1067 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:143 USARTx_2(D)->CR3 ] [143])
+        (nil)))
+
+(insn 41 32 42 3 (parallel [
+            (set (reg:SI 3 r3 [orig:137 D.7791 ] [137])
+                (ashift:SI (reg:SI 1 r1 [orig:137 D.7791 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1067 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:137 D.7791 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 42 41 25 3 (parallel [
+            (set (reg:SI 2 r2 [orig:137 D.7791 ] [137])
+                (lshiftrt:SI (reg:SI 3 r3 [orig:137 D.7791 ] [137])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1067 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:137 D.7791 ] [137])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 25 42 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:137 D.7791 ] [137])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1067 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:137 D.7791 ] [137])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 40 25 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 43)
+
+(code_label 43 39 9 4 75 "" [1 uses])
+
+(note 9 43 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 12 9 11 4 NOTE_INSN_DELETED)
+
+(insn 11 12 13 4 (set (reg:SI 1 r1 [orig:134 D.7787 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1062 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:140 USARTx_2(D)->CR3 ] [140])
+        (nil)))
+
+(insn 13 11 15 4 (set (reg:SI 3 r3 [orig:135 D.7788 ] [135])
+        (ior:SI (reg:SI 1 r1 [orig:134 D.7787 ] [134])
+            (const_int 2 [0x2]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1062 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:134 D.7787 ] [134])
+        (nil)))
+
+(insn 15 13 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 3 r3 [orig:135 D.7788 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1062 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:135 D.7788 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+            (nil))))
+
+(jump_insn 38 15 31 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 31 38 35)
+
+(note 35 31 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_DMACmd (USART_DMACmd)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 6 NOTE_INSN_DELETED)
+
+(note 6 1 37 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 37 6 4 2 NOTE_INSN_PROLOGUE_END)
+
+(note 4 37 5 2 NOTE_INSN_DELETED)
+
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 5 11 2 NOTE_INSN_DELETED)
+
+(insn 11 8 12 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                    (const_int 20 [0x14])) [5 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1110 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 12 11 9 2 (set (reg:SI 3 r3 [orig:134 D.7779 ] [134])
+        (zero_extend:SI (reg:HI 3 r3 [orig:142 USARTx_2(D)->CR3 ] [142]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1110 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(jump_insn 9 12 20 2 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg:SI 2 r2 [ NewState ])
+                        (const_int 0 [0]))
+                    (label_ref:SI 41)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1106 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [ NewState ])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 41)
+
+(note 20 9 23 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(note 23 20 25 3 NOTE_INSN_DELETED)
+
+(note 25 23 26 3 NOTE_INSN_DELETED)
+
+(insn 26 25 28 3 (set (reg:SI 2 r2 [orig:138 D.7784 ] [138])
+        (and:SI (not:SI (reg/v:SI 1 r1 [orig:140 USART_DMAReq ] [140]))
+            (reg:SI 3 r3 [orig:136 D.7782 ] [136]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1116 83 {andsi_notsi_si}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:136 D.7782 ] [136])
+        (expr_list:REG_DEAD (reg/v:SI 1 r1 [orig:140 USART_DMAReq ] [140])
+            (nil))))
+
+(insn 28 26 40 3 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 2 r2 [orig:138 D.7784 ] [138])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1116 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:138 D.7784 ] [138])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+            (nil))))
+
+(jump_insn 40 28 39 3 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 39 40 41)
+
+(code_label 41 39 10 4 79 "" [1 uses])
+
+(note 10 41 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 13 10 14 4 NOTE_INSN_DELETED)
+
+(insn 14 13 16 4 (parallel [
+            (set (reg:SI 1 r1 [orig:135 D.7780 ] [135])
+                (ior:SI (reg/v:SI 1 r1 [orig:140 USART_DMAReq ] [140])
+                    (reg:SI 3 r3 [orig:134 D.7779 ] [134])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1110 736 {*thumb2_alusi3_short}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:134 D.7779 ] [134])
+        (nil)))
+
+(insn 16 14 38 4 (set (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+                (const_int 20 [0x14])) [5 S2 A16])
+        (reg:HI 1 r1 [orig:135 D.7780 ] [135])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1110 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 1 r1 [orig:135 D.7780 ] [135])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+            (nil))))
+
+(jump_insn 38 16 34 4 (return) 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 34 38 35)
+
+(note 35 34 36 NOTE_INSN_DELETED)
+
+(note 36 35 0 NOTE_INSN_DELETED)
+
+;; Function USART_ITConfig (USART_ITConfig)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+df_worklist_dataflow_doublequeue:n_basic_blocks 11 n_edges 13 count 11 (    1)
+df_worklist_dataflow_doublequeue:n_basic_blocks 11 n_edges 13 count 11 (    1)
+(note 1 0 6 NOTE_INSN_DELETED)
+
+(note 6 1 5 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 5 6 9 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 9 5 10 2 NOTE_INSN_DELETED)
+
+(note 10 9 12 2 NOTE_INSN_DELETED)
+
+(insn 12 10 63 2 (set (reg:SI 3 r3 [155])
+        (and:SI (reg/v:SI 1 r1 [orig:151 USART_IT ] [151])
+            (const_int 31 [0x1f]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1252 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn/f 63 12 64 2 (parallel [
+            (set (mem/c:BLK (pre_modify:SI (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -4 [0xfffffffffffffffc]))) [2 A8])
+                (unspec:BLK [
+                        (reg:SI 4 r4)
+                    ] 2))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1232 319 {*push_multi}
+     (expr_list:REG_DEAD (reg:SI 4 r4)
+        (expr_list:REG_FRAME_RELATED_EXPR (sequence [
+                    (set/f (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -4 [0xfffffffffffffffc])))
+                    (set/f (mem/c:SI (reg/f:SI 13 sp) [2 S4 A32])
+                        (reg:SI 4 r4))
+                ])
+            (nil))))
+
+(note 64 63 11 2 NOTE_INSN_PROLOGUE_END)
+
+(insn 11 64 71 2 (set (reg/v:SI 1 r1 [orig:138 usartreg ] [138])
+        (zero_extract:SI (reg/v:SI 1 r1 [orig:151 USART_IT ] [151])
+            (const_int 3 [0x3])
+            (const_int 5 [0x5]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1249 131 {extzv_t2}
+     (nil))
+
+(insn 71 11 15 2 (parallel [
+            (set (reg:SI 4 r4 [156])
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1253 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 15 71 14 2 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 1 r1 [orig:138 usartreg ] [138])
+            (reg:SI 4 r4))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1255 206 {*arm_cmpsi_insn}
+     (nil))
+
+(insn 14 15 16 2 (set (reg/v:SI 3 r3 [orig:142 itmask ] [142])
+        (ashift:SI (reg:SI 4 r4 [156])
+            (reg:SI 3 r3 [155]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1253 119 {*arm_shiftsi3}
+     (expr_list:REG_EQUAL (ashift:SI (const_int 1 [0x1])
+            (reg:SI 3 r3 [155]))
+        (nil)))
+
+(jump_insn 16 14 22 2 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 72)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1255 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 2800 [0xaf0])
+            (nil)))
+ -> 72)
+
+(note 22 16 23 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 23 22 24 3 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 1 r1 [orig:138 usartreg ] [138])
+            (const_int 2 [0x2]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1259 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg/v:SI 1 r1 [orig:138 usartreg ] [138])
+        (nil)))
+
+(jump_insn 24 23 30 3 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 73)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1259 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 2800 [0xaf0])
+            (nil)))
+ -> 73)
+
+(note 30 24 68 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(insn 68 30 32 4 (parallel [
+            (set (reg/v:SI 0 r0 [orig:134 usartxbase ] [134])
+                (plus:SI (reg/v/f:SI 0 r0 [orig:150 USARTx ] [150])
+                    (const_int 20 [0x14])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1265 741 {*thumb2_addsi_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(code_label 32 68 33 5 82 "" [2 uses])
+
+(note 33 32 34 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(note 34 33 35 5 NOTE_INSN_DELETED)
+
+(jump_insn 35 34 44 5 (parallel [
+            (set (pc)
+                (if_then_else (ne (reg/v:SI 2 r2 [orig:152 NewState ] [152])
+                        (const_int 0 [0]))
+                    (label_ref:SI 74)
+                    (pc)))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1267 749 {*thumb2_cbnz}
+     (expr_list:REG_DEAD (reg/v:SI 2 r2 [orig:152 NewState ] [152])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (expr_list:REG_BR_PROB (const_int 3900 [0xf3c])
+                (nil))))
+ -> 74)
+
+(note 44 35 47 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+(note 47 44 46 6 NOTE_INSN_DELETED)
+
+(insn 46 47 48 6 (set (reg:SI 1 r1 [orig:147 D.7774 ] [147])
+        (mem/v:SI (reg/v:SI 0 r0 [orig:134 usartxbase ] [134]) [4 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1273 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 48 46 49 6 (set (reg:SI 3 r3 [orig:149 D.7776 ] [149])
+        (and:SI (not:SI (reg/v:SI 3 r3 [orig:142 itmask ] [142]))
+            (reg:SI 1 r1 [orig:147 D.7774 ] [147]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1273 83 {andsi_notsi_si}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:147 D.7774 ] [147])
+        (nil)))
+
+(insn 49 48 52 6 (set (mem/v:SI (reg/v:SI 0 r0 [orig:134 usartxbase ] [134]) [4 S4 A32])
+        (reg:SI 3 r3 [orig:149 D.7776 ] [149])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1273 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:149 D.7776 ] [149])
+        (expr_list:REG_DEAD (reg/v:SI 0 r0 [orig:134 usartxbase ] [134])
+            (nil))))
+
+(code_label 52 49 53 7 80 "" [1 uses])
+
+(note 53 52 65 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+(note 65 53 66 7 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 66 65 67 7 (unspec_volatile [
+            (return)
+        ] 1) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1275 315 {*epilogue_insns}
+     (nil)
+ -> return)
+
+(barrier 67 66 74)
+
+(code_label 74 67 36 8 88 "" [1 uses])
+
+(note 36 74 38 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+
+(insn 38 36 39 8 (set (reg:SI 2 r2 [orig:144 D.7771 ] [144])
+        (mem/v:SI (reg/v:SI 0 r0 [orig:134 usartxbase ] [134]) [4 S4 A32])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1269 709 {*thumb2_movsi_insn}
+     (nil))
+
+(insn 39 38 40 8 (set (reg:SI 1 r1 [orig:145 D.7772 ] [145])
+        (ior:SI (reg:SI 2 r2 [orig:144 D.7771 ] [144])
+            (reg/v:SI 3 r3 [orig:142 itmask ] [142]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1269 91 {*iorsi3_insn}
+     (expr_list:REG_DEAD (reg/v:SI 3 r3 [orig:142 itmask ] [142])
+        (expr_list:REG_DEAD (reg:SI 2 r2 [orig:144 D.7771 ] [144])
+            (nil))))
+
+(insn 40 39 81 8 (set (mem/v:SI (reg/v:SI 0 r0 [orig:134 usartxbase ] [134]) [4 S4 A32])
+        (reg:SI 1 r1 [orig:145 D.7772 ] [145])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1269 709 {*thumb2_movsi_insn}
+     (expr_list:REG_DEAD (reg:SI 1 r1 [orig:145 D.7772 ] [145])
+        (expr_list:REG_DEAD (reg/v:SI 0 r0 [orig:134 usartxbase ] [134])
+            (nil))))
+
+(jump_insn 81 40 82 8 (set (pc)
+        (label_ref 52)) 230 {*arm_jump}
+     (nil)
+ -> 52)
+
+(barrier 82 81 72)
+
+(code_label 72 82 17 9 86 "" [1 uses])
+
+(note 17 72 70 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+(insn 70 17 83 9 (parallel [
+            (set (reg/v:SI 0 r0 [orig:134 usartxbase ] [134])
+                (plus:SI (reg/v/f:SI 0 r0 [orig:150 USARTx ] [150])
+                    (const_int 12 [0xc])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1257 741 {*thumb2_addsi_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(jump_insn 83 70 84 9 (set (pc)
+        (label_ref 32)) 230 {*arm_jump}
+     (nil)
+ -> 32)
+
+(barrier 84 83 73)
+
+(code_label 73 84 25 10 87 "" [1 uses])
+
+(note 25 73 69 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+(insn 69 25 85 10 (parallel [
+            (set (reg/v:SI 0 r0 [orig:134 usartxbase ] [134])
+                (plus:SI (reg/v/f:SI 0 r0 [orig:150 USARTx ] [150])
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1261 741 {*thumb2_addsi_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(jump_insn 85 69 86 10 (set (pc)
+        (label_ref 32)) 230 {*arm_jump}
+     (nil)
+ -> 32)
+
+(barrier 86 85 60)
+
+(note 60 86 62 NOTE_INSN_DELETED)
+
+(note 62 60 0 NOTE_INSN_DELETED)
+
+;; Function USART_GetFlagStatus (USART_GetFlagStatus)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 27 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 27 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 27 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 8 4 9 2 NOTE_INSN_DELETED)
+
+(note 9 8 10 2 NOTE_INSN_DELETED)
+
+(note 10 9 12 2 NOTE_INSN_DELETED)
+
+(note 12 10 13 2 NOTE_INSN_DELETED)
+
+(note 13 12 14 2 NOTE_INSN_DELETED)
+
+(note 14 13 7 2 NOTE_INSN_DELETED)
+
+(insn 7 14 11 2 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138]) [5 USARTx_3(D)->SR+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1308 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:138 USARTx ] [138])
+        (nil)))
+
+(insn 11 7 19 2 (parallel [
+            (set (reg:CC_NOOV 24 cc)
+                (compare:CC_NOOV (and:SI (reg:SI 1 r1 [ USART_FLAG ])
+                        (reg:SI 3 r3 [orig:140 USARTx_3(D)->SR ] [140]))
+                    (const_int 0 [0])))
+            (clobber (scratch:SI))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1310 72 {*andsi3_compare0_scratch}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:140 USARTx_3(D)->SR ] [140])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [ USART_FLAG ])
+            (nil))))
+
+(insn 19 11 22 2 (set (reg/i:SI 0 r0)
+        (ne:SI (reg:CC_NOOV 24 cc)
+            (const_int 0 [0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1317 713 {*thumb2_mov_scc}
+     (expr_list:REG_DEAD (reg:CC_NOOV 24 cc)
+        (nil)))
+
+(insn 22 19 31 2 (use (reg/i:SI 0 r0)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1317 -1
+     (nil))
+
+(note 31 22 29 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 29 31 30 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1317 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 30 29 25)
+
+(note 25 30 26 NOTE_INSN_DELETED)
+
+(note 26 25 0 NOTE_INSN_DELETED)
+
+;; Function USART_ClearFlag (USART_ClearFlag)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 16 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 16 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 16 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 20 2 NOTE_INSN_FUNCTION_BEG)
+
+(insn 20 4 10 2 (parallel [
+            (set (reg:SI 1 r1 [137])
+                (not:SI (reg:SI 1 r1 [ USART_FLAG ])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1356 750 {*thumb2_one_cmplsi2_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 10 20 21 2 (set (mem/s/v:HI (reg/v/f:SI 0 r0 [orig:135 USARTx ] [135]) [5 USARTx_5(D)->SR+0 S2 A16])
+        (reg:HI 1 r1 [orig:134 D.7746 ] [134])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1356 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 1 r1 [orig:134 D.7746 ] [134])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:135 USARTx ] [135])
+            (nil))))
+
+(note 21 10 18 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 18 21 19 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1357 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 19 18 14)
+
+(note 14 19 15 NOTE_INSN_DELETED)
+
+(note 15 14 0 NOTE_INSN_DELETED)
+
+;; Function USART_GetITStatus (USART_GetITStatus)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+df_worklist_dataflow_doublequeue:n_basic_blocks 6 n_edges 6 count 6 (    1)
+df_worklist_dataflow_doublequeue:n_basic_blocks 6 n_edges 6 count 6 (    1)
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 4 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 4 5 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 8 2 NOTE_INSN_DELETED)
+
+(note 8 7 9 2 NOTE_INSN_DELETED)
+
+(insn 9 8 70 2 (set (reg/v:SI 3 r3 [orig:137 usartreg ] [137])
+        (zero_extract:SI (reg/v:SI 1 r1 [orig:161 USART_IT ] [161])
+            (const_int 3 [0x3])
+            (const_int 5 [0x5]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1393 131 {extzv_t2}
+     (nil))
+
+(insn/f 70 9 71 2 (parallel [
+            (set (mem/c:BLK (pre_modify:SI (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -4 [0xfffffffffffffffc]))) [2 A8])
+                (unspec:BLK [
+                        (reg:SI 4 r4)
+                    ] 2))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1379 319 {*push_multi}
+     (expr_list:REG_DEAD (reg:SI 4 r4)
+        (expr_list:REG_FRAME_RELATED_EXPR (sequence [
+                    (set/f (reg/f:SI 13 sp)
+                        (plus:SI (reg/f:SI 13 sp)
+                            (const_int -4 [0xfffffffffffffffc])))
+                    (set/f (mem/c:SI (reg/f:SI 13 sp) [2 S4 A32])
+                        (reg:SI 4 r4))
+                ])
+            (nil))))
+
+(note 71 70 10 2 NOTE_INSN_PROLOGUE_END)
+
+(insn 10 71 77 2 (set (reg:SI 2 r2 [orig:140 itmask.0 ] [140])
+        (and:SI (reg/v:SI 1 r1 [orig:161 USART_IT ] [161])
+            (const_int 31 [0x1f]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1395 69 {*arm_andsi3_insn}
+     (nil))
+
+(insn 77 10 13 2 (parallel [
+            (set (reg:SI 4 r4 [164])
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1396 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 13 77 12 2 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 3 r3 [orig:137 usartreg ] [137])
+            (const_int 1 [0x1]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1398 206 {*arm_cmpsi_insn}
+     (nil))
+
+(insn 12 13 14 2 (set (reg/v:SI 4 r4 [orig:141 itmask ] [141])
+        (ashift:SI (reg:SI 4 r4 [164])
+            (reg:SI 2 r2 [orig:140 itmask.0 ] [140]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1396 119 {*arm_shiftsi3}
+     (expr_list:REG_EQUAL (ashift:SI (const_int 1 [0x1])
+            (reg:SI 2 r2 [orig:140 itmask.0 ] [140]))
+        (nil)))
+
+(jump_insn 14 12 22 2 (set (pc)
+        (if_then_else (eq (reg:CC 24 cc)
+                (const_int 0 [0]))
+            (label_ref:SI 78)
+            (pc))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1398 218 {*arm_cond_branch}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (expr_list:REG_BR_PROB (const_int 2800 [0xaf0])
+            (nil)))
+ -> 78)
+
+(note 22 14 23 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+
+(insn 23 22 26 3 (set (reg:CC 24 cc)
+        (compare:CC (reg/v:SI 3 r3 [orig:137 usartreg ] [137])
+            (const_int 2 [0x2]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1402 206 {*arm_cmpsi_insn}
+     (expr_list:REG_DEAD (reg/v:SI 3 r3 [orig:137 usartreg ] [137])
+        (nil)))
+
+(insn 26 23 33 3 (cond_exec (eq (reg:CC 24 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 2 r2)
+            (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:160 USARTx ] [160])
+                        (const_int 16 [0x10])) [5 USARTx_15(D)->CR2+0 S2 A16])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1404 3154 {*p *thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 33 26 34 3 (cond_exec (ne (reg:CC 24 cc)
+            (const_int 0 [0]))
+        (set (reg:SI 2 r2)
+            (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:160 USARTx ] [160])
+                        (const_int 20 [0x14])) [5 USARTx_15(D)->CR3+0 S2 A16])))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1408 3154 {*p *thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:CC 24 cc)
+        (nil)))
+
+(insn 34 33 35 3 (set (reg:SI 12 ip [orig:146 D.7728 ] [146])
+        (zero_extend:SI (reg:HI 2 r2 [orig:167 USARTx_15(D)->CR3 ] [167]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1408 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 2 r2 [orig:167 USARTx_15(D)->CR3 ] [167])
+        (nil)))
+
+(insn 35 34 36 3 (set (reg/v:SI 2 r2 [orig:134 itmask ] [134])
+        (and:SI (reg/v:SI 4 r4 [orig:141 itmask ] [141])
+            (reg:SI 12 ip [orig:146 D.7728 ] [146]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1408 69 {*arm_andsi3_insn}
+     (expr_list:REG_DEAD (reg:SI 12 ip [orig:146 D.7728 ] [146])
+        (expr_list:REG_DEAD (reg/v:SI 4 r4 [orig:141 itmask ] [141])
+            (nil))))
+
+(code_label 36 35 37 4 93 "" [1 uses])
+
+(note 37 36 38 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+
+(note 38 37 44 4 NOTE_INSN_DELETED)
+
+(note 44 38 45 4 NOTE_INSN_DELETED)
+
+(note 45 44 47 4 NOTE_INSN_DELETED)
+
+(note 47 45 51 4 NOTE_INSN_DELETED)
+
+(note 51 47 52 4 NOTE_INSN_DELETED)
+
+(note 52 51 42 4 NOTE_INSN_DELETED)
+
+(insn 42 52 76 4 (set (reg:SI 0 r0)
+        (zero_extend:SI (mem/s/v:HI (reg/v/f:SI 0 r0 [orig:160 USARTx ] [160]) [5 USARTx_15(D)->SR+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1413 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 76 42 75 4 (parallel [
+            (set (reg:SI 4 r4 [169])
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1412 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 75 76 43 4 (parallel [
+            (set (reg:SI 1 r1 [orig:150 bitpos.1 ] [150])
+                (lshiftrt:SI (reg/v:SI 1 r1 [orig:161 USART_IT ] [161])
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1411 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 43 75 41 4 (set (reg:SI 3 r3 [orig:152 D.7732 ] [152])
+        (zero_extend:SI (reg:HI 0 r0 [orig:170 USARTx_15(D)->SR ] [170]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1413 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 0 r0 [orig:170 USARTx_15(D)->SR ] [170])
+        (nil)))
+
+(insn 41 43 48 4 (set (reg/v:SI 1 r1 [orig:151 bitpos ] [151])
+        (ashift:SI (reg:SI 4 r4 [169])
+            (reg:SI 1 r1 [orig:150 bitpos.1 ] [150]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1412 119 {*arm_shiftsi3}
+     (expr_list:REG_EQUAL (ashift:SI (const_int 1 [0x1])
+            (reg:SI 1 r1 [orig:150 bitpos.1 ] [150]))
+        (nil)))
+
+(insn 48 41 49 4 (parallel [
+            (set (reg:CC_NOOV 24 cc)
+                (compare:CC_NOOV (and:SI (reg/v:SI 1 r1 [orig:151 bitpos ] [151])
+                        (reg:SI 3 r3 [orig:152 D.7732 ] [152]))
+                    (const_int 0 [0])))
+            (clobber (scratch:SI))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1414 72 {*andsi3_compare0_scratch}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [orig:152 D.7732 ] [152])
+        (expr_list:REG_DEAD (reg/v:SI 1 r1 [orig:151 bitpos ] [151])
+            (nil))))
+
+(insn 49 48 57 4 (set (reg:SI 0 r0 [176])
+        (ne:SI (reg:CC_NOOV 24 cc)
+            (const_int 0 [0]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1414 713 {*thumb2_mov_scc}
+     (expr_list:REG_DEAD (reg:CC_NOOV 24 cc)
+        (nil)))
+
+(insn 57 49 60 4 (parallel [
+            (set (reg/i:SI 0 r0)
+                (and:SI (ne:SI (reg/v:SI 2 r2 [orig:134 itmask ] [134])
+                        (const_int 0 [0]))
+                    (reg:SI 0 r0 [176])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1424 724 {*thumb2_cond_arith}
+     (expr_list:REG_DEAD (reg/v:SI 2 r2 [orig:134 itmask ] [134])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 60 57 81 4 (use (reg/i:SI 0 r0)) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1424 -1
+     (nil))
+
+(note 81 60 73 4 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 73 81 74 4 (unspec_volatile [
+            (return)
+        ] 1) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1424 315 {*epilogue_insns}
+     (nil)
+ -> return)
+
+(barrier 74 73 78)
+
+(code_label 78 74 15 5 95 "" [1 uses])
+
+(note 15 78 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+(insn 16 15 17 5 (set (reg:SI 3 r3)
+        (zero_extend:SI (mem/s/v:HI (plus:SI (reg/v/f:SI 0 r0 [orig:160 USARTx ] [160])
+                    (const_int 12 [0xc])) [5 USARTx_15(D)->CR1+0 S2 A16]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1400 729 {*thumb2_zero_extendhisi2_v6}
+     (nil))
+
+(insn 17 16 18 5 (set (reg:SI 2 r2 [orig:142 D.7720 ] [142])
+        (zero_extend:SI (reg:HI 3 r3 [orig:165 USARTx_15(D)->CR1 ] [165]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1400 729 {*thumb2_zero_extendhisi2_v6}
+     (expr_list:REG_DEAD (reg:HI 3 r3 [orig:165 USARTx_15(D)->CR1 ] [165])
+        (nil)))
+
+(insn 18 17 82 5 (parallel [
+            (set (reg/v:SI 2 r2 [orig:134 itmask ] [134])
+                (and:SI (reg:SI 2 r2 [orig:142 D.7720 ] [142])
+                    (reg/v:SI 4 r4 [orig:141 itmask ] [141])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1400 736 {*thumb2_alusi3_short}
+     (expr_list:REG_DEAD (reg/v:SI 4 r4 [orig:141 itmask ] [141])
+        (nil)))
+
+(jump_insn 82 18 83 5 (set (pc)
+        (label_ref 36)) 230 {*arm_jump}
+     (nil)
+ -> 36)
+
+(barrier 83 82 67)
+
+(note 67 83 69 NOTE_INSN_DELETED)
+
+(note 69 67 0 NOTE_INSN_DELETED)
+
+;; Function USART_ClearITPendingBit (USART_ClearITPendingBit)
+
+starting the processing of deferred insns
+ending the processing of deferred insns
+df_analyze called
+(note 1 0 5 NOTE_INSN_DELETED)
+
+(note 5 1 21 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+
+(note 21 5 3 2 NOTE_INSN_PROLOGUE_END)
+
+(note 3 21 4 2 NOTE_INSN_DELETED)
+
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+
+(note 7 4 25 2 NOTE_INSN_DELETED)
+
+(insn 25 7 26 2 (parallel [
+            (set (reg:SI 1 r1 [142])
+                (lshiftrt:SI (reg:SI 1 r1 [ USART_IT ])
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1466 737 {*thumb2_shiftsi3_short}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 26 25 10 2 (parallel [
+            (set (reg:SI 3 r3 [144])
+                (const_int 1 [0x1]))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1466 740 {*thumb2_movsi_shortim}
+     (expr_list:REG_UNUSED (reg:CC 24 cc)
+        (nil)))
+
+(insn 10 26 27 2 (set (reg:SI 2 r2 [143])
+        (ashift:SI (reg:SI 3 r3 [144])
+            (reg:SI 1 r1 [142]))) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1466 119 {*arm_shiftsi3}
+     (expr_list:REG_DEAD (reg:SI 3 r3 [144])
+        (expr_list:REG_DEAD (reg:SI 1 r1 [142])
+            (expr_list:REG_EQUAL (ashift:SI (const_int 1 [0x1])
+                    (reg:SI 1 r1 [142]))
+                (nil)))))
+
+(insn 27 10 15 2 (parallel [
+            (set (reg:SI 1 r1 [146])
+                (not:SI (reg:SI 2 r2 [143])))
+            (clobber (reg:CC 24 cc))
+        ]) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1467 750 {*thumb2_one_cmplsi2_short}
+     (expr_list:REG_DEAD (reg:SI 2 r2 [143])
+        (expr_list:REG_UNUSED (reg:CC 24 cc)
+            (nil))))
+
+(insn 15 27 28 2 (set (mem/s/v:HI (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139]) [5 USARTx_9(D)->SR+0 S2 A16])
+        (reg:HI 1 r1 [orig:138 D.7711 ] [138])) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1467 711 {*thumb2_movhi_insn}
+     (expr_list:REG_DEAD (reg:HI 1 r1 [orig:138 D.7711 ] [138])
+        (expr_list:REG_DEAD (reg/v/f:SI 0 r0 [orig:139 USARTx ] [139])
+            (nil))))
+
+(note 28 15 23 2 NOTE_INSN_EPILOGUE_BEG)
+
+(jump_insn 23 28 24 2 (return) ../STM32F429I-Discovery_FW_V1.0.1/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c:1468 733 {*thumb2_return}
+     (nil)
+ -> return)
+
+(barrier 24 23 19)
+
+(note 19 24 20 NOTE_INSN_DELETED)
+
+(note 20 19 0 NOTE_INSN_DELETED)
