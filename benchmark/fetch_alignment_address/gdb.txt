@@ -1,0 +1,80 @@
+0x00010040 in __cs3_reset_generic ()
+Breakpoint 1 at 0x10144
+No symbol table is loaded.  Use the "file" command.
+A debugging session is active.
+
+	Inferior 1 [Remote target] will be killed.
+
+Quit anyway? (y or n) gdbscript/.gdbinit:3: Error in sourced command file:
+You can't do that when your target is `exec'
+No symbol table is loaded.  Use the "file" command.
+The program is not being run.
+gdbscript/.gdbinit:3: Error in sourced command file:
+You can't do that when your target is `exec'
+1	#include <stdio.h>
+2	#include "include/stack.h"
+3	
+4	__attribute__ ((section (".stack_pool"))) stack s;
+5	__attribute__ ((section (".stack_pool"))) int size = 100;
+6	
+7	int main (int argc, char** argv, char** env)
+8	{	
+9		return 0;
+10	}
+gdbscript/.gdbinit:3: Error in sourced command file:
+You can't do that when your target is `exec'
+1	#include <stdio.h>
+2	#include "include/stack.h"
+3	
+4	__attribute__ ((section (".stack_pool"))) stack s;
+5	__attribute__ ((section (".stack_pool"))) int size = 100;
+6	
+7	int main (int argc, char** argv, char** env)
+8	{	
+9		return 0;
+10	}
+gdbscript/.gdbinit:3: Error in sourced command file:
+You can't do that when your target is `exec'
+Undefined command: "exit".  Try "help".
+gdbscript/.gdbinit:3: Error in sourced command file:
+You can't do that when your target is `exec'
+0x00010040 in __cs3_reset_generic ()
+Breakpoint 1 at 0x10144: file main.c, line 9.
+
+Breakpoint 1, main (argc=1, argv=0x18698, env=0x0) at main.c:9
+9		return 0;
+4	__attribute__ ((section (".stack_pool"))) stack s;
+5	__attribute__ ((section (".stack_pool"))) int size = 100;
+6	
+7	int main (int argc, char** argv, char** env)
+8	{	
+9		return 0;
+10	}
+A debugging session is active.
+
+	Inferior 1 [Remote target] will be killed.
+
+Quit anyway? (y or n) Not confirmed.
+A debugging session is active.
+
+	Inferior 1 [Remote target] will be killed.
+
+Quit anyway? (y or n) gdbscript/.gdbinit:3: Error in sourced command file:
+localhost:3333: Connection refused.
+0x00010040 in __cs3_reset_generic ()
+Breakpoint 1 at 0x10144: file main.c, line 9.
+
+Breakpoint 1, main (argc=1, argv=0x18698, env=0x0) at main.c:9
+9		return 0;
+4	__attribute__ ((section (".stack_pool"))) stack s;
+5	__attribute__ ((section (".stack_pool"))) int size = 100;
+6	
+7	int main (int argc, char** argv, char** env)
+8	{	
+9		return 0;
+10	}
+A debugging session is active.
+
+	Inferior 1 [Remote target] will be killed.
+
+Quit anyway? (y or n) 
