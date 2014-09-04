@@ -2,8 +2,8 @@
 
 #define CORE_CLOCK						(0x0a037a00)
 #define SYSTICK_MAXRELOAD				(0x00ffffff)
-#define RESULT_BYTES					0x8000
-#define CONFIG_KTIMER_HEARTBEAT			0x1000
+#define RESULT_BYTES					(0x8000)
+#define CONFIG_KTIMER_HEARTBEAT			(0x1000)
 
 #define SCS_BASE                        (uint32_t) (0xE000E000) 
 #define SYSTICK_BASE                    (SCS_BASE + 0x0010)                                     
@@ -59,6 +59,24 @@ void USART1_Configuration(void)
 	USART_Cmd(USART1, ENABLE);
 }
 
+void RNG_Configuration (void)
+{
+	RCC_AHB2PeriphClockCmd (RCC_AHB2Periph_RNG, ENABLE);
+	RNG_Cmd (ENABLE);
+}
+
+void CCM_Configuration (void)
+{
+	*RCC_AHB1ENR |= RCC_AHB1ENR_CCMDATARAMEN;
+}
+
+void SysTick_Configuration (void)
+{
+	SysTick_Config (CONFIG_KTIMER_HEARTBEAT);
+	NVIC_SetPriority (SysTick_IRQn, 1);
+	NVIC_EnableIRQ (SysTick_IRQn);
+}
+
 void USART1_puts(char* s)
 {
 	while(*s) {
@@ -66,31 +84,6 @@ void USART1_puts(char* s)
 		USART_SendData(USART1, *s);
 		s++;
 	}
-}
-
-void init_systick(uint32_t tick_reload, uint32_t tick_next_reload)
-{
-	*SYSTICK_RELOAD = tick_reload - 1;
-	*SYSTICK_VAL = 0;
-	*SYSTICK_CTL = 0x00000007;
-
-	if (tick_next_reload)
-		*SYSTICK_RELOAD = tick_next_reload - 1;
-}
-
-void systick_disable()
-{
-	*SYSTICK_CTL = 0x00000000;
-}
-
-uint32_t systick_now()
-{
-	return *SYSTICK_VAL;
-}
-
-uint32_t systick_flag_count()
-{
-	return (*SYSTICK_CTL & (1 << 16)) >> 16; 
 }
 
 uint32_t delta_ticks (uint32_t n, uint32_t m) 
@@ -107,18 +100,15 @@ void init_block (char *blk)
 	}
 }
 
-static void config_rng (void)
-{
-	RCC_AHB2PeriphClockCmd (RCC_AHB2Periph_RNG, ENABLE);
-	RNG_Cmd (ENABLE);
-}
-
 #pragma GCC optimize ("O0")
 int main(void)
 {
-	RCC_Configuration();
-	GPIO_Configuration();
-	USART1_Configuration();
+	RCC_Configuration ();
+	GPIO_Configuration ();
+	USART1_Configuration ();
+	CCM_Configuration ();
+	RNG_Configuration ();
+	SysTick_Configuration ();
 
 	uint32_t start = 0;
 	uint32_t end = 0;
@@ -128,13 +118,6 @@ int main(void)
 	for (int i = 0; i < 14; ++i) {
 		result[i] = 0;
 	}
-
-	*RCC_AHB1ENR |= RCC_AHB1ENR_CCMDATARAMEN;
-	SysTick_Config (CONFIG_KTIMER_HEARTBEAT);
-	NVIC_SetPriority (SysTick_IRQn, 1);
-	NVIC_EnableIRQ (SysTick_IRQn);
-
-	config_rng ();
 
 	init_block (src);
 	init_block (dest);
@@ -151,6 +134,12 @@ int main(void)
 
 			result[j] += delta_ticks (start, end);
 		}
+	}
+
+	uint32_t rnd[12];
+
+	for (int i = 0; i < 12; ++i) {
+		rnd[i] = RNG_GetRandomNumber() % 12 + 1;
 	}
 
 	USART1_puts ("Profiling Finish.\r\n");
