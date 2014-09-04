@@ -3,10 +3,9 @@
 #define CORE_CLOCK						(0x0a037a00)
 #define SYSTICK_MAXRELOAD				(0x00ffffff)
 #define RESULT_BYTES					0x8000
-#define MAX_ALIGNMENT					0x8000
 #define CONFIG_KTIMER_HEARTBEAT			0x1000
 
-#define SCS_BASE                        (uint32_t) (0xE000E000)                                                                                           
+#define SCS_BASE                        (uint32_t) (0xE000E000) 
 #define SYSTICK_BASE                    (SCS_BASE + 0x0010)                                     
 #define SYSTICK_CTL                     (volatile uint32_t *) (SYSTICK_BASE)                                                                
 #define SYSTICK_RELOAD                  (volatile uint32_t *) (SYSTICK_BASE + 0x04)             
@@ -108,15 +107,10 @@ void init_block (char *blk)
 	}
 }
 
-static char *realign(char *p, int alignment)
+static void config_rng (void)
 {
-	uintptr_t pp = (uintptr_t)p;
-
-	pp = (pp + (MAX_ALIGNMENT - 1)) & ~(MAX_ALIGNMENT - 1);  
-
-	pp += alignment;
-
-	return (char *)pp;
+	RCC_AHB2PeriphClockCmd (RCC_AHB2Periph_RNG, ENABLE);
+	RNG_Cmd (ENABLE);
 }
 
 #pragma GCC optimize ("O0")
@@ -126,9 +120,6 @@ int main(void)
 	GPIO_Configuration();
 	USART1_Configuration();
 
-	USART1_puts("Hello World!\r\n");
-	USART1_puts("Just for STM32F429I Discovery verify USART1 with USB TTL Cable\r\n");
-
 	uint32_t start = 0;
 	uint32_t end = 0;
 	uint64_t offset = 4;
@@ -137,11 +128,13 @@ int main(void)
 	for (int i = 0; i < 14; ++i) {
 		result[i] = 0;
 	}
-	*RCC_AHB1ENR |= RCC_AHB1ENR_CCMDATARAMEN;
 
+	*RCC_AHB1ENR |= RCC_AHB1ENR_CCMDATARAMEN;
 	SysTick_Config (CONFIG_KTIMER_HEARTBEAT);
 	NVIC_SetPriority (SysTick_IRQn, 1);
 	NVIC_EnableIRQ (SysTick_IRQn);
+
+	config_rng ();
 
 	init_block (src);
 	init_block (dest);
@@ -160,23 +153,12 @@ int main(void)
 		}
 	}
 
-	while(1)
-	{
-		while(USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
-		char t = USART_ReceiveData(USART1);
-		if ((t == '\r')) {
-			while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
-			USART_SendData(USART1, t);
-			t = '\n';
-		}
-		while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
-		USART_SendData(USART1, t);
-	}
+	USART1_puts ("Profiling Finish.\r\n");
 
 	while(1); 
 }
-#ifdef  USE_FULL_ASSERT
 
+#ifdef  USE_FULL_ASSERT
 void assert_failed(uint8_t* file, uint32_t line)
 { 
 	while (1)
